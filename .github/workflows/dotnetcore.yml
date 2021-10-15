@@ -1,0 +1,23 @@
+name: .NET Core
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@master
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@master
+      with:
+        dotnet-version: 5.0.100
+    - name: dotnet info
+      run: dotnet --info
+    - name: dotnet restore
+      run: dotnet restore ./src/JT905.Protocol.sln
+    - name: dotnet jt905 build
+      run: dotnet build ./src/JT905.Protocol.Test/JT905.Protocol.Test.csproj
+    - name: dotnet jt905 test
+      run: dotnet test ./src/JT905.Protocol.Test/JT905.Protocol.Test.csproj
