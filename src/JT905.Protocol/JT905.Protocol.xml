@@ -2378,13 +2378,25 @@
         <member name="P:JT905.Protocol.MessageBody.JT905_0x0200.Lat">
             <summary>
             纬度
-            以度为单位的纬度值乘以 10 的 6 次方，精确到百万分之一度
+            除以600000.0D
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x0200.Lng">
             <summary>
             经度
-            以度为单位的经度值乘以 10 的 6 次方，精确到百万分之一度
+            除以600000.0D
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0200.ConvertLat">
+            <summary>
+            纬度
+            除以600000.0D
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0200.ConvertLng">
+            <summary>
+            经度
+            除以600000.0D
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x0200.Speed">

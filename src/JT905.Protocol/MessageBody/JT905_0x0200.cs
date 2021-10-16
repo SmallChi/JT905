@@ -36,14 +36,24 @@ namespace JT905.Protocol.MessageBody
         public uint StatusFlag { get; set; }
         /// <summary>
         /// 纬度
-        /// 以度为单位的纬度值乘以 10 的 6 次方，精确到百万分之一度
+        /// 除以600000.0D
         /// </summary>
         public int Lat { get; set; }
         /// <summary>
         /// 经度
-        /// 以度为单位的经度值乘以 10 的 6 次方，精确到百万分之一度
+        /// 除以600000.0D
         /// </summary>
         public int Lng { get; set; }
+        /// <summary>
+        /// 纬度
+        /// 除以600000.0D
+        /// </summary>
+        public double ConvertLat { get { return Math.Round(Lat / 600000.0D,6); } }
+        /// <summary>
+        /// 经度
+        /// 除以600000.0D
+        /// </summary>
+        public double ConvertLng { get { return Math.Round(Lng / 600000.0D, 6); } }
         /// <summary>
         /// 速度 1/10km/h
         /// </summary>
@@ -436,22 +446,22 @@ namespace JT905.Protocol.MessageBody
             if (((value.StatusFlag >> 30) & 1) == 1)
             {   //南纬 268435456 0x10000000
                 value.Lat = (int)reader.ReadUInt32();
-                writer.WriteNumber($"[{value.Lat.ReadNumber()}]纬度", value.Lat);
+                writer.WriteNumber($"[{value.Lat.ReadNumber()}]纬度", value.ConvertLat);
             }
             else
             {
                 value.Lat = reader.ReadInt32();
-                writer.WriteNumber($"[{value.Lat.ReadNumber()}]纬度", value.Lat);
+                writer.WriteNumber($"[{value.Lat.ReadNumber()}]纬度", value.ConvertLat);
             }
             if (((value.StatusFlag >> 29) & 1) == 1)
             {   //西经 ‭134217728‬ 0x8000000
                 value.Lng = (int)reader.ReadUInt32();
-                writer.WriteNumber($"[{value.Lng.ReadNumber()}]经度", value.Lng);
+                writer.WriteNumber($"[{value.Lng.ReadNumber()}]经度", value.ConvertLng);
             }
             else
             {
                 value.Lng = reader.ReadInt32();
-                writer.WriteNumber($"[{value.Lng.ReadNumber()}]经度", value.Lng);
+                writer.WriteNumber($"[{value.Lng.ReadNumber()}]经度", value.ConvertLng);
             }
 
             value.Speed = reader.ReadUInt16();

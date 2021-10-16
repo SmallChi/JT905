@@ -39,5 +39,12 @@ namespace JT905.Protocol.Test.MessageBody
             byte[] bytes = "7E0200001910010111111114A610004C00C000000000F8345603F89E38000000201014000002E97E".ToHexBytes();
             var json = JT905Serializer.Analyze(bytes);
         }
+
+        [Fact]
+        public void LngLatTest1()
+        {
+            var lat = 0x00F83B9E / 600000.0D;//27.11365
+            var lng = 0x03F84738 / 600000.0D;//111.00468
+        }
     }
 }
