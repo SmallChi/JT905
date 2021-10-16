@@ -1,6 +1,6 @@
 # JT905协议
 
-[![MIT Licence](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/SmallChi/JT905/blob/master/LICENSE)![.NET Core](https://github.com/SmallChi/JT905/workflows/.NET%20Core/badge.svg?branch=master)
+[![MIT Licence](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/SmallChi/JT905/blob/main/LICENSE)![.NET Core](https://github.com/SmallChi/JT905/workflows/.NET%20Core/badge.svg?branch=main)
 
 ## 前提条件
 

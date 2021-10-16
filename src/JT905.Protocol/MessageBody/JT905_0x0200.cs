@@ -416,7 +416,7 @@ namespace JT905.Protocol.MessageBody
             writer.WriteNumber($"[{value.StatusFlag.ReadBinary().ToString()}]状态位标志", value.StatusFlag);
             var StatusFlagBits = Convert.ToString(value.StatusFlag, 2).PadLeft(32, '0').AsSpan();
             writer.WriteStartObject("状态标志对象");
-            writer.WriteString($"[bit15~bit31]保留", StatusFlagBits.Slice(0, 9).ToString());
+            writer.WriteString($"[bit15~bit31]保留", StatusFlagBits.Slice(0, 17).ToString());
             writer.WriteString($"[{StatusFlagBits[17]}]bit14", StatusFlagBits[17] == '0' ? "未到达限制营运次数/时间" : "已达到限制营运次数/时间");
             writer.WriteString($"[{StatusFlagBits[18]}]bit13", StatusFlagBits[18] == '0' ? "车辆未锁定" : "车辆锁定");
             writer.WriteString($"[{StatusFlagBits[19]}]bit12", StatusFlagBits[19] == '0' ? "车门解锁" : "车门加锁");
