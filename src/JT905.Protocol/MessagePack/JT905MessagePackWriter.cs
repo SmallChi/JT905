@@ -326,6 +326,24 @@ namespace JT905.Protocol.MessagePack
             writer.Advance(6);
         }
         /// <summary>
+        /// 写入六个字节的日期类型,yyyyMMddHHmm
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="fromBase"></param>
+        public void WriteDateTime6YYYYMMddHHmm(in DateTime value, in int fromBase = 16)
+        {
+            var span = writer.Free;
+            var yearSpan = value.ToString("yyyy").AsSpan();
+         
+            span[0] = Convert.ToByte(yearSpan.Slice(0,2).ToString(), fromBase);
+            span[1] = Convert.ToByte(yearSpan.Slice(2, 2).ToString(), fromBase);
+            span[2] = Convert.ToByte(value.ToString("MM"), fromBase);
+            span[3] = Convert.ToByte(value.ToString("dd"), fromBase);
+            span[4] = Convert.ToByte(value.ToString("HH"), fromBase);
+            span[5] = Convert.ToByte(value.ToString("mm"), fromBase);
+            writer.Advance(6);
+        }
+        /// <summary>
         /// 写入六个字节的可空日期类型,yyMMddHHmmss
         /// </summary>
         /// <param name="value"></param>

@@ -80,6 +80,7 @@ namespace JT905.Protocol
             //  4.1.判断有无数据体
             if (value.Header.DataLength > 0)
             {
+               
                 if (config.MsgIdFactory.TryGetValue(value.Header.MsgId, out object instance))
                 {
                     try
@@ -179,7 +180,7 @@ namespace JT905.Protocol
                 writer.WriteString("检验和错误", $"{reader.RealCheckXorCode}!={reader.CalculateCheckXorCode}");
             }
             // 2.读取起始位置
-            byte start = reader.ReadEnd();
+            byte start = reader.ReadStart();
             writer.WriteNumber($"[{start.ReadNumber()}]开始", start);
             var msgid = reader.ReadUInt16();
             // 3.读取头部信息

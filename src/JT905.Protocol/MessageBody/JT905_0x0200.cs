@@ -31,7 +31,7 @@ namespace JT905.Protocol.MessageBody
         public uint AlarmFlag { get; set; }
         /// <summary>
         /// 状态位标志
-        /// <see cref="JT905.Protocol.Enums.JT905Status"/>
+        /// <see cref="Enums.JT905Status"/>
         /// </summary>
         public uint StatusFlag { get; set; }
         /// <summary>

@@ -37,7 +37,10 @@ namespace JT905.Protocol.Test.MessageBody
             // 52
             // 7E
             byte[] bytes = "7E0200001910010111111114A610004C00C000000000F8345603F89E38000000201014000002E97E".ToHexBytes();
+            JT905Package jT905Package = JT905Serializer.Deserialize(bytes);
             var json = JT905Serializer.Analyze(bytes);
+            byte[] jt905_0xB03 = "7E0B03004C10010739501709E9000018008000010000F86EDB03F83BB0000000201013133943393631393600000000000000000000003236370000000000000000000000000000000045583330353520201013134400000A65057E".ToHexBytes();
+            JT905Package jT905Package1 = JT905Serializer.Deserialize(bytes);
         }
 
         [Fact]

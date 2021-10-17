@@ -392,6 +392,30 @@ namespace JT905.Protocol.MessagePack
             return d;
         }
         /// <summary>
+        /// 读取六字节日期,yyyyMMddHHmm
+        /// </summary>
+        /// <param name="format">>D2： 10  X2：16</param>
+        public DateTime ReadDateTime6Ext(string format = "X2")
+        {
+            DateTime d;
+            try
+            {
+                var readOnlySpan = GetReadOnlySpan(6);
+                //int year = BinaryPrimitives.ReadInt16BigEndian(readOnlySpan.Slice(0,2));
+                int year = Convert.ToInt32(readOnlySpan[0].ToString(format) + readOnlySpan[1].ToString(format));
+                int month = Convert.ToInt32(readOnlySpan[2].ToString(format));
+                int day = Convert.ToInt32(readOnlySpan[3].ToString(format));
+                int hour = Convert.ToInt32(readOnlySpan[4].ToString(format));
+                int minute = Convert.ToInt32(readOnlySpan[5].ToString(format));
+                d = new DateTime(year, month, day, hour, minute,0);
+            }
+            catch (Exception)
+            {
+                d = JT905Constants.UTCBaseTime;
+            }
+            return d;
+        }
+        /// <summary>
         /// 读取可空类型的六字节日期,yyMMddHHmmss
         /// </summary>
         /// <param name="format">>D2： 10  X2：16</param>

@@ -39,6 +39,9 @@ namespace JT905.Protocol
         public string SerializerId => JT905Config.ConfigId;
 
         private readonly IJT905Config JT905Config;
+
+       
+
         /// <summary>
         /// 
         /// </summary>

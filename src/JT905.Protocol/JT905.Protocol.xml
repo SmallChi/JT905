@@ -2372,7 +2372,7 @@
         <member name="P:JT905.Protocol.MessageBody.JT905_0x0200.StatusFlag">
             <summary>
             状态位标志
-            <see cref="!:JT905.Protocol.Enums.JT905Status"/>
+            <see cref="!:Enums.JT905Status"/>
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x0200.Lat">
@@ -2659,6 +2659,69 @@
             自定义附加信息长度
             四个字节
             </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x0B03">
+            <summary>
+            上班签到信息
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B03.MsgId">
+            <summary>
+            0x0B03
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B03.Description">
+            <summary>
+            上班签到信息
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B03.Position">
+            <summary>
+            位置基本信息
+            详见 0x0200 交易
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B03.BusinessLicenseNumber">
+            <summary>
+            企业经营许可证号
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B03.QualificationCode">
+            <summary>
+            驾驶员从业资格证号
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B03.PlateNo">
+            <summary>
+            车牌号
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B03.Uptime">
+            <summary>
+            开机时间
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B03.ExtraAttributes">
+            <summary>
+            扩展属性
+            可根据实际管理需要进行扩展，当有扩展需求时，则该项有内容，否则该项无内容
+            </summary>
+        </member>
+        <member name="M:JT905.Protocol.MessageBody.JT905_0x0B03.Analyze(JT905.Protocol.MessagePack.JT905MessagePackReader@,System.Text.Json.Utf8JsonWriter,JT905.Protocol.IJT905Config)">
+            <summary>
+            
+            </summary>
+            <param name="reader"></param>
+            <param name="writer"></param>
+            <param name="config"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessageBody.JT905_0x0B03.Deserialize(JT905.Protocol.MessagePack.JT905MessagePackReader@,JT905.Protocol.IJT905Config)">
+            <summary>
+            反序列化11
+            </summary>
+            <param name="reader"></param>
+            <param name="config"></param>
+            <returns></returns>
         </member>
         <member name="T:JT905.Protocol.MessageBody.JT905_0x8103">
             <summary>
@@ -2972,6 +3035,12 @@
         <member name="M:JT905.Protocol.MessagePack.JT905MessagePackReader.ReadDateTime6(System.String)">
             <summary>
             读取六字节日期,yyMMddHHmmss
+            </summary>
+            <param name="format">>D2： 10  X2：16</param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905MessagePackReader.ReadDateTime6Ext(System.String)">
+            <summary>
+            读取六字节日期,yyyyMMddHHmm
             </summary>
             <param name="format">>D2： 10  X2：16</param>
         </member>
