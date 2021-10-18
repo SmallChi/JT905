@@ -14,7 +14,7 @@ namespace JT905.Protocol.MessageBody
     /// </summary>
     public class JT905_0x0001 : JT905Bodies, IJT905MessagePackFormatter<JT905_0x0001>, IJT905Analyze
     {
-        public override ushort MsgId => Enums.JT905MsgId.ISU通用应答.ToUInt16Value();
+        public override ushort MsgId { get; } = JT905MsgId.ISU通用应答.ToUInt16Value();
 
         public override string Description => "ISU通用应答";
         /// <summary>

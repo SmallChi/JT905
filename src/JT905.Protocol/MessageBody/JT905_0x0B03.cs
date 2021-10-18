@@ -16,7 +16,7 @@ namespace JT905.Protocol.MessageBody
         /// <summary>
         /// 0x0B03
         /// </summary>
-        public override ushort MsgId { get; } = 0x0B03;
+        public override ushort MsgId { get; } = (ushort)Enums.JT905MsgId.上班签到信息.ToUInt16Value();
         /// <summary>
         /// 上班签到信息
         /// </summary>
