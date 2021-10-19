@@ -1,36 +1,37 @@
 ﻿using System.Text.Json;
-
 using JT905.Protocol.Extensions;
-
 using JT905.Protocol.Interfaces;
 using JT905.Protocol.MessagePack;
 
 namespace JT905.Protocol.MessageBody
 {
     /// <summary>
-    /// 拐点补传角度，小于180
+    /// 拐点补传角度，﹤180°
+    /// 0x8103_=0x0030
     /// </summary>
     public class JT905_0x8103_0x0030 : JT905_0x8103_BodyBase, IJT905MessagePackFormatter<JT905_0x8103_0x0030>, IJT905Analyze
     {
         /// <summary>
         /// 0x0030
         /// </summary>
-        public override uint ParamId { get; set; } = 0x0030;
+        public override uint ParamId { get; set; } = JT905Constants.JT905_0x8103_0x0030;
         /// <summary>
         /// 数据长度
         /// 4 byte
         /// </summary>
         public override byte ParamLength { get; set; } = 4;
         /// <summary>
-        /// 拐点补传角度，小于180
+        /// 拐点补传角度，﹤180°
         /// </summary>
         public uint ParamValue { get; set; }
         /// <summary>
-        /// 
+        /// 拐点补传角度，﹤180°
+        /// 0x8103_0x0030
+        /// 解析数据
         /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="writer"></param>
-        /// <param name="config"></param>
+        /// <param name="reader">JT905消息读取器</param>
+        /// <param name="writer">消息写入</param>
+        /// <param name="config">JT905接口配置</param>
         public void Analyze(ref JT905MessagePackReader reader, Utf8JsonWriter writer, IJT905Config config)
         {
             JT905_0x8103_0x0030 JT905_0x8103_0x0030 = new JT905_0x8103_0x0030();
@@ -39,10 +40,12 @@ namespace JT905.Protocol.MessageBody
             JT905_0x8103_0x0030.ParamValue = reader.ReadUInt32();
             writer.WriteNumber($"[{ JT905_0x8103_0x0030.ParamId.ReadNumber()}]参数ID", JT905_0x8103_0x0030.ParamId);
             writer.WriteNumber($"[{JT905_0x8103_0x0030.ParamLength.ReadNumber()}]参数长度", JT905_0x8103_0x0030.ParamLength);
-            writer.WriteNumber($"[{ JT905_0x8103_0x0030.ParamValue.ReadNumber()}]参数值[拐点补传角度,<180]", JT905_0x8103_0x0030.ParamValue);
+            writer.WriteNumber($"[{ JT905_0x8103_0x0030.ParamValue.ReadNumber()}]参数值[拐点补传角度，﹤180°]", JT905_0x8103_0x0030.ParamValue);
         }
         /// <summary>
-        /// 
+        /// 拐点补传角度，﹤180°
+        /// 0x8103_0x0030
+        /// 消息反序列化
         /// </summary>
         /// <param name="reader"></param>
         /// <param name="config"></param>
@@ -56,8 +59,9 @@ namespace JT905.Protocol.MessageBody
             return JT905_0x8103_0x0030;
         }
         /// <summary>
-        /// 
-        /// </summary>
+        /// 拐点补传角度，﹤180°
+        /// 0x8103_0x0030
+        /// 消息序列化
         /// <param name="writer"></param>
         /// <param name="value"></param>
         /// <param name="config"></param>
@@ -69,3 +73,5 @@ namespace JT905.Protocol.MessageBody
         }
     }
 }
+
+                    

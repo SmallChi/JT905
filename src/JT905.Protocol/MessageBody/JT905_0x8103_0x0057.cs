@@ -1,35 +1,37 @@
 ﻿using System.Text.Json;
-
 using JT905.Protocol.Extensions;
-
 using JT905.Protocol.Interfaces;
 using JT905.Protocol.MessagePack;
 
 namespace JT905.Protocol.MessageBody
 {
     /// <summary>
-    /// 连续驾驶时间门限，单位为秒（s）
+    /// 连续驾驶时间门限，单位为秒(s)
+    /// 0x8103_=0x0057
     /// </summary>
     public class JT905_0x8103_0x0057 : JT905_0x8103_BodyBase, IJT905MessagePackFormatter<JT905_0x8103_0x0057>, IJT905Analyze
     {
         /// <summary>
         /// 0x0057
         /// </summary>
-        public override uint ParamId { get; set; } = 0x0057;
+        public override uint ParamId { get; set; } = JT905Constants.JT905_0x8103_0x0057;
         /// <summary>
         /// 数据长度
+        /// 4 byte
         /// </summary>
         public override byte ParamLength { get; set; } = 4;
         /// <summary>
-        /// 连续驾驶时间门限，单位为秒（s）
+        /// 连续驾驶时间门限，单位为秒(s)
         /// </summary>
         public uint ParamValue { get; set; }
         /// <summary>
-        /// 
+        /// 连续驾驶时间门限，单位为秒(s)
+        /// 0x8103_0x0057
+        /// 解析数据
         /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="writer"></param>
-        /// <param name="config"></param>
+        /// <param name="reader">JT905消息读取器</param>
+        /// <param name="writer">消息写入</param>
+        /// <param name="config">JT905接口配置</param>
         public void Analyze(ref JT905MessagePackReader reader, Utf8JsonWriter writer, IJT905Config config)
         {
             JT905_0x8103_0x0057 JT905_0x8103_0x0057 = new JT905_0x8103_0x0057();
@@ -38,10 +40,12 @@ namespace JT905.Protocol.MessageBody
             JT905_0x8103_0x0057.ParamValue = reader.ReadUInt32();
             writer.WriteNumber($"[{ JT905_0x8103_0x0057.ParamId.ReadNumber()}]参数ID", JT905_0x8103_0x0057.ParamId);
             writer.WriteNumber($"[{JT905_0x8103_0x0057.ParamLength.ReadNumber()}]参数长度", JT905_0x8103_0x0057.ParamLength);
-            writer.WriteNumber($"[{ JT905_0x8103_0x0057.ParamValue.ReadNumber()}]参数值[连续驾驶时间门限s]", JT905_0x8103_0x0057.ParamValue);
+            writer.WriteNumber($"[{ JT905_0x8103_0x0057.ParamValue.ReadNumber()}]参数值[连续驾驶时间门限，单位为秒(s)]", JT905_0x8103_0x0057.ParamValue);
         }
         /// <summary>
-        /// 
+        /// 连续驾驶时间门限，单位为秒(s)
+        /// 0x8103_0x0057
+        /// 消息反序列化
         /// </summary>
         /// <param name="reader"></param>
         /// <param name="config"></param>
@@ -55,8 +59,9 @@ namespace JT905.Protocol.MessageBody
             return JT905_0x8103_0x0057;
         }
         /// <summary>
-        /// 
-        /// </summary>
+        /// 连续驾驶时间门限，单位为秒(s)
+        /// 0x8103_0x0057
+        /// 消息序列化
         /// <param name="writer"></param>
         /// <param name="value"></param>
         /// <param name="config"></param>
@@ -68,3 +73,5 @@ namespace JT905.Protocol.MessageBody
         }
     }
 }
+
+                    

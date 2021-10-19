@@ -1,54 +1,51 @@
 ﻿using System.Text.Json;
-
 using JT905.Protocol.Extensions;
-
 using JT905.Protocol.Interfaces;
 using JT905.Protocol.MessagePack;
 
 namespace JT905.Protocol.MessageBody
 {
     /// <summary>
-    /// GNSS 模块详细定位数据输出频率，定义如下：
-    /// 0x00：500ms；0x01：1000ms（默认值）；
-    /// 0x02：2000ms；0x03：3000ms；
-    /// 0x04：4000ms。
+    /// 出租车企业营运许可证号
+    /// 0x8103_=0x0092
     /// </summary>
     public class JT905_0x8103_0x0092 : JT905_0x8103_BodyBase, IJT905MessagePackFormatter<JT905_0x8103_0x0092>, IJT905Analyze
     {
         /// <summary>
         /// 0x0092
         /// </summary>
-        public override uint ParamId { get; set; } = 0x0092;
+        public override uint ParamId { get; set; } = JT905Constants.JT905_0x8103_0x0092;
         /// <summary>
         /// 数据长度
-        /// 1 byte
+        /// 4 byte
         /// </summary>
-        public override byte ParamLength { get; set; } = 1;
+        public override byte ParamLength { get; set; } = 4;
         /// <summary>
-        /// GNSS 模块详细定位数据输出频率，定义如下：
-        /// 0x00：500ms；0x01：1000ms（默认值）；
-        /// 0x02：2000ms；0x03：3000ms；
-        /// 0x04：4000ms。
+        /// 出租车企业营运许可证号
         /// </summary>
-        public byte ParamValue { get; set; }
+        public uint ParamValue { get; set; }
         /// <summary>
-        /// 
+        /// 出租车企业营运许可证号
+        /// 0x8103_0x0092
+        /// 解析数据
         /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="writer"></param>
-        /// <param name="config"></param>
+        /// <param name="reader">JT905消息读取器</param>
+        /// <param name="writer">消息写入</param>
+        /// <param name="config">JT905接口配置</param>
         public void Analyze(ref JT905MessagePackReader reader, Utf8JsonWriter writer, IJT905Config config)
         {
             JT905_0x8103_0x0092 JT905_0x8103_0x0092 = new JT905_0x8103_0x0092();
             JT905_0x8103_0x0092.ParamId = reader.ReadUInt32();
             JT905_0x8103_0x0092.ParamLength = reader.ReadByte();
-            JT905_0x8103_0x0092.ParamValue = reader.ReadByte();
+            JT905_0x8103_0x0092.ParamValue = reader.ReadUInt32();
             writer.WriteNumber($"[{ JT905_0x8103_0x0092.ParamId.ReadNumber()}]参数ID", JT905_0x8103_0x0092.ParamId);
             writer.WriteNumber($"[{JT905_0x8103_0x0092.ParamLength.ReadNumber()}]参数长度", JT905_0x8103_0x0092.ParamLength);
-            writer.WriteNumber($"[{ JT905_0x8103_0x0092.ParamValue.ReadNumber()}]GNSS模块详细定位数据输出频率ms", JT905_0x8103_0x0092.ParamValue==0?500: JT905_0x8103_0x0092.ParamValue*1000);
+            writer.WriteNumber($"[{ JT905_0x8103_0x0092.ParamValue.ReadNumber()}]参数值[出租车企业营运许可证号]", JT905_0x8103_0x0092.ParamValue);
         }
         /// <summary>
-        /// 
+        /// 出租车企业营运许可证号
+        /// 0x8103_0x0092
+        /// 消息反序列化
         /// </summary>
         /// <param name="reader"></param>
         /// <param name="config"></param>
@@ -58,12 +55,13 @@ namespace JT905.Protocol.MessageBody
             JT905_0x8103_0x0092 JT905_0x8103_0x0092 = new JT905_0x8103_0x0092();
             JT905_0x8103_0x0092.ParamId = reader.ReadUInt32();
             JT905_0x8103_0x0092.ParamLength = reader.ReadByte();
-            JT905_0x8103_0x0092.ParamValue = reader.ReadByte();
+            JT905_0x8103_0x0092.ParamValue = reader.ReadUInt32();
             return JT905_0x8103_0x0092;
         }
         /// <summary>
-        /// 
-        /// </summary>
+        /// 出租车企业营运许可证号
+        /// 0x8103_0x0092
+        /// 消息序列化
         /// <param name="writer"></param>
         /// <param name="value"></param>
         /// <param name="config"></param>
@@ -71,7 +69,9 @@ namespace JT905.Protocol.MessageBody
         {
             writer.WriteUInt32(value.ParamId);
             writer.WriteByte(value.ParamLength);
-            writer.WriteByte(value.ParamValue);
+            writer.WriteUInt32(value.ParamValue);
         }
     }
 }
+
+                    
