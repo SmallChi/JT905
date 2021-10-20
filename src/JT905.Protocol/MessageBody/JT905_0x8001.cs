@@ -27,13 +27,13 @@ namespace JT905.Protocol.MessageBody
         /// 对应的平台消息的 ID
         /// <see cref="JT905.Protocol.Enums.JT905MsgId"/>
         /// </summary>
-        public ushort ReplyMsgId { get; set; }
+        public ushort AckMsgId { get; set; }
 
         /// <summary>
         /// 结果
         /// 0：成功/确认；1：失败；2：消息有误；
         /// </summary>
-        public JT905ISUResult ISUResult { get; set; }
+        public JT905PlatformResult PlatformResult { get; set; }
         /// <summary>
         /// 0x0100解析
         /// </summary>
@@ -60,8 +60,8 @@ namespace JT905.Protocol.MessageBody
         {
             JT905_0x8001 jT905_0X8001 = new JT905_0x8001();
             jT905_0X8001.ReplyMsgNum = reader.ReadUInt16();
-            jT905_0X8001.ReplyMsgId = reader.ReadUInt16();
-            jT905_0X8001.ISUResult = (JT905ISUResult)reader.ReadByte();
+            jT905_0X8001.AckMsgId = reader.ReadUInt16();
+            jT905_0X8001.PlatformResult = (JT905PlatformResult)reader.ReadByte();
             return jT905_0X8001;
         }
         /// <summary>
@@ -73,8 +73,8 @@ namespace JT905.Protocol.MessageBody
         public void Serialize(ref JT905MessagePackWriter writer, JT905_0x8001 value, IJT905Config config)
         {
             writer.WriteUInt16(value.ReplyMsgNum);
-            writer.WriteUInt16(value.ReplyMsgId);
-            writer.WriteByte((byte)value.ISUResult);
+            writer.WriteUInt16(value.AckMsgId);
+            writer.WriteByte((byte)value.PlatformResult);
         }
     }
 }

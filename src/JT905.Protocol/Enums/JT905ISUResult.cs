@@ -22,4 +22,5 @@ namespace JT905.Protocol.Enums
         /// </summary>
         MessageError = 0x02,
     }
+
 }

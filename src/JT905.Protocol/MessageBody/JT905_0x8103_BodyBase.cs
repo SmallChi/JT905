@@ -8,7 +8,7 @@
         /// <summary>
         /// 参数 ID
         /// </summary>
-        public abstract uint ParamId { get; set; }
+        public abstract ushort ParamId { get; set; }
 
         /// <summary>
         /// 参数长度

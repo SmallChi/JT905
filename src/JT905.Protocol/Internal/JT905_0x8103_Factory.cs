@@ -13,6 +13,7 @@ namespace JT905.Protocol.Interfaces
         public JT905_0x8103_Factory()
         {
             Map = new Dictionary<uint, object>();
+            InitMap(Assembly.GetExecutingAssembly());
             //Map.Add(JT905Constants.JT905_0x8103_0x0001, new JT905_0x8103_0x0001());
             //Map.Add(JT905Constants.JT905_0x8103_0x0002, new JT905_0x8103_0x0002());
             //Map.Add(JT905Constants.JT905_0x8103_0x0003, new JT905_0x8103_0x0003());
@@ -101,6 +102,11 @@ namespace JT905.Protocol.Interfaces
 
         public void Register(Assembly externalAssembly)
         {
+            InitMap(externalAssembly);
+        }
+
+        private void InitMap(Assembly externalAssembly)
+        {
             var types = externalAssembly.GetTypes().Where(w => w.BaseType == typeof(JT905_0x8103_BodyBase)).ToList();
             foreach (var type in types)
             {
@@ -108,7 +114,7 @@ namespace JT905.Protocol.Interfaces
                 uint paramId = 0;
                 try
                 {
-                    paramId = (uint)type.GetProperty(nameof(JT905_0x8103_BodyBase.ParamId)).GetValue(instance);
+                    paramId = (ushort)type.GetProperty(nameof(JT905_0x8103_BodyBase.ParamId)).GetValue(instance);
                 }
                 catch
                 {

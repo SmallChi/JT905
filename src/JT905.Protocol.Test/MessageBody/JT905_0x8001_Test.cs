@@ -20,8 +20,8 @@ namespace JT905.Protocol.Test.MessageBody
                 },
                 Bodies = new JT905_0x8001
                 {
-                    ReplyMsgId = Enums.JT905MsgId.位置信息汇报.ToUInt16Value(),
-                    ISUResult = Enums.JT905ISUResult.Success,
+                    AckMsgId = Enums.JT905MsgId.位置信息汇报.ToUInt16Value(),
+                    PlatformResult = Enums.JT905PlatformResult.Success,
                     ReplyMsgNum = 100
                 }
             };
@@ -49,9 +49,9 @@ namespace JT905.Protocol.Test.MessageBody
             Assert.Equal("12345678900", JT905Package.Header.ISU);
 
             JT905_0x8001 JT905Bodies = (JT905_0x8001)JT905Package.Bodies;
-            Assert.Equal(Enums.JT905MsgId.位置信息汇报.ToUInt16Value(), JT905Bodies.ReplyMsgId);
+            Assert.Equal(Enums.JT905MsgId.位置信息汇报.ToUInt16Value(), JT905Bodies.AckMsgId);
             Assert.Equal(100, JT905Bodies.ReplyMsgNum);
-            Assert.Equal(Enums.JT905ISUResult.Success, JT905Bodies.ISUResult);
+            Assert.Equal(Enums.JT905PlatformResult.Success, JT905Bodies.PlatformResult);
         }
 
         [Fact]

@@ -23,6 +23,9 @@ namespace JT905.Protocol.Test.MessageBody
         [Fact]
         public void Test1()
         {
+            System.Int32 i = new int();
+            Type type = i.GetType();
+            
             JT905.Protocol.JT905Package package = new JT905Package {
                 Header = new JT905Header
                 {

@@ -12,22 +12,26 @@ namespace JT905.Protocol.MessageBody
     public class JT905_0x8103_0x002E : JT905_0x8103_BodyBase, IJT905MessagePackFormatter<JT905_0x8103_0x002E>, IJT905Analyze
     {
         /// <summary>
+        ///Int32
+        ///System.Int32
         /// 0x002E
         /// </summary>
-        public override uint ParamId { get; set; } = JT905Constants.JT905_0x8103_0x002E;
+        public override ushort ParamId { get; set; } = JT905Constants.JT905_0x8103_0x002E;
         /// <summary>
         /// 数据长度
         /// 4 byte
         /// </summary>
         public override byte ParamLength { get; set; } = 4;
+        
         /// <summary>
         /// 休眠时汇报距离间隔，单位为米(m)
         /// </summary>
         public uint ParamValue { get; set; }
+        
         /// <summary>
-        /// 休眠时汇报距离间隔，单位为米(m)
-        /// 0x8103_0x002E
         /// 解析数据
+        /// 休眠时汇报距离间隔，单位为米(m)
+        /// 0x8103_0x002E        
         /// </summary>
         /// <param name="reader">JT905消息读取器</param>
         /// <param name="writer">消息写入</param>
@@ -35,17 +39,18 @@ namespace JT905.Protocol.MessageBody
         public void Analyze(ref JT905MessagePackReader reader, Utf8JsonWriter writer, IJT905Config config)
         {
             JT905_0x8103_0x002E JT905_0x8103_0x002E = new JT905_0x8103_0x002E();
-            JT905_0x8103_0x002E.ParamId = reader.ReadUInt32();
-            JT905_0x8103_0x002E.ParamLength = reader.ReadByte();
-            JT905_0x8103_0x002E.ParamValue = reader.ReadUInt32();
-            writer.WriteNumber($"[{ JT905_0x8103_0x002E.ParamId.ReadNumber()}]参数ID", JT905_0x8103_0x002E.ParamId);
+            JT905_0x8103_0x002E.ParamId = reader.ReadUInt16();
+            JT905_0x8103_0x002E.ParamLength = reader.ReadByte();            
+            writer.WriteNumber($"[{JT905_0x8103_0x002E.ParamId.ReadNumber()}]参数ID", JT905_0x8103_0x002E.ParamId);
             writer.WriteNumber($"[{JT905_0x8103_0x002E.ParamLength.ReadNumber()}]参数长度", JT905_0x8103_0x002E.ParamLength);
-            writer.WriteNumber($"[{ JT905_0x8103_0x002E.ParamValue.ReadNumber()}]参数值[休眠时汇报距离间隔，单位为米(m)]", JT905_0x8103_0x002E.ParamValue);
+            JT905_0x8103_0x002E.ParamValue = reader.ReadUInt32();
+            writer.WriteNumber($"[{JT905_0x8103_0x002E.ParamValue.ReadNumber()}]参数值[休眠时汇报距离间隔，单位为米(m)]", JT905_0x8103_0x002E.ParamValue);
+            
         }
         /// <summary>
-        /// 休眠时汇报距离间隔，单位为米(m)
-        /// 0x8103_0x002E
         /// 消息反序列化
+        /// 休眠时汇报距离间隔，单位为米(m)
+        /// 0x8103_0x002E        
         /// </summary>
         /// <param name="reader"></param>
         /// <param name="config"></param>
@@ -53,22 +58,24 @@ namespace JT905.Protocol.MessageBody
         public JT905_0x8103_0x002E Deserialize(ref JT905MessagePackReader reader, IJT905Config config)
         {
             JT905_0x8103_0x002E JT905_0x8103_0x002E = new JT905_0x8103_0x002E();
-            JT905_0x8103_0x002E.ParamId = reader.ReadUInt32();
+            JT905_0x8103_0x002E.ParamId = reader.ReadUInt16();
             JT905_0x8103_0x002E.ParamLength = reader.ReadByte();
             JT905_0x8103_0x002E.ParamValue = reader.ReadUInt32();
+            
             return JT905_0x8103_0x002E;
         }
         /// <summary>
-        /// 休眠时汇报距离间隔，单位为米(m)
-        /// 0x8103_0x002E
         /// 消息序列化
+        /// 休眠时汇报距离间隔，单位为米(m)
+        /// 0x8103_0x002E        
         /// <param name="writer"></param>
         /// <param name="value"></param>
         /// <param name="config"></param>
         public void Serialize(ref JT905MessagePackWriter writer, JT905_0x8103_0x002E value, IJT905Config config)
         {
-            writer.WriteUInt32(value.ParamId);
-            writer.WriteByte(value.ParamLength);
+                       
+            writer.WriteUInt16(value.ParamId);
+            writer.WriteByte(value.ParamLength); 
             writer.WriteUInt32(value.ParamValue);
         }
     }

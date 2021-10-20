@@ -43,6 +43,7 @@ namespace JT905.Protocol.MessageBody
 
         public void Analyze(ref JT905MessagePackReader reader, Utf8JsonWriter writer, IJT905Config config)
         {
+            
             var replyMsgNum = reader.ReadUInt16();
             var replyMsgId = reader.ReadUInt16();
             var iSUResult = reader.ReadByte();
