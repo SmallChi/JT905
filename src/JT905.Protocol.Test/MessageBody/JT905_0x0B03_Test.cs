@@ -33,7 +33,7 @@ namespace JT905.Protocol.Test.MessageBody
             JT905Package jT905Package = new JT905Package();
             jT905Package.Header = new JT905Header
             {
-                MsgId = Enums.JT905MsgId.上班签到信息.ToUInt16Value(),
+                MsgId = Enums.JT905MsgId.上班签到信息上传.ToUInt16Value(),
                 ManualMsgNum = 123,
                 ISU = "103456789012"
             };
@@ -66,7 +66,7 @@ namespace JT905.Protocol.Test.MessageBody
         {
             byte[] bytes = "7E0B030048103456789012007B000000010000000200BA7F0E07E4F11C003C002110152110103132333435360000000000000000000031323334353600000000000000000000000000453333394B4B202110152110057E".ToHexBytes();
             JT905Package jT905Package = JT905Serializer.Deserialize(bytes);
-            Assert.Equal(Enums.JT905MsgId.上班签到信息.ToUInt16Value(), jT905Package.Header.MsgId);
+            Assert.Equal(Enums.JT905MsgId.上班签到信息上传.ToUInt16Value(), jT905Package.Header.MsgId);
             Assert.Equal((ushort)123, jT905Package.Header.MsgNum);
             Assert.Equal("103456789012", jT905Package.Header.ISU);
             JT905_0x0B03 jT905_0X0B03 = (JT905_0x0B03)jT905Package.Bodies;

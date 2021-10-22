@@ -12,21 +12,23 @@ namespace JT905.Protocol.MessageBody
     public class JT905_0x8103_0x0020 : JT905_0x8103_BodyBase, IJT905MessagePackFormatter<JT905_0x8103_0x0020>, IJT905Analyze
     {
         /// <summary>
-        ///Int32
-        ///System.Int32
+        /// 参数ID
+        ///位置汇报策略，0：定时汇报；1：定距汇报；2：定时+定距汇报
         /// 0x0020
         /// </summary>
         public override ushort ParamId { get; set; } = JT905Constants.JT905_0x8103_0x0020;
         /// <summary>
         /// 数据长度
-        /// 4 byte
         /// </summary>
         public override byte ParamLength { get; set; } = 4;
+    
+        public override string Description => "位置汇报策略，0：定时汇报；1：定距汇报；2：定时+定距汇报";
         
         /// <summary>
         /// 位置汇报策略，0：定时汇报；1：定距汇报；2：定时+定距汇报
         /// </summary>
         public uint ParamValue { get; set; }
+        
         
         /// <summary>
         /// 解析数据

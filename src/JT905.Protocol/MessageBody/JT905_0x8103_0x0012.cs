@@ -12,21 +12,23 @@ namespace JT905.Protocol.MessageBody
     public class JT905_0x8103_0x0012 : JT905_0x8103_BodyBase, IJT905MessagePackFormatter<JT905_0x8103_0x0012>, IJT905Analyze
     {
         /// <summary>
-        ///AnsiString
-        ///System.String
+        /// 参数ID
+        ///主服务器无线通信拨号密码
         /// 0x0012
         /// </summary>
         public override ushort ParamId { get; set; } = JT905Constants.JT905_0x8103_0x0012;
         /// <summary>
         /// 数据长度
-        /// 4 byte
         /// </summary>
         public override byte ParamLength { get; set; }
+    
+        public override string Description => "主服务器无线通信拨号密码";
         
         /// <summary>
         /// 主服务器无线通信拨号密码
         /// </summary>
         public string ParamValue { get; set; }
+        
         
         /// <summary>
         /// 解析数据

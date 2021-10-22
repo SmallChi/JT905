@@ -12,21 +12,23 @@ namespace JT905.Protocol.MessageBody
     public class JT905_0x8103_0x0021 : JT905_0x8103_BodyBase, IJT905MessagePackFormatter<JT905_0x8103_0x0021>, IJT905Analyze
     {
         /// <summary>
-        ///Int32
-        ///System.Int32
+        /// 参数ID
+        ///位置汇报方案，0：根据ACC状态；1：根据空重车状态；2：根据登录状态+ACC状态，先判断登录状态，若登录再根据ACC状态；3：根据登录状态+空重车状态，先判断登录状态，若登录再根据空重车状态
         /// 0x0021
         /// </summary>
         public override ushort ParamId { get; set; } = JT905Constants.JT905_0x8103_0x0021;
         /// <summary>
         /// 数据长度
-        /// 4 byte
         /// </summary>
         public override byte ParamLength { get; set; } = 4;
+    
+        public override string Description => "位置汇报方案，0：根据ACC状态；1：根据空重车状态；2：根据登录状态+ACC状态，先判断登录状态，若登录再根据ACC状态；3：根据登录状态+空重车状态，先判断登录状态，若登录再根据空重车状态";
         
         /// <summary>
         /// 位置汇报方案，0：根据ACC状态；1：根据空重车状态；2：根据登录状态+ACC状态，先判断登录状态，若登录再根据ACC状态；3：根据登录状态+空重车状态，先判断登录状态，若登录再根据空重车状态
         /// </summary>
         public uint ParamValue { get; set; }
+        
         
         /// <summary>
         /// 解析数据

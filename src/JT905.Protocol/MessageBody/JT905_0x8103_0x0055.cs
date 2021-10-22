@@ -12,21 +12,23 @@ namespace JT905.Protocol.MessageBody
     public class JT905_0x8103_0x0055 : JT905_0x8103_BodyBase, IJT905MessagePackFormatter<JT905_0x8103_0x0055>, IJT905Analyze
     {
         /// <summary>
-        ///Int32
-        ///System.Int32
+        /// 参数ID
+        ///最高速度，单位为千米每小时(km/h)
         /// 0x0055
         /// </summary>
         public override ushort ParamId { get; set; } = JT905Constants.JT905_0x8103_0x0055;
         /// <summary>
         /// 数据长度
-        /// 4 byte
         /// </summary>
         public override byte ParamLength { get; set; } = 4;
+    
+        public override string Description => "最高速度，单位为千米每小时(km/h)";
         
         /// <summary>
         /// 最高速度，单位为千米每小时(km/h)
         /// </summary>
         public uint ParamValue { get; set; }
+        
         
         /// <summary>
         /// 解析数据

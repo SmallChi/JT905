@@ -12,21 +12,23 @@ namespace JT905.Protocol.MessageBody
     public class JT905_0x8103_0x0005 : JT905_0x8103_BodyBase, IJT905MessagePackFormatter<JT905_0x8103_0x0005>, IJT905Analyze
     {
         /// <summary>
-        ///Int32
-        ///System.Int32
+        /// 参数ID
+        ///SMS消息重传次数
         /// 0x0005
         /// </summary>
         public override ushort ParamId { get; set; } = JT905Constants.JT905_0x8103_0x0005;
         /// <summary>
         /// 数据长度
-        /// 4 byte
         /// </summary>
         public override byte ParamLength { get; set; } = 4;
+    
+        public override string Description => "SMS消息重传次数";
         
         /// <summary>
         /// SMS消息重传次数
         /// </summary>
         public uint ParamValue { get; set; }
+        
         
         /// <summary>
         /// 解析数据

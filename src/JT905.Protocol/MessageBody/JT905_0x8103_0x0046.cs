@@ -12,21 +12,23 @@ namespace JT905.Protocol.MessageBody
     public class JT905_0x8103_0x0046 : JT905_0x8103_BodyBase, IJT905MessagePackFormatter<JT905_0x8103_0x0046>, IJT905Analyze
     {
         /// <summary>
-        ///Int32
-        ///System.Int32
+        /// 参数ID
+        ///每次最长通话时间，单位为秒(s)
         /// 0x0046
         /// </summary>
         public override ushort ParamId { get; set; } = JT905Constants.JT905_0x8103_0x0046;
         /// <summary>
         /// 数据长度
-        /// 4 byte
         /// </summary>
         public override byte ParamLength { get; set; } = 4;
+    
+        public override string Description => "每次最长通话时间，单位为秒(s)";
         
         /// <summary>
         /// 每次最长通话时间，单位为秒(s)
         /// </summary>
         public uint ParamValue { get; set; }
+        
         
         /// <summary>
         /// 解析数据

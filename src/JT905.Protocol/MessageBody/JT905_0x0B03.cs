@@ -16,12 +16,12 @@ namespace JT905.Protocol.MessageBody
         /// <summary>
         /// 0x0B03
         /// </summary>
-        public override ushort MsgId { get; } = (ushort)Enums.JT905MsgId.上班签到信息.ToUInt16Value();
+        public override ushort MsgId { get; } = (ushort)Enums.JT905MsgId.上班签到信息上传.ToUInt16Value();
         /// <summary>
         /// 上班签到信息
         /// </summary>
 
-        public override string Description => "上班签到信息";
+        public override string Description => "上班签到信息上传";
         /// <summary>
         /// 位置基本信息
         /// 详见 0x0200 交易

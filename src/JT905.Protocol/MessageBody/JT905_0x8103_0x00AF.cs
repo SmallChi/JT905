@@ -12,21 +12,23 @@ namespace JT905.Protocol.MessageBody
     public class JT905_0x8103_0x00AF : JT905_0x8103_BodyBase, IJT905MessagePackFormatter<JT905_0x8103_0x00AF>, IJT905Analyze
     {
         /// <summary>
-        ///Int16
-        ///System.Int16
+        /// 参数ID
+        ///ACCOFF后进入休眠模式的时间，单位为秒(s)
         /// 0x00AF
         /// </summary>
         public override ushort ParamId { get; set; } = JT905Constants.JT905_0x8103_0x00AF;
         /// <summary>
         /// 数据长度
-        /// 4 byte
         /// </summary>
         public override byte ParamLength { get; set; } = 2;
+    
+        public override string Description => "ACCOFF后进入休眠模式的时间，单位为秒(s)";
         
         /// <summary>
         /// ACCOFF后进入休眠模式的时间，单位为秒(s)
         /// </summary>
         public ushort ParamValue { get; set; }
+        
         
         /// <summary>
         /// 解析数据
@@ -40,12 +42,12 @@ namespace JT905.Protocol.MessageBody
         {
             JT905_0x8103_0x00AF JT905_0x8103_0x00AF = new JT905_0x8103_0x00AF();
             JT905_0x8103_0x00AF.ParamId = reader.ReadUInt16();
-            JT905_0x8103_0x00AF.ParamLength = reader.ReadByte();
-            JT905_0x8103_0x00AF.ParamValue = reader.ReadUInt16();
+            JT905_0x8103_0x00AF.ParamLength = reader.ReadByte();            
             writer.WriteNumber($"[{JT905_0x8103_0x00AF.ParamId.ReadNumber()}]参数ID", JT905_0x8103_0x00AF.ParamId);
             writer.WriteNumber($"[{JT905_0x8103_0x00AF.ParamLength.ReadNumber()}]参数长度", JT905_0x8103_0x00AF.ParamLength);
+            JT905_0x8103_0x00AF.ParamValue = reader.ReadUInt16();
             writer.WriteNumber($"[{JT905_0x8103_0x00AF.ParamValue.ReadNumber()}]参数值[ACCOFF后进入休眠模式的时间，单位为秒(s)]", JT905_0x8103_0x00AF.ParamValue);
-
+            
         }
         /// <summary>
         /// 消息反序列化

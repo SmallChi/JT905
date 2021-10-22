@@ -9,6 +9,95 @@ namespace JT905.Protocol.Extensions
     public static partial class JT905BinaryExtensions
     {
         /// <summary>
+        /// 字符串BCD8421编码
+        /// </summary>
+        /// <param name="value">待转换的字符串</param>
+        /// <param name="len">BCD8421编码长度</param>
+        /// <returns></returns>
+        public static string ToBCDString(this string value, in int len)
+        {
+            return value.ToBCDByte(len).ToHexString();
+        }
+        /// <summary>
+        /// 字符串BCD8421编码
+        /// </summary>
+        /// <param name="value">待转换的字符串</param>
+        /// <param name="len">BCD8421编码长度</param>
+        /// <returns></returns>
+
+        public static byte[] ToBCDByte(this string value,in int len) {
+            string bcdText = value ?? "";
+            bcdText = bcdText.Replace(" ", "").Trim();
+            int startIndex = 0;
+            int noOfZero = len - bcdText.Length;
+            if (noOfZero > 0)
+            {
+                //bcdText = bcdText.Insert(startIndex, new string('0', noOfZero));
+                bcdText = bcdText.PadRight(len, '0');
+            }
+            //int count = len / 2;
+            byte[] aryTemp = new byte[len];
+            var bcdSpan = bcdText.AsSpan();
+            for (int i = 0; i < len; i++)
+            {
+                aryTemp[i] = Convert.ToByte(bcdSpan.Slice(startIndex, 2).ToString(), 16);
+                startIndex += 2;
+            }
+            return aryTemp;
+        }
+        /// <summary>
+        /// 整型数据转为BCD BYTE
+        /// 为了兼容int类型，不使用byte做参数
+        /// 支持0xFF一个字节的转换
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static byte ToBCD(this int value) {
+            byte result = 0;
+            if (value<=0xFF)
+            {
+                int high = value / 10;
+                int low = value % 10;
+                result = (byte)(high << 4 | low);
+            }
+            return result;
+        }
+        /// <summary>
+        /// 整型数据转为BCD
+        /// </summary>
+        /// <param name="value">待转换的字符串</param>
+        /// <param name="count">BCD[n]</param>
+        /// <returns></returns>
+        public static byte[] ToBCDByte(this int value,int count) {
+            byte[] vs = new byte[count];
+            Span<byte> list = new Span<byte>(vs);
+            int level = count - 1;
+            var high = value / 100;
+            var low = value % 100;
+            if (high>0)
+            {
+                ToBCDByte(high, list, --count);
+            }
+            byte res = (byte)(((low / 10) << 4) + (low % 10));
+            list[level] = res;
+            return list.ToArray();
+        }
+
+        private static void ToBCDByte(int value, Span<byte> list, int byteCount)
+        {
+            int level = byteCount - 1;
+            if (level < 0) return;
+            var high = value / 100;
+            var low = value % 100;
+            if (high > 0)
+            {
+                ToBCDByte(high, list, --byteCount);
+            }
+            byte res = (byte)(((low / 10) << 4) + (low % 10));
+            list[level] = res;
+        }
+
+        /// <summary>
         /// 16进制数组转16进制字符串
         /// </summary>
         /// <param name="source"></param>
@@ -132,7 +221,7 @@ namespace JT905.Protocol.Extensions
         /// </summary>
         /// <param name="value"></param>
         /// <param name="format"></param>
-        public static string ReadNumber(this ulong value, string format="X16")
+        public static string ReadNumber(this ulong value, string format = "X16")
         {
             return value.ToString(format);
         }

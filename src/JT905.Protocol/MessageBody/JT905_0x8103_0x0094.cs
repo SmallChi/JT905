@@ -12,21 +12,23 @@ namespace JT905.Protocol.MessageBody
     public class JT905_0x8103_0x0094 : JT905_0x8103_BodyBase, IJT905MessagePackFormatter<JT905_0x8103_0x0094>, IJT905Analyze
     {
         /// <summary>
-        ///Binary
-        ///System.Byte[]
+        /// 参数ID
+        ///出租车车牌号码(不包括汉字)
         /// 0x0094
         /// </summary>
         public override ushort ParamId { get; set; } = JT905Constants.JT905_0x8103_0x0094;
         /// <summary>
         /// 数据长度
-        /// 4 byte
         /// </summary>
         public override byte ParamLength { get; set; }
+    
+        public override string Description => "出租车车牌号码(不包括汉字)";
         
         /// <summary>
         /// 出租车车牌号码(不包括汉字)
         /// </summary>
         public string ParamValue { get; set; }
+        
         
         /// <summary>
         /// 解析数据

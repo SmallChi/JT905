@@ -310,6 +310,23 @@ namespace JT905.Protocol.MessagePack
             src.CopyTo(writer.Written.Slice(position));
         }
         /// <summary>
+        /// 整型数据转为BCD BYTE
+        /// 为了兼容int类型，不使用byte做参数
+        /// 支持0xFF一个字节的转换
+        /// </summary>
+        /// <returns></returns>
+        public byte IntToBCD(int value)
+        {
+            byte result = 0;
+            if (value<=0xFF)
+            {
+                int high = value / 10;
+                int low = value % 10;
+                result = (byte)(high << 4 | low);
+            }
+            return result;
+        }
+        /// <summary>
         /// 写入六个字节的日期类型,yyMMddHHmmss
         /// </summary>
         /// <param name="value"></param>

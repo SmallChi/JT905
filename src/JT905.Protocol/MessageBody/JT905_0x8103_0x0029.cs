@@ -12,21 +12,23 @@ namespace JT905.Protocol.MessageBody
     public class JT905_0x8103_0x0029 : JT905_0x8103_BodyBase, IJT905MessagePackFormatter<JT905_0x8103_0x0029>, IJT905Analyze
     {
         /// <summary>
-        ///Int32
-        ///System.Int32
+        /// 参数ID
+        ///未登录汇报距离间隔，单位为米(m)
         /// 0x0029
         /// </summary>
         public override ushort ParamId { get; set; } = JT905Constants.JT905_0x8103_0x0029;
         /// <summary>
         /// 数据长度
-        /// 4 byte
         /// </summary>
         public override byte ParamLength { get; set; } = 4;
+    
+        public override string Description => "未登录汇报距离间隔，单位为米(m)";
         
         /// <summary>
         /// 未登录汇报距离间隔，单位为米(m)
         /// </summary>
         public uint ParamValue { get; set; }
+        
         
         /// <summary>
         /// 解析数据

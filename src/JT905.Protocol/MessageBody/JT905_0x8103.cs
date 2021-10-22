@@ -72,7 +72,7 @@ namespace JT905.Protocol.MessageBody
                         dynamic attachImpl = JT905MessagePackFormatterResolverExtensions.JT905DynamicDeserialize(instance, ref reader, config);
                         value.ParamList.Add(attachImpl);
                     }
-                    else if (config.JT905_0X8103_Factory.Map.TryGetValue(paramId, out object customInstance))
+                    else if (config.JT905_0X8103_Custom_Factory.Map.TryGetValue(paramId, out object customInstance))
                     {
                         dynamic attachImpl = JT905MessagePackFormatterResolverExtensions.JT905DynamicDeserialize(customInstance, ref reader, config);
                         value.CustomParamList.Add(attachImpl);
@@ -139,7 +139,7 @@ namespace JT905.Protocol.MessageBody
                         writer.WriteEndObject();
                     }
                 }
-                writer.WriteEndArray();
+               
             }
             catch (Exception ex)
             {

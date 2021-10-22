@@ -12,21 +12,23 @@ namespace JT905.Protocol.MessageBody
     public class JT905_0x8103_0x0090 : JT905_0x8103_BodyBase, IJT905MessagePackFormatter<JT905_0x8103_0x0090>, IJT905Analyze
     {
         /// <summary>
-        ///Binary
-        ///System.Byte[]
+        /// 参数ID
+        ///计价器营运次数限制，0～9999；0表示不做限制
         /// 0x0090
         /// </summary>
         public override ushort ParamId { get; set; } = JT905Constants.JT905_0x8103_0x0090;
         /// <summary>
         /// 数据长度
-        /// 4 byte
         /// </summary>
         public override byte ParamLength { get; set; }
+    
+        public override string Description => "计价器营运次数限制，0～9999；0表示不做限制";
         
         /// <summary>
         /// 计价器营运次数限制，0～9999；0表示不做限制
         /// </summary>
         public string ParamValue { get; set; }
+        
         
         /// <summary>
         /// 解析数据

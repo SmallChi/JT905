@@ -8,7 +8,7 @@ using System.Text;
 
 namespace JT905.Protocol.Interfaces
 {
-    class JT905_0x8103_Factory : IJT905_0x8103_Factory
+    public class JT905_0x8103_Factory : IJT905_0x8103_Factory
     {
         public JT905_0x8103_Factory()
         {

@@ -12,21 +12,23 @@ namespace JT905.Protocol.MessageBody
     public class JT905_0x8103_0x004B : JT905_0x8103_BodyBase, IJT905MessagePackFormatter<JT905_0x8103_0x004B>, IJT905Analyze
     {
         /// <summary>
-        ///Byte
-        ///System.Byte
+        /// 参数ID
+        ///ISU的语音播报音量控制：0～9(0为静音，9为最高)
         /// 0x004B
         /// </summary>
         public override ushort ParamId { get; set; } = JT905Constants.JT905_0x8103_0x004B;
         /// <summary>
         /// 数据长度
-        /// 4 byte
         /// </summary>
         public override byte ParamLength { get; set; } = 1;
+    
+        public override string Description => "ISU的语音播报音量控制：0～9(0为静音，9为最高)";
         
         /// <summary>
         /// ISU的语音播报音量控制：0～9(0为静音，9为最高)
         /// </summary>
         public byte ParamValue { get; set; }
+        
         
         /// <summary>
         /// 解析数据

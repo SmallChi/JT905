@@ -12,21 +12,23 @@ namespace JT905.Protocol.MessageBody
     public class JT905_0x8103_0x001D : JT905_0x8103_BodyBase, IJT905MessagePackFormatter<JT905_0x8103_0x001D>, IJT905Analyze
     {
         /// <summary>
-        ///Int32
-        ///System.Int32
+        /// 参数ID
+        ///一卡通或支付平台备份服务器TCP端口
         /// 0x001D
         /// </summary>
         public override ushort ParamId { get; set; } = JT905Constants.JT905_0x8103_0x001D;
         /// <summary>
         /// 数据长度
-        /// 4 byte
         /// </summary>
         public override byte ParamLength { get; set; } = 4;
+    
+        public override string Description => "一卡通或支付平台备份服务器TCP端口";
         
         /// <summary>
         /// 一卡通或支付平台备份服务器TCP端口
         /// </summary>
         public uint ParamValue { get; set; }
+        
         
         /// <summary>
         /// 解析数据

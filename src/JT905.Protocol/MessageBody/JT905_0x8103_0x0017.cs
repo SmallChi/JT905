@@ -12,21 +12,23 @@ namespace JT905.Protocol.MessageBody
     public class JT905_0x8103_0x0017 : JT905_0x8103_BodyBase, IJT905MessagePackFormatter<JT905_0x8103_0x0017>, IJT905Analyze
     {
         /// <summary>
-        ///AnsiString
-        ///System.String
+        /// 参数ID
+        ///备份服务器地址，IP或域名
         /// 0x0017
         /// </summary>
         public override ushort ParamId { get; set; } = JT905Constants.JT905_0x8103_0x0017;
         /// <summary>
         /// 数据长度
-        /// 4 byte
         /// </summary>
         public override byte ParamLength { get; set; }
+    
+        public override string Description => "备份服务器地址，IP或域名";
         
         /// <summary>
         /// 备份服务器地址，IP或域名
         /// </summary>
         public string ParamValue { get; set; }
+        
         
         /// <summary>
         /// 解析数据

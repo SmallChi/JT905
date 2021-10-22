@@ -12,21 +12,23 @@ namespace JT905.Protocol.MessageBody
     public class JT905_0x8103_0x002B : JT905_0x8103_BodyBase, IJT905MessagePackFormatter<JT905_0x8103_0x002B>, IJT905Analyze
     {
         /// <summary>
-        ///Int32
-        ///System.Int32
+        /// 参数ID
+        ///ACCON汇报距离间隔，单位为米(m)
         /// 0x002B
         /// </summary>
         public override ushort ParamId { get; set; } = JT905Constants.JT905_0x8103_0x002B;
         /// <summary>
         /// 数据长度
-        /// 4 byte
         /// </summary>
         public override byte ParamLength { get; set; } = 4;
+    
+        public override string Description => "ACCON汇报距离间隔，单位为米(m)";
         
         /// <summary>
         /// ACCON汇报距离间隔，单位为米(m)
         /// </summary>
         public uint ParamValue { get; set; }
+        
         
         /// <summary>
         /// 解析数据

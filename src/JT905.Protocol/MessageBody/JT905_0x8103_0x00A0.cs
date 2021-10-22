@@ -12,21 +12,23 @@ namespace JT905.Protocol.MessageBody
     public class JT905_0x8103_0x00A0 : JT905_0x8103_BodyBase, IJT905MessagePackFormatter<JT905_0x8103_0x00A0>, IJT905Analyze
     {
         /// <summary>
-        ///Byte
-        ///System.Byte
+        /// 参数ID
+        ///ISU录音模式(0x01：全程录音；0x02：翻牌录音)
         /// 0x00A0
         /// </summary>
         public override ushort ParamId { get; set; } = JT905Constants.JT905_0x8103_0x00A0;
         /// <summary>
         /// 数据长度
-        /// 4 byte
         /// </summary>
         public override byte ParamLength { get; set; } = 1;
+    
+        public override string Description => "ISU录音模式(0x01：全程录音；0x02：翻牌录音)";
         
         /// <summary>
         /// ISU录音模式(0x01：全程录音；0x02：翻牌录音)
         /// </summary>
         public byte ParamValue { get; set; }
+        
         
         /// <summary>
         /// 解析数据

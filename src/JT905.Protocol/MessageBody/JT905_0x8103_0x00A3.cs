@@ -12,21 +12,23 @@ namespace JT905.Protocol.MessageBody
     public class JT905_0x8103_0x00A3 : JT905_0x8103_BodyBase, IJT905MessagePackFormatter<JT905_0x8103_0x00A3>, IJT905Analyze
     {
         /// <summary>
-        ///Byte
-        ///System.Byte
+        /// 参数ID
+        ///LED心跳时间间隔，单位为秒(s)
         /// 0x00A3
         /// </summary>
         public override ushort ParamId { get; set; } = JT905Constants.JT905_0x8103_0x00A3;
         /// <summary>
         /// 数据长度
-        /// 4 byte
         /// </summary>
         public override byte ParamLength { get; set; } = 1;
+    
+        public override string Description => "LED心跳时间间隔，单位为秒(s)";
         
         /// <summary>
         /// LED心跳时间间隔，单位为秒(s)
         /// </summary>
         public byte ParamValue { get; set; }
+        
         
         /// <summary>
         /// 解析数据

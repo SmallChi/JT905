@@ -12,21 +12,23 @@ namespace JT905.Protocol.MessageBody
     public class JT905_0x8103_0x0052 : JT905_0x8103_BodyBase, IJT905MessagePackFormatter<JT905_0x8103_0x0052>, IJT905Analyze
     {
         /// <summary>
-        ///Int32
-        ///System.Int32
+        /// 参数ID
+        ///报警拍摄开关，与位置信息汇报消息中的报警标志相对应，相应位为1，则相应报警时摄像头拍摄
         /// 0x0052
         /// </summary>
         public override ushort ParamId { get; set; } = JT905Constants.JT905_0x8103_0x0052;
         /// <summary>
         /// 数据长度
-        /// 4 byte
         /// </summary>
         public override byte ParamLength { get; set; } = 4;
+    
+        public override string Description => "报警拍摄开关，与位置信息汇报消息中的报警标志相对应，相应位为1，则相应报警时摄像头拍摄";
         
         /// <summary>
         /// 报警拍摄开关，与位置信息汇报消息中的报警标志相对应，相应位为1，则相应报警时摄像头拍摄
         /// </summary>
         public uint ParamValue { get; set; }
+        
         
         /// <summary>
         /// 解析数据
