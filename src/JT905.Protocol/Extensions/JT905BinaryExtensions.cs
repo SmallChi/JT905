@@ -35,10 +35,10 @@ namespace JT905.Protocol.Extensions
                 //bcdText = bcdText.Insert(startIndex, new string('0', noOfZero));
                 bcdText = bcdText.PadRight(len, '0');
             }
-            //int count = len / 2;
-            byte[] aryTemp = new byte[len];
+            int count = len / 2;
+            byte[] aryTemp = new byte[count];
             var bcdSpan = bcdText.AsSpan();
-            for (int i = 0; i < len; i++)
+            for (int i = 0; i < count; i++)
             {
                 aryTemp[i] = Convert.ToByte(bcdSpan.Slice(startIndex, 2).ToString(), 16);
                 startIndex += 2;

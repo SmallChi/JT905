@@ -2,6 +2,7 @@
 using JT905.Protocol.Interfaces;
 using JT905.Protocol.MessagePack;
 using System;
+using System.Buffers.Binary;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace JT905.Protocol.MessageBody
     /// </summary>
     public class JT905_0x8105 : JT905Bodies, IJT905MessagePackFormatter<JT905_0x8105>, IJT905Analyze
     {
-        public const int CommandParameterCount = 6;
+        public const int CommandParameterCount = 9;       
         public override ushort MsgId => Enums.JT905MsgId.ISU控制.ToUInt16Value();
 
         public override string Description => "ISU控制";
@@ -28,12 +29,89 @@ namespace JT905.Protocol.MessageBody
 
         public void Analyze(ref JT905MessagePackReader reader, Utf8JsonWriter writer, IJT905Config config)
         {
-            throw new NotImplementedException();
+            try
+            {
+                JT905_0x8105 jT905_0X8105 = new JT905_0x8105()
+                {
+                    CommandWord = reader.ReadByte(),
+                    CommandParameters = new List<ICommandParameter>(),
+                };
+                writer.WriteNumber($"[{ jT905_0X8105.CommandWord.ReadNumber()}]命令字", jT905_0X8105.CommandWord);
+                if (jT905_0X8105.CommandWord == 1)
+                {
+                    writer.WriteStartObject("命令参数");
+                    var DeviceType = reader.ReadByte();
+                    writer.WriteNumber($"[{ DeviceType.ReadNumber()}]设备类型", DeviceType);
+                    var VendorID = reader.ReadByte();
+                    writer.WriteNumber($"[{ VendorID.ReadNumber()}]厂商标识", VendorID);
+                    var HardwareVer = reader.ReadBCD(2);
+                    writer.WriteString($"[{ HardwareVer}]硬件版本号", HardwareVer);
+                    var SoftVer = reader.ReadBCD(4);
+                    writer.WriteString($"[{ SoftVer}]软件版本号", SoftVer);
+                    string _APN = reader.ReadVirtualArraryEndChar0();
+                    var APN = reader.ReadStringEndChar0();
+                    writer.WriteString($"[{ _APN}]APN", APN);
+                    string _UserName = reader.ReadVirtualArraryEndChar0();
+                    var UserName = reader.ReadStringEndChar0();
+                    writer.WriteString($"[{ _UserName}]拨号用户名", UserName);
+                    string _Password = reader.ReadVirtualArraryEndChar0();
+                    var Password = reader.ReadStringEndChar0();
+                    writer.WriteString($"[{ _Password}]拨号密码", Password);
+                    string _UpServer = reader.ReadVirtualArraryEndChar0();
+                    var UpServer = reader.ReadStringEndChar0();
+                    writer.WriteString($"[{ _UpServer}]升级服务器地址", UpServer);
+                    var UpPort = reader.ReadUInt16();
+                    writer.WriteNumber($"[{ UpPort.ReadNumber()}]升级服务器端口", UpPort);
+                    writer.WriteEndObject();
+                }
+                else
+                {
+                    writer.WriteString($"命令参数", "[null]");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                writer.WriteString($"解析失败", ex.ToString());
+            }
+            
         }
 
         public JT905_0x8105 Deserialize(ref JT905MessagePackReader reader, IJT905Config config)
         {
-            throw new NotImplementedException();
+            JT905_0x8105 result = new JT905_0x8105();
+            try
+            {
+                result.CommandWord = reader.ReadByte();
+                if (result.CommandWord==1)
+                {
+                    result.CommandParameters = new List<ICommandParameter>();
+                    var DeviceType = reader.ReadByte();
+                    result.CommandParameters.Add(new CommandParameter_0x01 { Value = DeviceType });
+                    var VendorID = reader.ReadByte();
+                    result.CommandParameters.Add(new CommandParameter_0x02 { Value = VendorID });
+                    var HardwareVer = reader.ReadBCD(2);
+                    result.CommandParameters.Add(new CommandParameter_0x03 { Value = HardwareVer });
+                    var SoftVer = reader.ReadBCD(4);
+                    result.CommandParameters.Add(new CommandParameter_0x04 { Value = SoftVer });
+                    var APN = reader.ReadStringEndChar0();
+                    result.CommandParameters.Add(new CommandParameter_0x05 { Value = APN });
+                    var UserName = reader.ReadStringEndChar0();
+                    result.CommandParameters.Add(new CommandParameter_0x06 { Value = UserName });
+                    var Password = reader.ReadStringEndChar0();
+                    result.CommandParameters.Add(new CommandParameter_0x07 { Value = Password });
+                    var UpServer = reader.ReadStringEndChar0();
+                    result.CommandParameters.Add(new CommandParameter_0x08 { Value = UpServer });
+                    var UpPort = reader.ReadUInt16();
+                    result.CommandParameters.Add(new CommandParameter_0x09 { Value = UpPort });
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            return result;
         }
 
         public void Serialize(ref JT905MessagePackWriter writer, JT905_0x8105 value, IJT905Config config)
@@ -174,7 +252,7 @@ namespace JT905.Protocol.MessageBody
 
         public byte[] ToBytes()
         {
-            return Value.ToBCDByte(1);
+            return Value.ToBCDByte(2);
         }
 
         public void ToValue(byte[] bytes)
@@ -198,7 +276,7 @@ namespace JT905.Protocol.MessageBody
 
         public byte[] ToBytes()
         {
-            return Value.ToBCDByte(2);
+            return Value.ToBCDByte(4);
         }
 
         public void ToValue(byte[] bytes)
@@ -214,7 +292,7 @@ namespace JT905.Protocol.MessageBody
     /// </summary>
     public class CommandParameter_0x05 : ICommandParameter, ICommandParameterValue<string>
     {
-        public int Order => 3;
+        public int Order => 4;
 
         public string CommandName => "APN";
 
@@ -222,14 +300,14 @@ namespace JT905.Protocol.MessageBody
 
         public byte[] ToBytes()
         {
-            return JT905Constants.Encoding.GetBytes(Value);
+            return JT905Constants.Encoding.GetBytes(Value+('\0'));
         }
 
         public void ToValue(byte[] bytes)
         {
             if (bytes != null && bytes.Length > 0)
             {
-                Value = JT905Constants.Encoding.GetString(bytes); ;
+                Value = JT905Constants.Encoding.GetString(bytes).Trim('\0'); ;
             }
         }
     }
@@ -239,7 +317,7 @@ namespace JT905.Protocol.MessageBody
     /// </summary>
     public class CommandParameter_0x06 : ICommandParameter, ICommandParameterValue<string>
     {
-        public int Order => 3;
+        public int Order => 5;
 
         public string CommandName => "拨号用户名";
 
@@ -247,14 +325,14 @@ namespace JT905.Protocol.MessageBody
 
         public byte[] ToBytes()
         {
-            return JT905Constants.Encoding.GetBytes(Value);
+            return JT905Constants.Encoding.GetBytes(Value+('\0'));
         }
 
         public void ToValue(byte[] bytes)
         {
             if (bytes != null && bytes.Length > 0)
             {
-                Value = JT905Constants.Encoding.GetString(bytes);
+                Value = JT905Constants.Encoding.GetString(bytes).Trim('\0');
             }
         }
     }
@@ -263,7 +341,7 @@ namespace JT905.Protocol.MessageBody
     /// </summary>
     public class CommandParameter_0x07 : ICommandParameter, ICommandParameterValue<string>
     {
-        public int Order => 3;
+        public int Order => 6;
 
         public string CommandName => "拨号密码";
 
@@ -271,14 +349,14 @@ namespace JT905.Protocol.MessageBody
 
         public byte[] ToBytes()
         {
-            return JT905Constants.Encoding.GetBytes(Value);
+            return JT905Constants.Encoding.GetBytes(Value+('\0'));
         }
 
         public void ToValue(byte[] bytes)
         {
             if (bytes != null && bytes.Length > 0)
             {
-                Value = JT905Constants.Encoding.GetString(bytes);
+                Value = JT905Constants.Encoding.GetString(bytes).Trim('\0');
             }
         }
     }
@@ -287,7 +365,7 @@ namespace JT905.Protocol.MessageBody
     /// </summary>
     public class CommandParameter_0x08 : ICommandParameter, ICommandParameterValue<string>
     {
-        public int Order => 3;
+        public int Order => 7;
 
         public string CommandName => "升级服务器地址";
 
@@ -295,40 +373,39 @@ namespace JT905.Protocol.MessageBody
 
         public byte[] ToBytes()
         {
-            return JT905Constants.Encoding.GetBytes(Value);
+            return JT905Constants.Encoding.GetBytes(Value+('\0'));
         }
 
         public void ToValue(byte[] bytes)
         {
             if (bytes != null && bytes.Length > 0)
             {
-                Value = JT905Constants.Encoding.GetString(bytes);
+                Value = JT905Constants.Encoding.GetString(bytes).Trim('\0');
             }
         }
     }
     /// <summary>
     /// 升级服务器端口
     /// </summary>
-    public class CommandParameter_0x09 : ICommandParameter, ICommandParameterValue<ushort?>
+    public class CommandParameter_0x09 : ICommandParameter, ICommandParameterValue<ushort>
     {
         
-        public int Order => 3;
+        public int Order => 8;
 
         public string CommandName => "升级服务器端口";
 
-        public ushort? Value { get; set; }
+        public ushort Value { get; set; }
 
         public byte[] ToBytes()
         {
-            JT905MessagePackWriter msgpackWriter = new JT905MessagePackWriter();
-            msgpackWriter.WriteUInt16((ushort)Value);
-
-            return msgpackWriter.FlushAndGetRealArray();
+            byte[] value = new byte[2];
+            BinaryPrimitives.WriteUInt16BigEndian(value, Value);
+            return value;
         }
 
         public void ToValue(byte[] bytes)
         {
-            throw new NotImplementedException();
+            Value= BinaryPrimitives.ReadUInt16BigEndian(bytes);
         }
     }
     #endregion

@@ -9,14 +9,14 @@ namespace JT905.Protocol.Interfaces
     public interface IJT905MessagePackFormatter<T> : IJT905Formatter
     {
         /// <summary>
-        /// 
+        /// 序列化
         /// </summary>
         /// <param name="writer"></param>
         /// <param name="value"></param>
         /// <param name="config"></param>
         void Serialize(ref JT905MessagePackWriter writer, T value, IJT905Config config);
         /// <summary>
-        /// 
+        /// 反序列化
         /// </summary>
         /// <param name="reader"></param>
         /// <param name="config"></param>

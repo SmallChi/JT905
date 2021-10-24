@@ -21,24 +21,10 @@ namespace JT905.Protocol.MessageBody
         /// <summary>
         /// 设置终端参数
         /// </summary>
-        public override string Description => "设置终端参数";
-        /// <summary>
-        /// 参数总数
-        /// </summary>
-        internal byte ParamCount
-        {
-            get
-            {
-                if (CustomParamList != null)
-                {
-                    return (byte)(ParamList.Count + CustomParamList.Count);
-                }
-                return (byte)(ParamList.Count);
-            }
-        }
+        public override string Description => "设置参数";
 
         /// <summary>
-        /// 参数列表
+        /// 参数项列表
         /// </summary>
         public List<JT905_0x8103_BodyBase> ParamList { get; set; }
         /// <summary>
@@ -60,11 +46,11 @@ namespace JT905.Protocol.MessageBody
                 CustomParamList = new List<JT905_0x8103_CustomBodyBase>()
             };
             //1.参数总数
-            var paramCount = reader.ReadByte();
+            //var paramCount = reader.ReadByte();
             //2.遍历所有的参数
             try
             {
-                for (int i = 0; i < paramCount; i++)
+                while(reader.ReadCurrentRemainContentLength()>0)
                 {
                     var paramId = reader.ReadVirtualUInt16();//参数ID         
                     if (config.JT905_0X8103_Factory.Map.TryGetValue(paramId, out object instance))
@@ -91,14 +77,18 @@ namespace JT905.Protocol.MessageBody
         public void Serialize(ref JT905MessagePackWriter writer, JT905_0x8103 value, IJT905Config config)
         {
             //todo:Serialize
-            writer.WriteByte(value.ParamCount);
+            
             try
             {
-                foreach (var item in value.ParamList)
+                if (value.ParamList!=null&&value.ParamList.Count>0)
                 {
-                    JT905MessagePackFormatterResolverExtensions.JT905DynamicSerialize(item, ref writer, item, config);
+                    foreach (var item in value.ParamList)
+                    {
+                        JT905MessagePackFormatterResolverExtensions.JT905DynamicSerialize(item, ref writer, item, config);
+                    }
                 }
-                if (value.CustomParamList != null)
+                
+                if (value.CustomParamList != null&&value.CustomParamList.Count>0)
                 {
                     foreach (var item in value.CustomParamList)
                     {
@@ -118,12 +108,12 @@ namespace JT905.Protocol.MessageBody
         public void Analyze(ref JT905MessagePackReader reader, Utf8JsonWriter writer, IJT905Config config)
         {
             //todo:Analyze
-            var paramCount = reader.ReadByte();//参数总数
-            writer.WriteNumber($"[{paramCount.ReadNumber()}]参数总数", paramCount);
+            //var paramCount = reader.ReadByte();//参数总数
+            //writer.WriteNumber($"[{paramCount.ReadNumber()}]参数总数", paramCount);
             try
             {
                 writer.WriteStartArray("参数项");
-                for (int i = 0; i < paramCount; i++)
+                while(reader.ReadCurrentRemainContentLength()>0)
                 {
                     var paramId = reader.ReadVirtualUInt16();//参数ID 
                     if (config.JT905_0X8103_Factory.Map.TryGetValue(paramId, out object instance))
@@ -139,6 +129,7 @@ namespace JT905.Protocol.MessageBody
                         writer.WriteEndObject();
                     }
                 }
+                writer.WriteEndArray();
                
             }
             catch (Exception ex)

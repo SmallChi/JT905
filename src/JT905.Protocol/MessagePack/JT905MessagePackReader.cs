@@ -706,6 +706,15 @@ namespace JT905.Protocol.MessagePack
             return value.Trim('\0');
         }
         /// <summary>
+        /// 虚拟读取一整串字符串到\0结束，不计入内存偏移量
+        /// </summary>
+        /// <returns></returns>
+        public string ReadVirtualArraryEndChar0()
+        {
+            var remainSpans = Reader.Slice(ReaderCount);
+            return GetVirtualReadOnlySpan(remainSpans.IndexOf((byte)'\0') + 1).ToArray().ToHexString();
+        }
+        /// <summary>
         /// 读取剩余数据体内容长度
         /// </summary>
         /// <returns></returns>
