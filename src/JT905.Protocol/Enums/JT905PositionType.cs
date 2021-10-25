@@ -7,7 +7,7 @@ namespace JT905.Protocol.Enums
     /// <summary>
     /// 位置类型
     /// </summary>
-    public enum JT905PositionType
+    public enum JT905PositionType:byte
     {
         /// <summary>
         /// 无特定位置

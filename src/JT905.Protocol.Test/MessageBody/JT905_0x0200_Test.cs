@@ -61,10 +61,11 @@ namespace JT905.Protocol.Test.MessageBody
                 MsgNum = 0,
                 ISU = "108000000316",
             };
-            JT905_0x8001 jT905_0X8001 = new JT905_0x8001() {
+            JT905_0x8001 jT905_0X8001 = new JT905_0x8001()
+            {
                 ReplyMsgNum = 0,
-                AckMsgId= (ushort)Enums.JT905MsgId.位置信息汇报,
-                PlatformResult=0
+                AckMsgId = (ushort)Enums.JT905MsgId.位置信息汇报,
+                PlatformResult = 0
             };
 
             JT905_0x0200 jT905_0X0200 = new JT905_0x0200();
@@ -79,10 +80,10 @@ namespace JT905.Protocol.Test.MessageBody
             jT905_0X0200.BasicLocationAttachData.Add(JT905Constants.JT905_0x0200_0x01, new JT905_0x0200_0x01 { Mileage = 1200 });
             jT905_0X0200.BasicLocationAttachData.Add(JT905Constants.JT905_0x0200_0x02, new JT905_0x0200_0x02 { Oil = 111 });
             jT905_0X0200.BasicLocationAttachData.Add(JT905Constants.JT905_0x0200_0x03, new JT905_0x0200_0x03 { Altitude = 111 });
-            jT905_0X0200.BasicLocationAttachData.Add(JT905Constants.JT905_0x0200_0x11, new JT905_0x0200_0x11 { AreaId=1,JT905PositionType=Enums.JT905PositionType.圆形区域});
+            jT905_0X0200.BasicLocationAttachData.Add(JT905Constants.JT905_0x0200_0x11, new JT905_0x0200_0x11 { AreaId = 1, JT905PositionType = Enums.JT905PositionType.圆形区域 });
             jT905_0X0200.BasicLocationAttachData.Add(JT905Constants.JT905_0x0200_0x12, new JT905_0x0200_0x12 { AreaId = 1, JT905PositionType = Enums.JT905PositionType.圆形区域 });
-            jT905_0X0200.BasicLocationAttachData.Add(JT905Constants.JT905_0x0200_0x13, new JT905_0x0200_0x13 { DrivenRouteId=1, Time=20, DrivenRoute= Enums.JT905DrivenRouteType.不足 });
-            jT905_0X0200.BasicLocationAttachData.Add(JT905Constants.JT905_0x0200_0x14, new JT905_0x0200_0x14 { DrivenRouteId=2,Time=30 });
+            jT905_0X0200.BasicLocationAttachData.Add(JT905Constants.JT905_0x0200_0x13, new JT905_0x0200_0x13 { DrivenRouteId = 1, Time = 20, DrivenRoute = Enums.JT905DrivenRouteType.不足 });
+            jT905_0X0200.BasicLocationAttachData.Add(JT905Constants.JT905_0x0200_0x14, new JT905_0x0200_0x14 { DrivenRouteId = 2, });
             JT905Package.Bodies = jT905_0X0200;
             string v = JT905Serializer.Serialize(JT905Package).ToHexString();
             jT905_0X8001.AckMsgId = (ushort)JT905.Protocol.Enums.JT905MsgId.ISU心跳;
@@ -92,7 +93,8 @@ namespace JT905.Protocol.Test.MessageBody
         }
         [Fact]
 
-        public void Test4() {
+        public void Test4()
+        {
             var botys = "7E020000471080000003160001000000010000000200BA7F0E07E4F11C003C002110152110100104000004B00202006F0302006F110501000000011206010000000100130700000001001400140400000002001E837E".ToHexBytes();
             string v = JT905Serializer.Analyze(botys, options: JTJsonWriterOptions.Instance);
         }

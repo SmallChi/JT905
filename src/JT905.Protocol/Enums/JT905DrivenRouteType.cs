@@ -7,7 +7,7 @@ namespace JT905.Protocol.Enums
     /// <summary>
     /// 路线行驶返回结果
     /// </summary>
-    public enum JT905DrivenRouteType
+    public enum JT905DrivenRouteType:byte
     {
         /// <summary>
         /// 不足

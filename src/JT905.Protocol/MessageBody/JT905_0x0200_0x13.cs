@@ -20,10 +20,12 @@ namespace JT905.Protocol.MessageBody
         /// </summary>
         public override byte AttachInfoLength { get; set; } = 7;
 
+
+
         /// <summary>
         /// 路段 ID
         /// </summary>
-        public int DrivenRouteId { get; set; }
+        public uint DrivenRouteId { get; set; }
 
         /// <summary>
         /// 路段行驶时间
@@ -48,7 +50,7 @@ namespace JT905.Protocol.MessageBody
             writer.WriteNumber($"[{value.AttachInfoId.ReadNumber()}]附加信息Id", value.AttachInfoId);
             value.AttachInfoLength = reader.ReadByte();
             writer.WriteNumber($"[{value.AttachInfoLength.ReadNumber()}]附加信息长度", value.AttachInfoLength);
-            value.DrivenRouteId = reader.ReadInt32();
+            value.DrivenRouteId = reader.ReadUInt32();
             writer.WriteNumber($"[{((byte)value.DrivenRouteId).ReadNumber()}]路段ID", value.DrivenRouteId);
             value.Time = reader.ReadUInt16();
             writer.WriteNumber($"[{value.Time.ReadNumber()}]路段行驶时间", value.Time);
@@ -67,7 +69,7 @@ namespace JT905.Protocol.MessageBody
             JT905_0x0200_0x13 value = new JT905_0x0200_0x13();
             value.AttachInfoId = reader.ReadByte();
             value.AttachInfoLength = reader.ReadByte();
-            value.DrivenRouteId = reader.ReadInt32();
+            value.DrivenRouteId = reader.ReadUInt32();
             value.Time = reader.ReadUInt16();
             value.DrivenRoute = (JT905DrivenRouteType)reader.ReadByte();
             return value;
@@ -82,7 +84,7 @@ namespace JT905.Protocol.MessageBody
         {
             writer.WriteByte(value.AttachInfoId);
             writer.WriteByte(value.AttachInfoLength);
-            writer.WriteInt32(value.DrivenRouteId);
+            writer.WriteUInt32(value.DrivenRouteId);
             writer.WriteUInt16(value.Time);
             writer.WriteByte((byte)value.DrivenRoute);
         }
