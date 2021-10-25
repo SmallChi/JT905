@@ -16,9 +16,10 @@ namespace JT905.Protocol.Internal
         public JT905_0x0200_Factory()
         {
             Map = new Dictionary<byte, object>();
-            Map.Add(JT905Constants.JT905_0x0200_0x01, new JT905_0x0200_0x01());
-            Map.Add(JT905Constants.JT905_0x0200_0x02, new JT905_0x0200_0x02());
-            //todo:
+            InitMap(Assembly.GetExecutingAssembly());
+            //Map.Add(JT905Constants.JT905_0x0200_0x01, new JT905_0x0200_0x01());
+            //Map.Add(JT905Constants.JT905_0x0200_0x02, new JT905_0x0200_0x02());
+            ////todo:
             //Map.Add(JT905Constants.JT905_0x0200_0x03, new JT905_0x0200_0x03());
             //Map.Add(JT905Constants.JT905_0x0200_0x04, new JT905_0x0200_0x04());
             //Map.Add(JT905Constants.JT905_0x0200_0x05, new JT905_0x0200_0x05());
@@ -51,6 +52,11 @@ namespace JT905.Protocol.Internal
         }
 
         public void Register(Assembly externalAssembly)
+        {
+            InitMap(externalAssembly);
+        }
+
+        private void InitMap(Assembly externalAssembly)
         {
             var types = externalAssembly.GetTypes().Where(w => w.BaseType == typeof(JT905_0x0200_BodyBase)).ToList();
             foreach (var type in types)

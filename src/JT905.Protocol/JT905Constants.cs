@@ -26,6 +26,7 @@ namespace JT905.Protocol
         /// 
         /// </summary>
         public static Encoding Encoding { get; }
+       
         #region JT905_0x0200
         /// <summary>
         /// 里程，UINT32，0. 1km，对应车上里程表读数
@@ -60,10 +61,8 @@ namespace JT905.Protocol
         public const byte JT905_0x0200_0x13 = 0x13;
         /// <summary>
         /// 禁行路段行驶报警附加信息
-        /// JT905_0x0200_0x14
         /// </summary>
-        public const byte JT905_0x0200_0x25 = 0x14;
-
+        public const byte JT905_0x0200_0x14 = 0x14;
         #endregion
 
         #region JT905_0x8103
