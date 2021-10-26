@@ -15,8 +15,8 @@ namespace JT905.Protocol.Test.MessageBody
                 Header = new JT905Header
                 {
                     MsgId = Enums.JT905MsgId.中心通用应答.ToUInt16Value(),
-                    ManualMsgNum = 10,
-                    ISU = "12345678900",
+                    ManualMsgNum = 0,
+                    ISU = "108000000316",
                 },
                 Bodies = new JT905_0x8001
                 {
@@ -36,7 +36,7 @@ namespace JT905.Protocol.Test.MessageBody
             //61 
             //7E"
             var hex = JT905Serializer.Serialize(JT905Package).ToHexString();
-            Assert.Equal("7E80010005012345678900000A0064020000617E", hex);
+            Assert.Equal("7E8001000510800000031600000064020000677E", hex);
         }
 
         [Fact]
