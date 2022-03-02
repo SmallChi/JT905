@@ -15,6 +15,279 @@
             编码之前的写入位置
             </summary>
         </member>
+        <member name="T:JT905.Protocol.Enums.JT905Alarm">
+            <summary>
+            报警标志
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Alarm.紧急报警_触动报警开关后触发">
+            <summary>
+            紧急报警，触动报警开关后触发
+            标志维持至报警条件解除
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Alarm.预警">
+            <summary>
+            预警
+            标志维持至预警条件解除或预警转化成为报警事件
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Alarm.卫星定位模块发生故障">
+            <summary>
+            卫星定位模块发生故障
+            标志维持至报警条件解除
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Alarm.卫星定位天线未接或被剪断">
+            <summary>
+            卫星定位天线未接或被剪断
+            标志维持至报警条件解除
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Alarm.卫星定位天线短路">
+            <summary>
+            卫星定位天线短路
+            标志维持至报警条件解除
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Alarm.ISU主电源欠压">
+            <summary>
+            ISU主电源欠压
+            标志维持至报警条件解除
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Alarm.ISU主电源掉电">
+            <summary>
+            ISU主电源掉电
+            标志维持至报警条件解除
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Alarm.液晶LCD显示ISU故障">
+            <summary>
+            液晶LCD显示ISU故障
+            标志维持至报警条件解除
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Alarm.语音合成TTS模块故障">
+            <summary>
+            语音合成TTS模块故障
+            标志维持至报警条件解除
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Alarm.摄像头故障">
+            <summary>
+            摄像头故障
+            标志维持至报警条件解除
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Alarm.计价器故障">
+            <summary>
+            计价器故障
+            标志维持至报警条件解除
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Alarm.服务评价器故障">
+            <summary>
+            服务评价器故障前后排
+            标志维持至报警条件解除
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Alarm.LED广告屏故障">
+            <summary>
+            LED广告屏故障
+            标志维持至报警条件解除
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Alarm.液晶LCD显示屏故障">
+            <summary>
+            液晶LCD显示屏故障
+            标志维持至报警条件解除
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Alarm.LED顶灯故障">
+            <summary>
+            LED顶灯故障
+            标志维持至报警条件解除
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Alarm.超速报警">
+            <summary>
+            超速报警
+            标志维持至报警条件解除
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Alarm.连续驾驶超时">
+            <summary>
+            连续驾驶超时
+            标志维持至报警条件解除
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Alarm.当天累计驾驶超时">
+            <summary>
+            当天累计驾驶超时
+            标志维持至报警条件解除
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Alarm.超时停车">
+            <summary>
+            超时停车
+            标志维持至报警条件解除
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Alarm.进出区域_路线">
+            <summary>
+            进出区域/路线
+            收到应答后清0
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Alarm.路段行驶时间不足_过长">
+            <summary>
+            路段行驶时间不足/过长
+            收到应答后清0
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Alarm.禁行路段行驶">
+            <summary>
+            禁行路段行驶
+            收到应答后清0
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Alarm.车速传感器故障">
+            <summary>
+            车速传感器故障
+            标志维持至报警条件解除
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Alarm.车辆非法点火">
+            <summary>
+            车辆非法点火
+            收到应答后清0
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Alarm.车辆非法位移">
+            <summary>
+            车辆非法位移
+            收到应答后清0
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Alarm.ISU存储异常">
+            <summary>
+            ISU存储异常
+            标志维持至报警条件解除
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Alarm.录音设备故障">
+            <summary>
+            录音设备故障
+            标志维持至报警条件解除
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Alarm.计价器实时时钟超过规定的误差范围">
+            <summary>
+            计价器实时时钟超过规定的误差范围
+            标志维持至报警条件解除
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.Enums.JT905BusinessType">
+            <summary>
+            业务类型 0：即时召车；1：预约召车；2：车辆指派
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905BusinessType.即时召车">
+            <summary>
+            即时召车
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905BusinessType.预约召车">
+            <summary>
+            预约召车
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905BusinessType.车辆指派">
+            <summary>
+            车辆指派
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.Enums.JT905CancellationReasons">
+            <summary>
+            取消原因
+            0:事故
+            1:路堵
+            2:其他
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.Enums.JT905ControlItem">
+            <summary>
+            车辆控制项
+            0x8500
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.Enums.JT905ControlType">
+            <summary>
+            位置跟踪控制类型
+            属性
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905ControlType.按时间间隔_持续时间">
+            <summary>
+            按时间间隔_持续时间
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905ControlType.按距离间隔_持续距离">
+            <summary>
+            按距离间隔_持续距离
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905ControlType.按时间间隔_持续距离">
+            <summary>
+            按时间间隔_持续距离
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905ControlType.按距离间隔_持续时间">
+            <summary>
+            按距离间隔_持续时间
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905ControlType.停止当前跟踪">
+            <summary>
+            停止当前跟踪
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.Enums.JT905DeviceType">
+            <summary>
+            设备类型
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.Enums.JT905DirectionType">
+            <summary>
+            方向类型
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905DirectionType.进">
+            <summary>
+            进
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905DirectionType.出">
+            <summary>
+            出
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.Enums.JT905DrivenRouteType">
+            <summary>
+            路线行驶返回结果
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905DrivenRouteType.不足">
+            <summary>
+            不足
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905DrivenRouteType.过长">
+            <summary>
+            过长
+            </summary>
+        </member>
         <member name="T:JT905.Protocol.Enums.JT905ErrorCode">
             <summary>
             异常错误码
@@ -139,22 +412,27 @@
             0x8103
             </summary>
         </member>
-        <member name="F:JT905.Protocol.Enums.JT905MsgId.查询终端参数">
+        <member name="F:JT905.Protocol.Enums.JT905MsgId.查询ISU参数">
             <summary>
             查询终端参数
             0x8104
             </summary>
         </member>
-        <member name="F:JT905.Protocol.Enums.JT905MsgId.查询终端参数应答">
+        <member name="F:JT905.Protocol.Enums.JT905MsgId.查询ISU参数应答">
             <summary>
             查询终端参数应答
             0x0104
             </summary>
         </member>
-        <member name="F:JT905.Protocol.Enums.JT905MsgId.终端控制">
+        <member name="F:JT905.Protocol.Enums.JT905MsgId.ISU控制">
             <summary>
             终端控制
             0x8105
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905MsgId.ISU升级结果报告消息">
+            <summary>
+            ISU升级结果报告消息
             </summary>
         </member>
         <member name="F:JT905.Protocol.Enums.JT905MsgId.查询指定终端参数">
@@ -205,10 +483,22 @@
             0x0201
             </summary>
         </member>
-        <member name="F:JT905.Protocol.Enums.JT905MsgId.临时位置跟踪控制">
+        <member name="F:JT905.Protocol.Enums.JT905MsgId.位置跟踪控制">
             <summary>
-            临时位置跟踪控制
+            位置跟踪控制
             0x8202
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905MsgId.位置跟踪信息汇报">
+            <summary>
+            位置信息查询应答
+            0x0202
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905MsgId.位置汇报数据补传">
+            <summary>
+            位置信息查询应答
+            0x0203
             </summary>
         </member>
         <member name="F:JT905.Protocol.Enums.JT905MsgId.人工确认报警消息">
@@ -385,7 +675,7 @@
             0x0705
             </summary>
         </member>
-        <member name="F:JT905.Protocol.Enums.JT905MsgId.多媒体事件信息上传">
+        <member name="F:JT905.Protocol.Enums.JT905MsgId.摄像头图像上传">
             <summary>
             多媒体事件信息上传
             0x0800
@@ -409,6 +699,17 @@
             0x8801
             </summary>
         </member>
+        <member name="F:JT905.Protocol.Enums.JT905MsgId.存储图像检索">
+            <summary>
+            存储图像检索
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905MsgId.存储图像检索应答">
+            <summary>
+            存储图像检索应答
+            0x0802
+            </summary>
+        </member>
         <member name="F:JT905.Protocol.Enums.JT905MsgId.摄像头立即拍摄命令应答">
             <summary>
             摄像头立即拍摄命令应答
@@ -421,10 +722,64 @@
             0x8802
             </summary>
         </member>
-        <member name="F:JT905.Protocol.Enums.JT905MsgId.存储多媒体数据上传">
+        <member name="F:JT905.Protocol.Enums.JT905MsgId.存储图像_音视频上传命令">
             <summary>
             存储多媒体数据上传
             0x8803
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905MsgId.订单任务下发">
+            <summary>
+            订单任务下发
+            0x8B00
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905MsgId.驾驶员抢答">
+            <summary>
+            驾驶员抢答
+            0x0B01
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905MsgId.下发抢答结果信息">
+            <summary>
+            下发抢答结果信息
+            0x8B01
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905MsgId.驾驶员电召任务完成确认">
+            <summary>
+            驾驶员电召任务完成确认
+            0x0B07
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905MsgId.驾驶员取消订单">
+            <summary>
+            驾驶员取消订单
+            0x0B08
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905MsgId.中心取消订单">
+            <summary>
+            中心取消订单
+            0x8B09
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905MsgId.上班签到信息上传">
+            <summary>
+            上班签到信息
+            0x0B03
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905MsgId.下班签退信息上传">
+            <summary>
+            下班签退信息上传
+            0x0B04
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905MsgId.运营数据上传">
+            <summary>
+            运营数据上传
+            0x0B05
             </summary>
         </member>
         <member name="F:JT905.Protocol.Enums.JT905MsgId.录音开始命令">
@@ -511,10 +866,53 @@
              0x0802
             </summary>
         </member>
-        <member name="F:JT905.Protocol.Enums.JT905MsgId.上班签到信息">
+        <member name="T:JT905.Protocol.Enums.JT905MultimediaType">
             <summary>
-            上班签到信息
-            0x0B03
+            多媒体类型
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905MultimediaType.照片">
+            <summary>
+            照片
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905MultimediaType.音频">
+            <summary>
+            音频
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905MultimediaType.视频">
+            <summary>
+            视频
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.Enums.JT905PhotoReason">
+            <summary>
+            拍照原因
+            0:进入重车拍照
+            1:服务评价拍照
+            2:报警拍照
+            3:中心主动拍照
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905PhotoReason.进入重车拍照">
+            <summary>
+            进入重车拍照
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905PhotoReason.服务评价拍照">
+            <summary>
+            服务评价拍照
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905PhotoReason.报警拍照">
+            <summary>
+            报警拍照
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905PhotoReason.中心主动拍照">
+            <summary>
+            中心主动拍照
             </summary>
         </member>
         <member name="T:JT905.Protocol.Enums.JT905PlatformResult">
@@ -535,6 +933,156 @@
         <member name="F:JT905.Protocol.Enums.JT905PlatformResult.MessageError">
             <summary>
             消息有误
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.Enums.JT905PositionType">
+            <summary>
+            位置类型
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905PositionType.无特定位置">
+            <summary>
+            无特定位置
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905PositionType.圆形区域">
+            <summary>
+            圆形区域
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905PositionType.矩形区域">
+            <summary>
+            矩形区域
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905PositionType.多边形区域">
+            <summary>
+            多边形区域
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905PositionType.路段">
+            <summary>
+            路段
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.Enums.JT905Status">
+            <summary>
+            JT808车辆状态位
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Status.未卫星定位">
+            <summary>
+            未卫星定位
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Status.南纬">
+            <summary>
+            南纬
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Status.西经">
+            <summary>
+            西经
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Status.停运状态">
+            <summary>
+            停运状态
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Status.预约_任务车">
+            <summary>
+            预约(任务车)
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Status.空转重">
+            <summary>
+            空转重
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Status.重转空">
+            <summary>
+            重转空
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Status.预留">
+            <summary>
+            预留
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Status.ACC开">
+            <summary>
+            ACC开
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Status.重车">
+            <summary>
+            重车
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Status.车辆油路断开">
+            <summary>
+            车辆油路断开
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Status.车辆电路断开">
+            <summary>
+            车辆电路断开
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Status.车门加锁">
+            <summary>
+            车门加锁
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Status.车辆锁定">
+            <summary>
+            车辆锁定
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905Status.已达到限制营运次数_时间">
+            <summary>
+            已达到限制营运次数_时间
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905TelephoneBookContactType.呼入">
+            <summary>
+            呼入
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905TelephoneBookContactType.呼出">
+            <summary>
+            呼出
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905TelephoneBookContactType.呼入_呼出">
+            <summary>
+            呼入_呼出
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.Enums.JT905TextFlag">
+            <summary>
+            文本信息标志位
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905TextFlag.紧急">
+            <summary>
+            紧急
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905TextFlag.显示装置显示">
+            <summary>
+            显示装置显示
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905TextFlag.语音合成播读">
+            <summary>
+            语音合成播读
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.Enums.JT905TextFlag.广告屏显示">
+            <summary>
+            广告屏显示
             </summary>
         </member>
         <member name="T:JT905.Protocol.Enums.JT905Version">
@@ -604,6 +1152,47 @@
             
             ref:"www.codeproject.com/tips/447938/high-performance-csharp-byte-array-to-hex-string-t"
             </summary>
+        </member>
+        <member name="M:JT905.Protocol.Extensions.JT905BinaryExtensions.FormatString(System.String,System.Int32@)">
+            <summary>
+            格式化字符串
+            </summary>
+            <param name="value"></param>
+            <param name="len">目标长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.Extensions.JT905BinaryExtensions.ToBCDString(System.String,System.Int32@)">
+            <summary>
+            字符串BCD8421编码
+            </summary>
+            <param name="value">待转换的字符串</param>
+            <param name="len">BCD8421编码长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.Extensions.JT905BinaryExtensions.ToBCDByte(System.String,System.Int32@)">
+            <summary>
+            字符串BCD8421编码
+            </summary>
+            <param name="value">待转换的字符串</param>
+            <param name="len">BCD8421编码长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.Extensions.JT905BinaryExtensions.ToBCD(System.Int32)">
+            <summary>
+            整型数据转为BCD BYTE
+            为了兼容int类型，不使用byte做参数
+            支持0xFF一个字节的转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.Extensions.JT905BinaryExtensions.ToBCDByte(System.Int32,System.Int32)">
+            <summary>
+            整型数据转为BCD
+            </summary>
+            <param name="value">待转换的字符串</param>
+            <param name="count">BCD[n]</param>
+            <returns></returns>
         </member>
         <member name="M:JT905.Protocol.Extensions.JT905BinaryExtensions.ToHexString(System.Byte[])">
             <summary>
@@ -1075,7 +1664,7 @@
         </member>
         <member name="M:JT905.Protocol.Interfaces.IJT905MessagePackFormatter`1.Serialize(JT905.Protocol.MessagePack.JT905MessagePackWriter@,`0,JT905.Protocol.IJT905Config)">
             <summary>
-            
+            序列化
             </summary>
             <param name="writer"></param>
             <param name="value"></param>
@@ -1083,7 +1672,7 @@
         </member>
         <member name="M:JT905.Protocol.Interfaces.IJT905MessagePackFormatter`1.Deserialize(JT905.Protocol.MessagePack.JT905MessagePackReader@,JT905.Protocol.IJT905Config)">
             <summary>
-            
+            反序列化
             </summary>
             <param name="reader"></param>
             <param name="config"></param>
@@ -1536,10 +2125,9 @@
             JT905_0x0200_0x13
             </summary>
         </member>
-        <member name="F:JT905.Protocol.JT905Constants.JT905_0x0200_0x25">
+        <member name="F:JT905.Protocol.JT905Constants.JT905_0x0200_0x14">
             <summary>
             禁行路段行驶报警附加信息
-            JT905_0x0200_0x14
             </summary>
         </member>
         <member name="F:JT905.Protocol.JT905Constants.JT905_0x8103_0x0001">
@@ -2389,6 +2977,86 @@
             跳过数据体序列化
             </summary>
         </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x0104">
+            <summary>
+            查询ISU参数应答
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0104.MsgId">
+            <summary>
+            0x0104
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0104.Description">
+            <summary>
+            查询终端参数应答
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0104.MsgNum">
+            <summary>
+            应答流水号
+            查询指定终端参数的流水号
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0104.ParamList">
+            <summary>
+            参数列表
+            </summary>
+        </member>
+        <member name="M:JT905.Protocol.MessageBody.JT905_0x0104.Deserialize(JT905.Protocol.MessagePack.JT905MessagePackReader@,JT905.Protocol.IJT905Config)">
+            <summary>
+            
+            </summary>
+            <param name="reader"></param>
+            <param name="config"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessageBody.JT905_0x0104.Serialize(JT905.Protocol.MessagePack.JT905MessagePackWriter@,JT905.Protocol.MessageBody.JT905_0x0104,JT905.Protocol.IJT905Config)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+            <param name="value"></param>
+            <param name="config"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessageBody.JT905_0x0104.Analyze(JT905.Protocol.MessagePack.JT905MessagePackReader@,System.Text.Json.Utf8JsonWriter,JT905.Protocol.IJT905Config)">
+            <summary>
+            
+            </summary>
+            <param name="reader"></param>
+            <param name="writer"></param>
+            <param name="config"></param>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x0105">
+            <summary>
+            ISU升级结果报告消息
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0105.DeviceType">
+            <summary>
+            设备类型
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0105.VendorID">
+            <summary>
+            厂商标识
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0105.HardwareVer">
+            <summary>
+            硬件版本号
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0105.SoftVer">
+            <summary>
+            软件版本号
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0105.UpStatus">
+            <summary>
+            升级结果
+            </summary>
+        </member>
         <member name="T:JT905.Protocol.MessageBody.JT905_0x0200">
             <summary>
             位置信息汇报
@@ -2407,13 +3075,13 @@
         <member name="P:JT905.Protocol.MessageBody.JT905_0x0200.AlarmFlag">
             <summary>
             报警标志 
-            <see cref="!:JT905.Protocol.Enums.JT905Alarm"/>
+            <see cref="T:JT905.Protocol.Enums.JT905Alarm"/>
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x0200.StatusFlag">
             <summary>
             状态位标志
-            <see cref="!:Enums.JT905Status"/>
+            <see cref="T:JT905.Protocol.Enums.JT905Status"/>
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x0200.Lat">
@@ -2622,6 +3290,264 @@
             <param name="value"></param>
             <param name="config"></param>
         </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x0200_0x03">
+            <summary>
+            海拔高度，INT16，单位为米( m)
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0200_0x03.Altitude">
+            <summary>
+            海拔高度，INT16，单位为米( m)
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0200_0x03.AttachInfoId">
+            <summary>
+            JT905_0x0200_0x02
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0200_0x03.AttachInfoLength">
+            <summary>
+            2 byte
+            </summary>
+        </member>
+        <member name="M:JT905.Protocol.MessageBody.JT905_0x0200_0x03.Analyze(JT905.Protocol.MessagePack.JT905MessagePackReader@,System.Text.Json.Utf8JsonWriter,JT905.Protocol.IJT905Config)">
+            <summary>
+            
+            </summary>
+            <param name="reader"></param>
+            <param name="writer"></param>
+            <param name="config"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessageBody.JT905_0x0200_0x03.Deserialize(JT905.Protocol.MessagePack.JT905MessagePackReader@,JT905.Protocol.IJT905Config)">
+            <summary>
+            
+            </summary>
+            <param name="reader"></param>
+            <param name="config"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessageBody.JT905_0x0200_0x03.Serialize(JT905.Protocol.MessagePack.JT905MessagePackWriter@,JT905.Protocol.MessageBody.JT905_0x0200_0x03,JT905.Protocol.IJT905Config)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+            <param name="value"></param>
+            <param name="config"></param>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x0200_0x11">
+            <summary>
+            超速报警附加信息
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0200_0x11.JT905PositionType">
+            <summary>
+            超速报警附加信息
+            0：无特定位置；
+            1：圆形区域；
+            2：矩形区域；
+            3：多边形区域；
+            4：路段
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0200_0x11.AreaId">
+            <summary>
+            区域或路段 ID
+            若位置类型为 0，无该字段
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0200_0x11.AttachInfoId">
+            <summary>
+            JT905_0x0200_0x11
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0200_0x11.AttachInfoLength">
+            <summary>
+            1或5 byte
+            </summary>
+        </member>
+        <member name="M:JT905.Protocol.MessageBody.JT905_0x0200_0x11.Analyze(JT905.Protocol.MessagePack.JT905MessagePackReader@,System.Text.Json.Utf8JsonWriter,JT905.Protocol.IJT905Config)">
+            <summary>
+            
+            </summary>
+            <param name="reader"></param>
+            <param name="writer"></param>
+            <param name="config"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessageBody.JT905_0x0200_0x11.Deserialize(JT905.Protocol.MessagePack.JT905MessagePackReader@,JT905.Protocol.IJT905Config)">
+            <summary>
+            
+            </summary>
+            <param name="reader"></param>
+            <param name="config"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessageBody.JT905_0x0200_0x11.Serialize(JT905.Protocol.MessagePack.JT905MessagePackWriter@,JT905.Protocol.MessageBody.JT905_0x0200_0x11,JT905.Protocol.IJT905Config)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+            <param name="value"></param>
+            <param name="config"></param>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x0200_0x12">
+            <summary>
+            进出区域/路线报警附加信息
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0200_0x12.JT905PositionType">
+            <summary>
+            位置类型
+            1：圆形区域；
+            2：矩形区域；
+            3：多边形区域；
+            4：路段
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0200_0x12.AreaId">
+            <summary>
+            区域或路段 ID
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0200_0x12.Direction">
+            <summary>
+            方向 
+            0：进
+            1：出
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0200_0x12.AttachInfoId">
+            <summary>
+            JT905_0x0200_0x12
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0200_0x12.AttachInfoLength">
+            <summary>
+            6 byte
+            </summary>
+        </member>
+        <member name="M:JT905.Protocol.MessageBody.JT905_0x0200_0x12.Analyze(JT905.Protocol.MessagePack.JT905MessagePackReader@,System.Text.Json.Utf8JsonWriter,JT905.Protocol.IJT905Config)">
+            <summary>
+            
+            </summary>
+            <param name="reader"></param>
+            <param name="writer"></param>
+            <param name="config"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessageBody.JT905_0x0200_0x12.Deserialize(JT905.Protocol.MessagePack.JT905MessagePackReader@,JT905.Protocol.IJT905Config)">
+            <summary>
+            
+            </summary>
+            <param name="reader"></param>
+            <param name="config"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessageBody.JT905_0x0200_0x12.Serialize(JT905.Protocol.MessagePack.JT905MessagePackWriter@,JT905.Protocol.MessageBody.JT905_0x0200_0x12,JT905.Protocol.IJT905Config)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+            <param name="value"></param>
+            <param name="config"></param>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x0200_0x13">
+            <summary>
+            路段行驶时间不足/过长报警附加信息
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0200_0x13.AttachInfoId">
+            <summary>
+            JT905_0x0200_0x13
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0200_0x13.AttachInfoLength">
+            <summary>
+            7 byte
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0200_0x13.DrivenRouteId">
+            <summary>
+            路段 ID
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0200_0x13.Time">
+            <summary>
+            路段行驶时间
+            单位为秒（s)
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0200_0x13.DrivenRoute">
+            <summary>
+             结果 0：不足；1：过长
+            </summary>
+        </member>
+        <member name="M:JT905.Protocol.MessageBody.JT905_0x0200_0x13.Analyze(JT905.Protocol.MessagePack.JT905MessagePackReader@,System.Text.Json.Utf8JsonWriter,JT905.Protocol.IJT905Config)">
+            <summary>
+            
+            </summary>
+            <param name="reader"></param>
+            <param name="writer"></param>
+            <param name="config"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessageBody.JT905_0x0200_0x13.Deserialize(JT905.Protocol.MessagePack.JT905MessagePackReader@,JT905.Protocol.IJT905Config)">
+            <summary>
+            
+            </summary>
+            <param name="reader"></param>
+            <param name="config"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessageBody.JT905_0x0200_0x13.Serialize(JT905.Protocol.MessagePack.JT905MessagePackWriter@,JT905.Protocol.MessageBody.JT905_0x0200_0x13,JT905.Protocol.IJT905Config)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+            <param name="value"></param>
+            <param name="config"></param>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x0200_0x14">
+            <summary>
+            禁行路段行驶报警附加信息
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0200_0x14.AttachInfoId">
+            <summary>
+            JT905_0x0200_0x14
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0200_0x14.AttachInfoLength">
+            <summary>
+            4 byte
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0200_0x14.DrivenRouteId">
+            <summary>
+            路段 ID
+            </summary>
+        </member>
+        <member name="M:JT905.Protocol.MessageBody.JT905_0x0200_0x14.Analyze(JT905.Protocol.MessagePack.JT905MessagePackReader@,System.Text.Json.Utf8JsonWriter,JT905.Protocol.IJT905Config)">
+            <summary>
+            
+            </summary>
+            <param name="reader"></param>
+            <param name="writer"></param>
+            <param name="config"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessageBody.JT905_0x0200_0x14.Deserialize(JT905.Protocol.MessagePack.JT905MessagePackReader@,JT905.Protocol.IJT905Config)">
+            <summary>
+            
+            </summary>
+            <param name="reader"></param>
+            <param name="config"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessageBody.JT905_0x0200_0x14.Serialize(JT905.Protocol.MessagePack.JT905MessagePackWriter@,JT905.Protocol.MessageBody.JT905_0x0200_0x14,JT905.Protocol.IJT905Config)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+            <param name="value"></param>
+            <param name="config"></param>
+        </member>
         <member name="T:JT905.Protocol.MessageBody.JT905_0x0200_BodyBase">
             <summary>
             位置附加信息
@@ -2701,6 +3627,152 @@
             四个字节
             </summary>
         </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x0201">
+            <summary>
+            位置信息查询应答
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0201.ReplyMsgNum">
+            <summary>
+            应答流水号汇报
+            对应的位置查询消息的流水号
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0201.Position">
+            <summary>
+            位置信息汇报(0x0200) 消息体
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x0202">
+            <summary>
+            位置跟踪信息汇报
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0202.Position">
+            <summary>
+            位置信息汇报(0x0200) 消息体
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x0203">
+            <summary>
+            位置汇报数据补传
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0203.Positions">
+            <summary>
+            位置信息汇报(0x0200) 消息体
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x0301">
+            <summary>
+            事件报告
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0301.EventId">
+            <summary>
+            事件ID
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x0302">
+            <summary>
+            提问应答
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0302.IssueId">
+            <summary>
+            问题ID
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0302.AnswerId">
+            <summary>
+            答案ID
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x0500">
+            <summary>
+            车辆控制应答
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0500.MsgNum">
+            <summary>
+            应答流水号
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0500.Position">
+            <summary>
+            位置信息汇报
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x0800">
+            <summary>
+            摄像头图像上传
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0800.UploadReason">
+            <summary>
+            上传原因
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0800.Image">
+            <summary>
+            图像
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0800.ChannelId">
+            <summary>
+            摄像头ID
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0800.ImageDataSize">
+            <summary>
+            位置图像数据大小
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0800.InitialAddress">
+            <summary>
+            起始地址
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0800.PositionImagePacket">
+            <summary>
+            位置图像数据包
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x0802">
+            <summary>
+            存储图像检索应答
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0802.MsgNum">
+            <summary>
+            应答流水号
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0802.RetrievesTotal">
+            <summary>
+            检索总项数据包大小
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0802.CurrentRetrievesOffset">
+            <summary>
+            当前检索项在总项 数据中的偏移量
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0802.RetrievalItem">
+            <summary>
+            检索项
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x0B01">
+            <summary>
+            驾驶员抢答
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B01.BusinessId">
+            <summary>
+            业务ID 对应订单业务下发(0x8B00) 消息中的业务 ID
+            </summary>
+        </member>
         <member name="T:JT905.Protocol.MessageBody.JT905_0x0B03">
             <summary>
             上班签到信息
@@ -2765,6 +3837,256 @@
             <param name="config"></param>
             <returns></returns>
         </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x0B04">
+            <summary>
+            下班签退信息上传
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B04.Position">
+            <summary>
+            位置基本信息
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B04.BusinessLicenseNumber">
+            <summary>
+            企业经营许可证号
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B04.QualificationCode">
+            <summary>
+            驾驶员从业资格证号
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B04.PlateNo">
+            <summary>
+            车牌号
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B04.TaximeterKValue">
+            <summary>
+            计价器 K 值
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B04.OnDutyPowerOnTime">
+            <summary>
+            当班开机时间
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B04.OnDutyPowerOffTime">
+            <summary>
+            当班关机时间
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B04.OnDutyMileage">
+            <summary>
+            当班里程
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B04.OnDutyOperationMileage">
+            <summary>
+            当班运营里程
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B04.TrainNumber">
+            <summary>
+            车次
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B04.TimingTime">
+            <summary>
+            计时时间
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B04.TotalAmount">
+            <summary>
+            总计金额
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B04.CardAmount">
+            <summary>
+            卡收金额
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B04.CardCount">
+            <summary>
+            卡次
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B04.OnDutyMileageBetween">
+            <summary>
+            班间里程
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B04.TotalMileage">
+            <summary>
+            总计里程
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B04.TotalOperationMileage">
+            <summary>
+            总运营里程
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B04.UnitPrice">
+            <summary>
+            单价
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B04.TotalOperations">
+            <summary>
+            总运营次数
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B04.SignType">
+            <summary>
+            签退方式
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B04.ExtraAttributes">
+            <summary>
+            扩展属性
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x0B05">
+            <summary>
+            运营数据上传
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B05.LdlingHeavyPosition">
+            <summary>
+            空转重时车辆位置信息
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B05.HeavyLdlingPosition">
+            <summary>
+            重转空时车辆位置信息
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B05.OperationId">
+            <summary>
+            营运ID
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B05.EvaluateId">
+            <summary>
+            评价ID
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B05.EvaluateOptions">
+            <summary>
+            评价选项
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B05.ExtEvaluateOptions">
+            <summary>
+            评价选项扩展
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B05.CallingId">
+            <summary>
+            电召订单ID
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B05.TaximeterData">
+            <summary>
+            计价营运数据
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x0B07">
+            <summary>
+            驾驶员电召任务完成确认
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B07.BusinessId">
+            <summary>
+            业务ID 对应订单业务下发(0x8B00) 消息中的业务ID
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x0B08">
+            <summary>
+            驾驶员取消订单
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B08.BusinessId">
+            <summary>
+            业务ID 对应订单业务下发(0x8B00) 消息中的业务ID
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B08.CancellationReasons">
+            <summary>
+            取消原因
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x0B10">
+            <summary>
+            外围设备指令上行透传
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B10.TypeID">
+            <summary>
+            设备类型代码
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B10.VendorID">
+            <summary>
+            厂商标识
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B10.CommandType">
+            <summary>
+            命令类型
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B10.DataPacket">
+            <summary>
+            数据包
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x0B11">
+            <summary>
+            设备巡检应答
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.TLV">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.TLV.DeviceType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.TLV.Length">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.TLV.SerialNumber">
+            <summary>
+            设备序列号
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.TLV.HardwareVer">
+            <summary>
+            硬件版本号
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.TLV.SoftVer">
+            <summary>
+            软件版本号
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.TLV.ISUStatus">
+            <summary>
+            ISU设备状态
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.TLV.ISUAlarm">
+            <summary>
+            ISU报警标志
+            </summary>
+        </member>
         <member name="T:JT905.Protocol.MessageBody.JT905_0x8001">
             <summary>
             中心通用应答
@@ -2828,14 +4150,9 @@
             设置终端参数
             </summary>
         </member>
-        <member name="P:JT905.Protocol.MessageBody.JT905_0x8103.ParamCount">
-            <summary>
-            参数总数
-            </summary>
-        </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103.ParamList">
             <summary>
-            参数列表
+            参数项列表
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103.CustomParamList">
@@ -2875,15 +4192,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0001.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            ISU心跳发送间隔，单位为秒(s)
              0x0001
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0001.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0001.ParamValue">
@@ -2920,15 +4236,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0002.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            TCP消息应答超时时间，单位为秒(s)
              0x0002
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0002.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0002.ParamValue">
@@ -2965,15 +4280,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0003.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            TCP消息重传次数
              0x0003
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0003.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0003.ParamValue">
@@ -3010,15 +4324,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0004.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            SMS消息应答超时时间，单位为秒(s)
              0x0004
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0004.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0004.ParamValue">
@@ -3055,15 +4368,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0005.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            SMS消息重传次数
              0x0005
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0005.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0005.ParamValue">
@@ -3100,15 +4412,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0010.ParamId">
              <summary>
-            AnsiString
-            System.String
+             参数ID
+            主服务器APN，无线通信拨号访问点
              0x0010
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0010.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0010.ParamValue">
@@ -3145,15 +4456,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0011.ParamId">
              <summary>
-            AnsiString
-            System.String
+             参数ID
+            主服务器无线通信拨号用户名
              0x0011
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0011.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0011.ParamValue">
@@ -3190,15 +4500,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0012.ParamId">
              <summary>
-            AnsiString
-            System.String
+             参数ID
+            主服务器无线通信拨号密码
              0x0012
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0012.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0012.ParamValue">
@@ -3235,15 +4544,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0013.ParamId">
              <summary>
-            AnsiString
-            System.String
+             参数ID
+            主服务器地址，IP或域名
              0x0013
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0013.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0013.ParamValue">
@@ -3280,15 +4588,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0014.ParamId">
              <summary>
-            AnsiString
-            System.String
+             参数ID
+            备份服务器APN，无线通信拨号访问点
              0x0014
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0014.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0014.ParamValue">
@@ -3325,15 +4632,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0015.ParamId">
              <summary>
-            AnsiString
-            System.String
+             参数ID
+            备份服务器无线通信拨号用户名
              0x0015
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0015.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0015.ParamValue">
@@ -3370,15 +4676,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0016.ParamId">
              <summary>
-            AnsiString
-            System.String
+             参数ID
+            备份服务器无线通信拨号密码
              0x0016
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0016.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0016.ParamValue">
@@ -3415,15 +4720,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0017.ParamId">
              <summary>
-            AnsiString
-            System.String
+             参数ID
+            备份服务器地址，IP或域名
              0x0017
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0017.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0017.ParamValue">
@@ -3460,15 +4764,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0018.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            主服务器TCP端口
              0x0018
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0018.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0018.ParamValue">
@@ -3505,15 +4808,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0019.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            备份服务器TCP端口
              0x0019
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0019.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0019.ParamValue">
@@ -3550,15 +4852,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x001A.ParamId">
              <summary>
-            AnsiString
-            System.String
+             参数ID
+            一卡通或支付平台主服务器地址，IP或域名
              0x001A
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x001A.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x001A.ParamValue">
@@ -3595,15 +4896,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x001B.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            一卡通或支付平台主服务器TCP端口
              0x001B
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x001B.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x001B.ParamValue">
@@ -3640,15 +4940,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x001C.ParamId">
              <summary>
-            AnsiString
-            System.String
+             参数ID
+            一卡通或支付平台备份服务器地址，IP或域名
              0x001C
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x001C.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x001C.ParamValue">
@@ -3685,15 +4984,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x001D.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            一卡通或支付平台备份服务器TCP端口
              0x001D
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x001D.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x001D.ParamValue">
@@ -3730,15 +5028,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0020.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            位置汇报策略，0：定时汇报；1：定距汇报；2：定时+定距汇报
              0x0020
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0020.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0020.ParamValue">
@@ -3775,15 +5072,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0021.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            位置汇报方案，0：根据ACC状态；1：根据空重车状态；2：根据登录状态+ACC状态，先判断登录状态，若登录再根据ACC状态；3：根据登录状态+空重车状态，先判断登录状态，若登录再根据空重车状态
              0x0021
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0021.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0021.ParamValue">
@@ -3820,15 +5116,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0022.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            未登录汇报时间间隔，单位为秒(s)
              0x0022
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0022.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0022.ParamValue">
@@ -3865,15 +5160,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0023.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            ACCOFF汇报时间间隔，单位为秒(s)
              0x0023
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0023.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0023.ParamValue">
@@ -3910,15 +5204,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0024.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            ACCON汇报时间间隔，单位为秒(s)
              0x0024
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0024.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0024.ParamValue">
@@ -3955,15 +5248,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0025.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            空车汇报时间间隔，单位为秒(s)
              0x0025
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0025.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0025.ParamValue">
@@ -4000,15 +5292,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0026.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            重车汇报时间间隔，单位为秒(s)
              0x0026
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0026.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0026.ParamValue">
@@ -4045,15 +5336,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0027.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            休眠时汇报时间间隔，单位为秒(s)
              0x0027
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0027.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0027.ParamValue">
@@ -4090,15 +5380,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0028.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            紧急报警时汇报时间间隔，单位为秒(s)
              0x0028
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0028.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0028.ParamValue">
@@ -4135,15 +5424,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0029.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            未登录汇报距离间隔，单位为米(m)
              0x0029
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0029.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0029.ParamValue">
@@ -4180,15 +5468,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x002A.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            ACCOFF汇报距离间隔，单位为米(m)
              0x002A
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x002A.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x002A.ParamValue">
@@ -4225,15 +5512,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x002B.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            ACCON汇报距离间隔，单位为米(m)
              0x002B
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x002B.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x002B.ParamValue">
@@ -4270,15 +5556,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x002C.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            空车汇报距离间隔，单位为米(m)
              0x002C
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x002C.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x002C.ParamValue">
@@ -4315,15 +5600,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x002D.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            重车汇报距离间隔，单位为米(m)
              0x002D
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x002D.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x002D.ParamValue">
@@ -4360,15 +5644,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x002E.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            休眠时汇报距离间隔，单位为米(m)
              0x002E
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x002E.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x002E.ParamValue">
@@ -4405,15 +5688,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x002F.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            紧急报警时汇报距离间隔，单位为米(m)
              0x002F
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x002F.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x002F.ParamValue">
@@ -4450,15 +5732,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0030.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            拐点补传角度，﹤180°
              0x0030
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0030.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0030.ParamValue">
@@ -4495,15 +5776,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0040.ParamId">
              <summary>
-            AnsiString
-            System.String
+             参数ID
+            监控指挥中心电话号码
              0x0040
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0040.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0040.ParamValue">
@@ -4540,15 +5820,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0041.ParamId">
              <summary>
-            AnsiString
-            System.String
+             参数ID
+            复位电话号码
              0x0041
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0041.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0041.ParamValue">
@@ -4585,15 +5864,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0042.ParamId">
              <summary>
-            AnsiString
-            System.String
+             参数ID
+            恢复出厂设置电话号码
              0x0042
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0042.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0042.ParamValue">
@@ -4630,15 +5908,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0043.ParamId">
              <summary>
-            AnsiString
-            System.String
+             参数ID
+            监控指挥中心SMS电话号码
              0x0043
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0043.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0043.ParamValue">
@@ -4675,15 +5952,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0044.ParamId">
              <summary>
-            AnsiString
-            System.String
+             参数ID
+            接收ISUSMS文本报警号码
              0x0044
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0044.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0044.ParamValue">
@@ -4720,15 +5996,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0045.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            ISU电话接听策略，0：自动接听；1：ACCON时自动接听，OFF时手动接听
              0x0045
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0045.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0045.ParamValue">
@@ -4765,15 +6040,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0046.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            每次最长通话时间，单位为秒(s)
              0x0046
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0046.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0046.ParamValue">
@@ -4810,15 +6084,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0047.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            当月最长通话时间，单位为秒(s)
              0x0047
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0047.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0047.ParamValue">
@@ -4855,15 +6128,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0048.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            电话短号长度
              0x0048
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0048.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0048.ParamValue">
@@ -4900,15 +6172,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0049.ParamId">
              <summary>
-            AnsiString
-            System.String
+             参数ID
+            监听电话号码
              0x0049
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0049.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0049.ParamValue">
@@ -4945,15 +6216,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x004A.ParamId">
              <summary>
-            AnsiString
-            System.String
+             参数ID
+            ISU设备维护密码
              0x004A
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x004A.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x004A.ParamValue">
@@ -4990,15 +6260,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x004B.ParamId">
              <summary>
-            Byte
-            System.Byte
+             参数ID
+            ISU的语音播报音量控制：0～9(0为静音，9为最高)
              0x004B
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x004B.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x004B.ParamValue">
@@ -5035,15 +6304,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0050.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            报警屏蔽字，与位置信息汇报消息中的报警标志相对应，相应位为1，则相应报警被屏蔽
              0x0050
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0050.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0050.ParamValue">
@@ -5080,15 +6348,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0051.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            报警发送文本SMS开关，与位置信息汇报消息中的报警标志相对应，相应位为1，则相应报警时发送文本SMS
              0x0051
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0051.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0051.ParamValue">
@@ -5125,15 +6392,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0052.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            报警拍摄开关，与位置信息汇报消息中的报警标志相对应，相应位为1，则相应报警时摄像头拍摄
              0x0052
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0052.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0052.ParamValue">
@@ -5170,15 +6436,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0053.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            报警拍摄存储标志，与位置信息汇报消息中的报警标志相对应，相应位为1，则对相应报警时拍的照片进行存储，否则实时上传
              0x0053
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0053.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0053.ParamValue">
@@ -5215,15 +6480,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0055.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            最高速度，单位为千米每小时(km/h)
              0x0055
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0055.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0055.ParamValue">
@@ -5260,15 +6524,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0056.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            超速持续时间，单位为秒(s)
              0x0056
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0056.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0056.ParamValue">
@@ -5305,15 +6568,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0057.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            连续驾驶时间门限，单位为秒(s)
              0x0057
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0057.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0057.ParamValue">
@@ -5350,15 +6612,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0058.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            最小休息时间，单位为秒(s)
              0x0058
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0058.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0058.ParamValue">
@@ -5395,15 +6656,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0059.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            最长停车时间，单位为秒(s)
              0x0059
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0059.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0059.ParamValue">
@@ -5440,15 +6700,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x005A.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            当天累计驾驶时间门限，单位为秒(s)
              0x005A
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x005A.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x005A.ParamValue">
@@ -5485,15 +6744,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0070.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            图像/视频质量，1～10，1最好
              0x0070
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0070.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0070.ParamValue">
@@ -5530,15 +6788,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0071.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            亮度，0～255
              0x0071
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0071.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0071.ParamValue">
@@ -5575,15 +6832,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0072.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            对比度，0～127
              0x0072
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0072.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0072.ParamValue">
@@ -5620,15 +6876,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0073.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            饱和度，0～127
              0x0073
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0073.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0073.ParamValue">
@@ -5665,15 +6920,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0074.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            色度，0～255
              0x0074
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0074.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0074.ParamValue">
@@ -5710,15 +6964,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0080.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            车辆里程表读数，0.1km
              0x0080
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0080.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0080.ParamValue">
@@ -5755,15 +7008,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0081.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            车辆所在的省域ID，1～255
              0x0081
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0081.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0081.ParamValue">
@@ -5800,15 +7052,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0082.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            车辆所在的市域ID，1～255
              0x0082
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0082.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0082.ParamValue">
@@ -5845,15 +7096,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0090.ParamId">
              <summary>
-            Binary
-            System.Byte[]
+             参数ID
+            计价器营运次数限制，0～9999；0表示不做限制
              0x0090
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0090.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0090.ParamValue">
@@ -5890,15 +7140,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0091.ParamId">
              <summary>
-            Binary
-            System.Byte[]
+             参数ID
+            计价器营运时间限制，YYYYMMDDhh，0000000000表示不做限制
              0x0091
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0091.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0091.ParamValue">
@@ -5935,15 +7184,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0092.ParamId">
              <summary>
-            AnsiString
-            System.String
+             参数ID
+            出租车企业营运许可证号
              0x0092
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0092.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0092.ParamValue">
@@ -5980,15 +7228,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0093.ParamId">
              <summary>
-            AnsiString
-            System.String
+             参数ID
+            出租车企业简称
              0x0093
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0093.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0093.ParamValue">
@@ -6025,15 +7272,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0094.ParamId">
              <summary>
-            Binary
-            System.Byte[]
+             参数ID
+            出租车车牌号码(不包括汉字)
              0x0094
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0094.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0094.ParamValue">
@@ -6070,15 +7316,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x00A0.ParamId">
              <summary>
-            Byte
-            System.Byte
+             参数ID
+            ISU录音模式(0x01：全程录音；0x02：翻牌录音)
              0x00A0
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x00A0.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x00A0.ParamValue">
@@ -6115,15 +7360,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x00A1.ParamId">
              <summary>
-            Byte
-            System.Byte
+             参数ID
+            ISU录音文件最大时长，1～255，单位为分钟(min)
              0x00A1
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x00A1.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x00A1.ParamValue">
@@ -6160,15 +7404,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x00A2.ParamId">
              <summary>
-            Byte
-            System.Byte
+             参数ID
+            液晶(LCD)心跳时间间隔，1～60，单位为秒(s)
              0x00A2
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x00A2.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x00A2.ParamValue">
@@ -6205,15 +7448,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x00A3.ParamId">
              <summary>
-            Byte
-            System.Byte
+             参数ID
+            LED心跳时间间隔，单位为秒(s)
              0x00A3
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x00A3.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x00A3.ParamValue">
@@ -6250,15 +7492,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x00AF.ParamId">
              <summary>
-            Int16
-            System.Int16
+             参数ID
+            ACCOFF后进入休眠模式的时间，单位为秒(s)
              0x00AF
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x00AF.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x00AF.ParamValue">
@@ -6295,15 +7536,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x00B0.ParamId">
              <summary>
-            Byte
-            System.Byte
+             参数ID
+            视频服务器协议模式，0x00：TCP；0x01：UDP
              0x00B0
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x00B0.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x00B0.ParamValue">
@@ -6340,15 +7580,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x00B1.ParamId">
              <summary>
-            AnsiString
-            System.String
+             参数ID
+            视频服务器APN，无线通信拨号访问点
              0x00B1
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x00B1.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x00B1.ParamValue">
@@ -6385,15 +7624,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x00B2.ParamId">
              <summary>
-            AnsiString
-            System.String
+             参数ID
+            视频服务器无线通信拨号用户名
              0x00B2
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x00B2.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x00B2.ParamValue">
@@ -6430,15 +7668,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x00B3.ParamId">
              <summary>
-            AnsiString
-            System.String
+             参数ID
+            视频服务器无线通信拨号密码
              0x00B3
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x00B3.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x00B3.ParamValue">
@@ -6475,15 +7712,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x00B4.ParamId">
              <summary>
-            AnsiString
-            System.String
+             参数ID
+            视频服务器地址，IP或域名
              0x00B4
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x00B4.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x00B4.ParamValue">
@@ -6520,15 +7756,14 @@
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x00B5.ParamId">
              <summary>
-            Int32
-            System.Int32
+             参数ID
+            视频服务器端口
              0x00B5
              </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x00B5.ParamLength">
             <summary>
             数据长度
-            4 byte
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x00B5.ParamValue">
@@ -6572,6 +7807,11 @@
             参数长度
             </summary>
         </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_BodyBase.Description">
+            <summary>
+            消息描述
+            </summary>
+        </member>
         <member name="T:JT905.Protocol.MessageBody.JT905_0x8103_CustomBodyBase">
             <summary>
             自定义终端参数设置
@@ -6585,6 +7825,704 @@
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_CustomBodyBase.ParamLength">
             <summary>
             参数长度
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_CustomBodyBase.Description">
+            <summary>
+            消息描述
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x8104">
+            <summary>
+            查询ISU参数
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8104.ParamIds">
+            <summary>
+            参数 ID
+            一次可以查询多个参数
+            </summary>
+        </member>
+        <member name="M:JT905.Protocol.MessageBody.JT905_0x8104.Analyze(JT905.Protocol.MessagePack.JT905MessagePackReader@,System.Text.Json.Utf8JsonWriter,JT905.Protocol.IJT905Config)">
+            <summary>
+            0x8104解析
+            查询ISU参数
+            </summary>
+            <param name="reader"></param>
+            <param name="writer"></param>
+            <param name="config"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessageBody.JT905_0x8104.Deserialize(JT905.Protocol.MessagePack.JT905MessagePackReader@,JT905.Protocol.IJT905Config)">
+            <summary>
+            0x8104反序列化
+            查询ISU参数
+            </summary>
+            <param name="reader"></param>
+            <param name="config"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessageBody.JT905_0x8104.Serialize(JT905.Protocol.MessagePack.JT905MessagePackWriter@,JT905.Protocol.MessageBody.JT905_0x8104,JT905.Protocol.IJT905Config)">
+            <summary>
+            0x8104序列化
+            查询ISU参数
+            </summary>
+            <param name="writer"></param>
+            <param name="value"></param>
+            <param name="config"></param>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x8105">
+            <summary>
+            ISU控制
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8105.CommandWord">
+            <summary>
+            命令字
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.ICommandParameter">
+            <summary>
+            命令参数接口
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.ICommandParameter.Order">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.ICommandParameter.CommandName">
+            <summary>
+            命令名称
+            </summary>
+        </member>
+        <member name="M:JT905.Protocol.MessageBody.ICommandParameterConvert.ToBytes">
+            <summary>
+            转为byte数组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessageBody.ICommandParameterConvert.ToValue(System.Byte[])">
+            <summary>
+            将byte数组转为命令值
+            </summary>
+            <param name="bytes"></param>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.ICommandParameterValue`1.Value">
+            <summary>
+            对应参数值
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.CommandParameter_0x01">
+            <summary>
+            设备类型
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.CommandParameter_0x01.Order">
+            <summary>
+            序号
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.CommandParameter_0x01.Value">
+            <summary>
+            0x00	ISU
+            0x01	通信模块
+            0x02	计价器
+            0x03	出租汽车安全模块
+            0x04	LED 显示屏
+            0x05	智能顶灯
+            0x06	服务评价器(后排)
+            0x07	摄像装置
+            0x08	卫星定位设备
+            0x09	液晶(LCD) 多媒体屏
+            0x10	ISU 人机交互设备
+            0x11	服务评价器(前排)
+            其他 RFU
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.CommandParameter_0x03">
+            <summary>
+            硬件版本号
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.CommandParameter_0x04">
+            <summary>
+            软件版本号
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.CommandParameter_0x05">
+            <summary>
+            APN
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.CommandParameter_0x06">
+            <summary>
+            拨号用户名
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.CommandParameter_0x07">
+            <summary>
+            拨号密码
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.CommandParameter_0x08">
+            <summary>
+            升级服务器地址
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.CommandParameter_0x09">
+            <summary>
+            升级服务器端口
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x8201">
+            <summary>
+            位置信息查询
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8201.MsgId">
+            <summary>
+            0x8201
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8201.SkipSerialization">
+            <summary>
+            跳过数据体序列化
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8201.Description">
+            <summary>
+            位置信息查询
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x8202">
+            <summary>
+            位置跟踪控制
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8202.MsgId">
+            <summary>
+            0x8201
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8202.Description">
+            <summary>
+            位置跟踪控制
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8202.ControlType">
+            <summary>
+            属性
+            对后面两个字段进行标示： 
+            0x00：按时间间隔、持续时间
+            0x11：按距离间隔、持续距离
+            0x01：按时间间隔、持续距离
+            0x10：按距离间隔、持续时间
+            0xFF：停止当前跟踪(ISU 忽略后面字段)
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8202.Interval">
+            <summary>
+            时间间隔或距离间隔
+            时间单位为秒( s)，距离单位为米( m)
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8202.DurationOrDistance">
+            <summary>
+            持续时间或持续距离
+            时间单位为秒( s)，距离单位为米( m)
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x8300">
+            <summary>
+            文本信息下发
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8300.MsgId">
+            <summary>
+            0x8300
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8300.Description">
+            <summary>
+            文本信息下发
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8300.TextFlag">
+            <summary>
+            文本信息标志位含义见表 28
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8300.TextInfo">
+            <summary>
+            文本信息
+            最长为 499byte
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x8301">
+            <summary>
+            事件设置
+            0x8301
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8301.MsgId">
+            <summary>
+            0x8301
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8301.Description">
+            <summary>
+            事件设置
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8301.EventCount">
+            <summary>
+            事件项个数
+            0：删除 ISU 现有所有事件
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8301.EventItems">
+            <summary>
+            事件项列表
+            长度不大于 499byte， 否则分多条消息下发；
+            事件项组成数据格式见表 30
+            </summary>
+        </member>
+        <member name="M:JT905.Protocol.MessageBody.JT905_0x8301.Deserialize(JT905.Protocol.MessagePack.JT905MessagePackReader@,JT905.Protocol.IJT905Config)">
+            <summary>
+            
+            </summary>
+            <param name="reader"></param>
+            <param name="config"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessageBody.JT905_0x8301.Serialize(JT905.Protocol.MessagePack.JT905MessagePackWriter@,JT905.Protocol.MessageBody.JT905_0x8301,JT905.Protocol.IJT905Config)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+            <param name="value"></param>
+            <param name="config"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessageBody.JT905_0x8301.Analyze(JT905.Protocol.MessagePack.JT905MessagePackReader@,System.Text.Json.Utf8JsonWriter,JT905.Protocol.IJT905Config)">
+            <summary>
+            
+            </summary>
+            <param name="reader"></param>
+            <param name="writer"></param>
+            <param name="config"></param>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905EventProperty">
+            <summary>
+            事件项
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905EventProperty.EventId">
+            <summary>
+            事件ID
+            若 ISU 已有同 ID 的事件，则被覆盖
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905EventProperty.EventContent">
+            <summary>
+            事件内容
+            最长为 20byte
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x8302">
+            <summary>
+            提问下发
+            0x8302
+            2019版本已作删除
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8302.MsgId">
+            <summary>
+            0x8302
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8302.Description">
+            <summary>
+            提问下发
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8302.Flag">
+            <summary>
+            标志
+            提问下发标志位定义
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8302.IssueId">
+            <summary>
+            问题ID
+            提问下发标志位定义见表 33
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8302.Issue">
+            <summary>
+            问题
+            最长 100byte
+            问题文本，经 GBK 编码，长度为 N
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8302.Answers">
+            <summary>
+            候选答案列表 
+            需保证消息体长度不大于 500byte，候选答案 组成见表 34
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x8302.Answer">
+            <summary>
+            候选答案信息
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8302.Answer.Id">
+            <summary>
+            答案 ID
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8302.Answer.Content">
+            <summary>
+            答案内容 
+            答案内容，经 GBK 编码
+            </summary>
+        </member>
+        <member name="M:JT905.Protocol.MessageBody.JT905_0x8302.Deserialize(JT905.Protocol.MessagePack.JT905MessagePackReader@,JT905.Protocol.IJT905Config)">
+            <summary>
+            
+            </summary>
+            <param name="reader"></param>
+            <param name="config"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessageBody.JT905_0x8302.Serialize(JT905.Protocol.MessagePack.JT905MessagePackWriter@,JT905.Protocol.MessageBody.JT905_0x8302,JT905.Protocol.IJT905Config)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+            <param name="value"></param>
+            <param name="config"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessageBody.JT905_0x8302.Analyze(JT905.Protocol.MessagePack.JT905MessagePackReader@,System.Text.Json.Utf8JsonWriter,JT905.Protocol.IJT905Config)">
+            <summary>
+            
+            </summary>
+            <param name="reader"></param>
+            <param name="writer"></param>
+            <param name="config"></param>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x8400">
+            <summary>
+            电话回拨
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8400.Flag">
+            <summary>
+            标志 0：普通通话；1：监听
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8400.PhoneNumber">
+            <summary>
+            电话号码 最长为 20byte
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x8401">
+            <summary>
+            设置电话本
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8401.ContactCount">
+            <summary>
+            联系人总数
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8401.Contacts">
+            <summary>
+            联系人项
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905ContactProperty">
+            <summary>
+            电话本联系人项数据
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905ContactProperty.TelephoneBookContactType">
+            <summary>
+            标志 1：呼入；2：呼出；3：呼入/呼出
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905ContactProperty.PhoneNumber">
+            <summary>
+            电话号码
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905ContactProperty.Contact">
+            <summary>
+            联系人 经 GBK 编码
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x8500">
+            <summary>
+            车辆控制
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8500.ControlItem">
+            <summary>
+            控制项
+            0:油路
+            1:电路
+            2:车门
+            3:车辆
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8500.ControlCommand">
+            <summary>
+            控制命令
+            油路 :0:恢复车辆油路,1:断开车辆油路
+            电路 :0:恢复车辆电路,1:断开车辆电路
+            车门 :0:车门解锁,1:车门加锁
+            车辆 :0:车辆解除锁定,1:车辆锁定
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x8801">
+            <summary>
+            摄像头立即拍摄命令
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8801.ChannelId">
+            <summary>
+            摄像头ID
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8801.ShootingCommand">
+            <summary>
+            拍摄命令 
+            0 表示停止拍摄；0xFFFF 表示录像；
+            其它表示拍照张数
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8801.VideoTime">
+            <summary>
+            拍照间隔/录像时间 
+            秒，0 表示按最小间隔拍照或一直录像
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8801.SaveFlag">
+            <summary>
+            保存标志 1：保存；0：实时上传
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8801.Resolution">
+            <summary>
+            分辨率
+            0：320 × 240；
+            1：640 × 480；
+            2：800 × 600； 
+            其他:保留
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8801.VideoQuality">
+            <summary>
+            图像/视频质量
+            1-10，1 代表质量损失最小，10 表示压缩比最大
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8801.Lighting">
+            <summary>
+            亮度
+            0-255
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8801.Contrast">
+            <summary>
+            对比度
+            0-127
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8801.Saturability">
+            <summary>
+            饱和度
+            0-127
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8801.Chroma">
+            <summary>
+            色度
+            0-127
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x8802">
+            <summary>
+            存储图像检索
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8802.ChannelId">
+            <summary>
+            摄像头ID
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8802.PhotoReason">
+            <summary>
+            拍照原因
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8802.StartTime">
+            <summary>
+            起始时间
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8802.EndTime">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x8803">
+            <summary>
+            存储图像/音视频上传命令
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8803.MultimediaType">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8803.FileId">
+            <summary>
+            文件 ID
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8803.InitialPosition">
+            <summary>
+            起始位置 本包数据在整个位置图像数据中的偏移量， 第一包数据为 0
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x8B00">
+            <summary>
+            订单任务下发
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8B00.BusinessId">
+            <summary>
+            业务ID
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8B00.BusinessType">
+            <summary>
+            业务类型 0：即时召车；1：预约召车；2：车辆指派
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8B00.TaxiTime">
+            <summary>
+            要车时间
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8B00.BusinessDescription">
+            <summary>
+            对乘客要车大概地点的描述
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x8B01">
+            <summary>
+            下发抢答结果信息
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8B01.BusinessId">
+            <summary>
+            业务ID
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8B01.BusinessType">
+            <summary>
+            业务类型 0：即时召车；1：预约召车；2：车辆指派
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8B01.CallingTime">
+            <summary>
+            要车时间
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8B01.StartLongitude">
+            <summary>
+            乘客位置经度
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8B01.StartLatitude">
+            <summary>
+            乘客位置纬度
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8B01.DestinationLongitude">
+            <summary>
+            目的地位置经度
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8B01.DestinationLatitude">
+            <summary>
+            目的地位置经度
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8B01.CarServiceCharge">
+            <summary>
+            电召服务费
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8B01.PassengerPhone">
+            <summary>
+            乘客电话号码
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8B01.BusinessDescription">
+            <summary>
+            对乘客要车大概地点的描述
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x8B09">
+            <summary>
+            中心取消订单
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8B09.BusinessId">
+            <summary>
+            业务ID 对应订单业务下发(0x8B00) 消息中的业务ID
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x8B0A">
+            <summary>
+            中心确认报警
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x8B0B">
+            <summary>
+            中心解除报警
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x8B10">
+            <summary>
+            外围设备指令下行透传
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8B10.TypeID">
+            <summary>
+            设备类型代码
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8B10.DataType">
+            <summary>
+            数据类型
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8B10.DataPacket">
+            <summary>
+            数据包
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x8B11">
+            <summary>
+            中心巡检设备
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8B11.TypeID">
+            <summary>
+            巡检设备类型代码
             </summary>
         </member>
         <member name="T:JT905.Protocol.MessagePack.JT905MessagePackReader">
@@ -6880,6 +8818,25 @@
             <param name="trim"></param>
             <returns></returns>
         </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905MessagePackReader.ReadBCD(System.Int32,System.Char)">
+            <summary>
+            读取BCD编码，返回以输入分隔符格式化字符串
+            电召服务费：XXX-X
+            里程：XXXXX.X
+            </summary>
+            <param name="len">长度</param>
+            <param name="separator">分隔符</param>
+            <returns>XXXX-X</returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905MessagePackReader.ReadBCD(System.Int32,System.Int32,System.Char)">
+            <summary>
+            读取BCD编码
+            </summary>
+            <param name="len">长度</param>
+            <param name="v2">分隔符位置</param>
+            <param name="v3">分隔符</param>
+            <returns></returns>
+        </member>
         <member name="M:JT905.Protocol.MessagePack.JT905MessagePackReader.GetReadOnlySpan(System.Int32)">
             <summary>
             读取数量大小的内存块
@@ -6908,6 +8865,12 @@
             <returns></returns>
         </member>
         <member name="M:JT905.Protocol.MessagePack.JT905MessagePackReader.ReadVirtualStringEndChar0">
+            <summary>
+            虚拟读取一整串字符串到\0结束，不计入内存偏移量
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905MessagePackReader.ReadVirtualArraryEndChar0">
             <summary>
             虚拟读取一整串字符串到\0结束，不计入内存偏移量
             </summary>
@@ -7134,6 +9097,14 @@
             </summary>
             <param name="src"></param>
             <param name="position"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905MessagePackWriter.IntToBCD(System.Int32)">
+            <summary>
+            整型数据转为BCD BYTE
+            为了兼容int类型，不使用byte做参数
+            支持0xFF一个字节的转换
+            </summary>
+            <returns></returns>
         </member>
         <member name="M:JT905.Protocol.MessagePack.JT905MessagePackWriter.WriteDateTime6(System.DateTime@,System.Int32@)">
             <summary>

@@ -121,8 +121,9 @@ namespace JT905.Protocol.MessageBody
         {
             JT905_0x8302 value = new JT905_0x8302();
             value.Flag = reader.ReadByte();
-            writer.WriteNumber($"[{value.Flag.ReadNumber()}]标志", value.Flag);
+            writer.WriteString($"[{value.Flag.ReadNumber()}]标志", ((Enums.JT905TextFlag)value.Flag).ToString());
             value.IssueId = reader.ReadUInt32();
+            writer.WriteNumber($"[{value.IssueId.ReadNumber()}]问题ID", value.IssueId);
             var issueBuffer= reader.ReadVirtualArraryEndChar0();
             value.Issue = reader.ReadStringEndChar0();
             writer.WriteString($"[{issueBuffer}]问题文本", value.Issue);

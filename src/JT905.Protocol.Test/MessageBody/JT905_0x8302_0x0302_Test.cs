@@ -1,11 +1,7 @@
 ﻿using JT905.Protocol.Extensions;
 using JT905.Protocol.Internal;
 using JT905.Protocol.MessageBody;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace JT905.Protocol.Test.MessageBody

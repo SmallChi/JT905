@@ -178,6 +178,8 @@ namespace JT905.Protocol.MessagePack
         {
             return BinaryPrimitives.ReadUInt16BigEndian(GetReadOnlySpan(2)); 
         }
+
+        
         /// <summary>
         /// 读取无符号位的四字节数值类型
         /// </summary>
@@ -226,6 +228,9 @@ namespace JT905.Protocol.MessagePack
         {
             return (char)GetReadOnlySpan(1)[0];
         }
+
+
+
         /// <summary>
         /// 虚拟读取一个字节，不计入内存偏移量
         /// </summary>
@@ -642,6 +647,51 @@ namespace JT905.Protocol.MessagePack
             {
                 return bcdSb.ToString();
             }  
+        }
+
+        /// <summary>
+        /// 读取BCD编码，返回以输入分隔符格式化字符串
+        /// 电召服务费：XXX-X
+        /// 里程：XXXXX.X
+        /// </summary>
+        /// <param name="len">长度</param>
+        /// <param name="separator">分隔符</param>
+        /// <returns>XXXX-X</returns>
+        public string ReadBCD(int len, char separator)
+        {
+            int count = len / 2;
+            var readOnlySpan = GetReadOnlySpan(count);
+            StringBuilder bcdSb = new StringBuilder(count);
+            for (int i = 0; i < count; i++)
+            {
+                if (i < count - 1)
+                {
+                    bcdSb.Append(readOnlySpan[i].ToString("X2"));
+                }
+                else
+                {
+                    ReadOnlySpan<char> readOnlySpan1 = readOnlySpan[i].ToString("X2").AsSpan();
+                    string tempStr = $"{readOnlySpan1[0]}{separator}{readOnlySpan1[1]}";
+                    bcdSb.Append(tempStr);
+                }
+            }
+
+            return bcdSb.ToString();
+        }
+        /// <summary>
+        /// 读取BCD编码
+        /// </summary>
+        /// <param name="len">长度</param>
+        /// <param name="v2">分隔符位置</param>
+        /// <param name="v3">分隔符</param>
+        /// <returns></returns>
+        public string ReadBCD(int len, int v2, char v3)
+        {
+            string tempStr = ReadBCD(len,false);
+            int v = tempStr.Length - v2;
+            var prefix = tempStr.Substring(0, v);
+            var postfix = tempStr.Substring(v,v2);
+            return prefix + v3 + postfix;
         }
         /// <summary>
         /// 读取数量大小的内存块

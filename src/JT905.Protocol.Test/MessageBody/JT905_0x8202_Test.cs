@@ -37,14 +37,14 @@ namespace JT905.Protocol.Test.MessageBody
                 }
             };
             var vs = JT905Serializer.Serialize(package).ToHexString();
-            Assert.Equal("7E8202000710800000031600000100050000000A0C7E", vs);
+            Assert.Equal("7E82020007108000000316000000000200000014147E", vs);
             //string v = JT905Serializer.Analyze(vs,options:JTJsonWriterOptions.Instance);
 
         }
 
         [Fact]
         public void Test2() {
-            var hex = "7E8202000710800000031600000100050000000A0C7E".ToHexBytes();
+            var hex = "7E82020007108000000316000000000200000014147E".ToHexBytes();
             
             string v = JT905Serializer.Analyze(hex, options: JTJsonWriterOptions.Instance);
 
@@ -58,12 +58,12 @@ namespace JT905.Protocol.Test.MessageBody
         [Fact]
         public void Test3()
         {
-            var hex = "7E8202000710800000031600000000050000000A0D7E".ToHexBytes();
+            var hex = "7E82020007108000000316000000000200000014147E".ToHexBytes();
             JT905Package jT905Package = JT905Serializer.Deserialize(hex);
-            Assert.Equal(Enums.JT905MsgId.位置信息查询.ToUInt16Value(), jT905Package.Header.MsgId);
+            Assert.Equal(Enums.JT905MsgId.位置跟踪控制.ToUInt16Value(), jT905Package.Header.MsgId);
             Assert.Equal(0, jT905Package.Header.MsgNum);
             Assert.Equal("108000000316", jT905Package.Header.ISU);
-            Assert.Null(jT905Package.Bodies);
+            Assert.NotNull(jT905Package.Bodies);
         }
 
 

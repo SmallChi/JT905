@@ -8,6 +8,33 @@ namespace JT905.Protocol.Extensions
     /// </summary>
     public static partial class JT905BinaryExtensions
     {
+
+        /// <summary>
+        /// 格式化字符串
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="len">目标长度</param>
+        /// <returns></returns>
+        public static string FormatString(this string value,in int len)
+        {
+            string result = value ?? "";
+            if (result.IndexOf('.')>0)
+            {
+                result = result.Replace(".", "");
+            }
+            else
+            {
+                result += "0";
+            }
+            int length=value.Length - len;
+            if (length > 0)
+            {
+                result = result.Substring(length, len);
+            }
+            else
+                result.PadLeft(len, '0');
+            return result;
+        }
         /// <summary>
         /// 字符串BCD8421编码
         /// </summary>

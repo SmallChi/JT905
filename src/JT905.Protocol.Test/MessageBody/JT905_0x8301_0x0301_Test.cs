@@ -64,12 +64,12 @@ namespace JT905.Protocol.Test.MessageBody
         [Fact]
         public void Test3()
         {
-            var hex = "7E8202000710800000031600000000050000000A0D7E".ToHexBytes();
+            var hex = "7E8301002B10800000031600000201B2E2CAD4B2E2CAD4B2E2CAD4B2E2CAD4B2E2CAD4B2E2CAD40002CED2CAC7D2BBB8F6D6D0B9FAC8CB005D7E".ToHexBytes();
             JT905Package jT905Package = JT905Serializer.Deserialize(hex);
-            Assert.Equal(Enums.JT905MsgId.位置信息查询.ToUInt16Value(), jT905Package.Header.MsgId);
+            Assert.Equal(Enums.JT905MsgId.事件设置.ToUInt16Value(), jT905Package.Header.MsgId);
             Assert.Equal(0, jT905Package.Header.MsgNum);
             Assert.Equal("108000000316", jT905Package.Header.ISU);
-            Assert.Null(jT905Package.Bodies);
+            Assert.NotNull(jT905Package.Bodies);
         }
 
         [Fact]

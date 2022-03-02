@@ -151,20 +151,20 @@ namespace JT905.Protocol.MessageBody
         public void Serialize(ref JT905MessagePackWriter writer, JT905_0x0B03 value, IJT905Config config)
         {
             config.GetMessagePackFormatter<JT905_0x0200>().Serialize(ref writer,value.Position,config);
-            writer.WriteString(value.BusinessLicenseNumber.PadRight(16,'\0'));
-            writer.WriteString(value.QualificationCode.PadRight(19, '\0'));
+            writer.WriteASCII(value.BusinessLicenseNumber.PadRight(16,'\0'));
+            writer.WriteASCII(value.QualificationCode.PadRight(19, '\0'));
             if (value.PlateNo.Length > 6)
             {
                 int l = value.PlateNo.Length - 6;
-                writer.WriteString(value.PlateNo.Substring(l));
+                writer.WriteASCII(value.PlateNo.Substring(l));
             }
             else if(value.PlateNo.Length < 6)
             {
-                writer.WriteString(value.PlateNo.PadRight(6, '\0'));
+                writer.WriteASCII(value.PlateNo.PadRight(6, '\0'));
             }
             else
             {
-                writer.WriteString(value.PlateNo);
+                writer.WriteASCII(value.PlateNo);
             }
 
             writer.WriteDateTime6YYYYMMddHHmm(value.Uptime);

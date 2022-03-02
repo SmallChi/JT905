@@ -4,6 +4,10 @@ using System.Text;
 
 namespace JT905.Protocol.Enums
 {
+    /// <summary>
+    /// 位置跟踪控制类型
+    /// 属性
+    /// </summary>
     public enum JT905ControlType:byte
     {
         /// <summary>

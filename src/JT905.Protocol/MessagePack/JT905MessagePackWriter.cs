@@ -93,6 +93,12 @@ namespace JT905.Protocol.MessagePack
             }
             writer.Advance(count);
         }
+
+        internal void WriteByte(JT905PhotoReason photoReason)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// 跳过多少字节数
         /// </summary>
