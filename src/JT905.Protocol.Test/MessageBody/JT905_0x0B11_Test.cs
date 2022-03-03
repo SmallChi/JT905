@@ -50,7 +50,7 @@ namespace JT905.Protocol.Test.MessageBody
                 }
             };
             var _0x0B11Hex = JT905Serializer.Serialize(package).ToHexString();
-            Assert.Equal("7E0B1100011080000003160000019F7E", _0x0B11Hex);
+            Assert.Equal("7E0B1100131080000003160000000000000000000012100100000000000000008F7E", _0x0B11Hex);
             //string v = JT905Serializer.Analyze(vs,options:JTJsonWriterOptions.Instance);
 
         }
@@ -58,7 +58,7 @@ namespace JT905.Protocol.Test.MessageBody
         [Fact]
         public void Test2()
         {
-            var hex = "7E0B1100011080000003160000019F7E".ToHexBytes();
+            var hex = "7E0B1100131080000003160000000000000000000012100100000000000000008F7E".ToHexBytes();
 
             string _0x0B11Json = JT905Serializer.Analyze(hex, options: JTJsonWriterOptions.Instance);
 
@@ -67,7 +67,7 @@ namespace JT905.Protocol.Test.MessageBody
         [Fact]
         public void Test3()
         {
-            var hex = "7E0B1100011080000003160000019F7E".ToHexBytes();
+            var hex = "7E0B1100131080000003160000000000000000000012100100000000000000008F7E".ToHexBytes();
             JT905Package jT905Package = JT905Serializer.Deserialize(hex);
             Assert.Equal(Enums.JT905MsgId.设备巡检应答.ToUInt16Value(), jT905Package.Header.MsgId);
             Assert.Equal(0, jT905Package.Header.MsgNum);
