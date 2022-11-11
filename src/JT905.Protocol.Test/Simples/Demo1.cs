@@ -23,7 +23,6 @@ namespace JT905.Protocol.Test.Simples
         public void Test1()
         {
             JT905Package JT905Package = new JT905Package();
-
             JT905Package.Header = new JT905Header
             {
                 MsgId = Enums.JT905MsgId.位置信息汇报.ToUInt16Value(),
