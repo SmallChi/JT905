@@ -22,9 +22,6 @@ namespace JT905.Protocol.MessageBody
         /// </summary>
         public List<Enums.JT905DeviceType> TypeID { get; set; }
 
-
-
-
         public void Analyze(ref JT905MessagePackReader reader, Utf8JsonWriter writer, IJT905Config config)
         {
             JT905_0x8B11 value = new JT905_0x8B11();
@@ -74,6 +71,7 @@ namespace JT905.Protocol.MessageBody
                 }
                 
             }
+            
 
         }
     }

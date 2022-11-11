@@ -1,53 +1,32 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="..\Info.props" />
-  <PropertyGroup>
-    <PackageId>JT905</PackageId>
-    <Product>JT905</Product>
-    <Description>JT905协议、GB905协议、出租汽车终端与中心平台通讯协议</Description>
-    <PackageReleaseNotes>JT905协议、GB905协议、出租汽车终端与中心平台通讯协议</PackageReleaseNotes>
+	<Import Project="..\Info.props" />
+	<PropertyGroup>
+		<PackageId>JT905</PackageId>
+		<Product>JT905</Product>
+		<Description>JT905协议、GB905协议、出租汽车终端与中心平台通讯协议</Description>
+		<PackageReleaseNotes>JT905协议、GB905协议、出租汽车终端与中心平台通讯协议</PackageReleaseNotes>
 
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-  </PropertyGroup>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 
-    <PropertyGroup Condition="'$(Configuration)' == 'Release'">
-	    <DocumentationFile>JT905.Protocol.xml</DocumentationFile>
-    </PropertyGroup>
-	
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
-    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="System.Buffers" Version="4.5.1" />
-    <PackageReference Include="System.Dynamic.Runtime" Version="4.3.0" />
-    <PackageReference Include="System.Memory" Version="4.5.4" />
-    <PackageReference Include="System.Reflection.Extensions" Version="4.3.0" />
-	  <PackageReference Include="System.Text.Json" Version="6.0.1" />
-	  <PackageReference Include="System.Text.Encoding.CodePages" Version="6.0.0" />
-	  <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+		<TargetFrameworks>net6.0</TargetFrameworks>
+	</PropertyGroup>
 
-  </ItemGroup>
+	<PropertyGroup Condition="'$(Configuration)' == 'Release'">
+		<DocumentationFile>JT905.Protocol.xml</DocumentationFile>
+	</PropertyGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.1' ">
-	  <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-	  <PackageReference Include="System.Text.Json" Version="6.0.1" />
-	  <PackageReference Include="System.Text.Encoding.CodePages" Version="6.0.0" />
-	  <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
-  </ItemGroup>
-
-	<ItemGroup Condition=" '$(TargetFramework)' == 'net5.0' ">
-		<PackageReference Include="System.Text.Encoding.CodePages" Version="5.0.0" />
-		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
-	</ItemGroup>
 
 	<ItemGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
 		<PackageReference Include="System.Text.Encoding.CodePages" Version="6.0.0" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
 	</ItemGroup>
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net7.0' ">
+		<PackageReference Include="System.Text.Encoding.CodePages" Version="7.0.0" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="System.Text.Encoding.CodePages" Version="5.0.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
-  </ItemGroup>
-  <ItemGroup>
-  	<PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.0" />
+	</ItemGroup>
 </Project>

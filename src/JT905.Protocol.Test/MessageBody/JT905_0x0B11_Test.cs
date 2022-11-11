@@ -36,19 +36,15 @@ namespace JT905.Protocol.Test.MessageBody
                     MsgId = Enums.JT905MsgId.设备巡检应答.ToUInt16Value(),
                     ManualMsgNum = 0,
                     ISU = "108000000316",
-                },
-                Bodies = new JT905_0x0B11()
-                {
-                    tLVs = new List<TLV>() { new TLV {
-                        DeviceType=Enums.JT905DeviceType.ISU,
-                        HardwareVer="12",
-                        SoftVer="1001",
-                        ISUStatus=0,
-                        ISUAlarm=0
-                    } }
+                },               
 
-                }
             };
+            JT905_0x0B11 jT905_0X0B11 = new JT905_0x0B11()
+            {
+                tLVs = new Dictionary<byte, JT905_0x0B11_TLV>()
+
+            };
+            jT905_0X0B11.tLVs.Add((byte)Enums.JT905DeviceType.计价器, new JT905_0x0B11_0x00 { SerialNumber="1301", HardwareVer="12",SoftVer="1234"});
             var _0x0B11Hex = JT905Serializer.Serialize(package).ToHexString();
             Assert.Equal("7E0B1100131080000003160000000000000000000012100100000000000000008F7E", _0x0B11Hex);
             //string v = JT905Serializer.Analyze(vs,options:JTJsonWriterOptions.Instance);
@@ -58,7 +54,7 @@ namespace JT905.Protocol.Test.MessageBody
         [Fact]
         public void Test2()
         {
-            var hex = "7E0B1100131080000003160000000000000000000012100100000000000000008F7E".ToHexBytes();
+            var hex = "7e0b1100e6100107395027204100140107395027183503c000000800004c000000000202370000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003430000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004200000000000000000000000000000000000000000000000000000000000000000052000000000000000000000000000000000000000000000000000000000000000001004170120000706000000000000667e".ToHexBytes();
 
             string _0x0B11Json = JT905Serializer.Analyze(hex, options: JTJsonWriterOptions.Instance);
 

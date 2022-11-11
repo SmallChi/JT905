@@ -61,8 +61,8 @@ namespace JT905.Protocol.Test.MessageBody
         [Fact]
         public void Test3()
         {
-            var b = "7E 01 04 00 3B 10 80 00 00 03 16 00 A0 00 00 00 11 00 00 12 00 00 13 0C 34 32 2E 34 39 2E 31 35 2E 32 31 33 00 14 05 43 4D 49 4F 54 00 15 00 00 16 00 00 17 0C 34 32 2E 34 39 2E 31 35 2E 32 31 33 00 18 04 00 00 18 3B 6D 7E ".ToHexBytes();
-            var bytes = "7E8103001C012345678900000A0300000001040000000A0000001007313131313131310000004B0109747E".ToHexBytes();
+            var b = "7e010400111001073950270bd2210544fa0c34322e34392e31352e323133127e".ToHexBytes();
+            var bytes = "7e010400111001073950270bd8210944fd0c34322e34392e31352e323133137e".ToHexBytes();
             string json = JT905Serializer.Analyze<JT905Package>(b,options:JTJsonWriterOptions.Instance);
         }
     }
