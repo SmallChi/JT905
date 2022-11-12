@@ -84,7 +84,7 @@ namespace JT905.Protocol.MessagePack
             _realCheckXorCode = 0;
             allocateBuffer[offset++] = SrcBuffer[0];
             // 取出校验码看是否需要转义
-            ReadOnlySpan<byte> checkCodeBufferSpan = SrcBuffer.Slice(len - 3, 2);
+            ReadOnlySpan<byte> checkCodeBufferSpan = SrcBuffer.Slice(len - 3,2);
             int checkCodeLen = 1;
             if (checkCodeBufferSpan.SequenceEqual(decode7d01))
             {
@@ -135,7 +135,7 @@ namespace JT905.Protocol.MessagePack
                 i++;
             }
             allocateBuffer[offset++] = _realCheckXorCode;
-            allocateBuffer[offset++] = SrcBuffer[SrcBuffer.Length - 1];
+            allocateBuffer[offset++] = SrcBuffer[SrcBuffer.Length- 1];
             _checkXorCodeVali = (_calculateCheckXorCode == _realCheckXorCode);
             Reader = allocateBuffer.Slice(0, offset);
             _decoded = true;
@@ -156,12 +156,12 @@ namespace JT905.Protocol.MessagePack
         /// 读取标识头
         /// </summary>
         /// <returns></returns>
-        public byte ReadStart() => ReadByte();
+        public byte ReadStart()=> ReadByte();
         /// <summary>
         /// 读取尾标识
         /// </summary>
         /// <returns></returns>
-        public byte ReadEnd() => ReadByte();
+        public byte ReadEnd()=> ReadByte();
         /// <summary>
         /// 读取有符号位的两字节数值类型
         /// </summary>
@@ -176,10 +176,10 @@ namespace JT905.Protocol.MessagePack
         /// <returns></returns>
         public ushort ReadUInt16()
         {
-            return BinaryPrimitives.ReadUInt16BigEndian(GetReadOnlySpan(2));
+            return BinaryPrimitives.ReadUInt16BigEndian(GetReadOnlySpan(2)); 
         }
 
-
+        
         /// <summary>
         /// 读取无符号位的四字节数值类型
         /// </summary>
@@ -327,9 +327,9 @@ namespace JT905.Protocol.MessagePack
         /// <param name="start"></param>
         /// <param name="end"></param>
         /// <returns></returns>
-        public ReadOnlySpan<byte> ReadArray(int start, int end)
+        public ReadOnlySpan<byte> ReadArray(int start,int end)
         {
-            return Reader.Slice(start, end);
+            return Reader.Slice(start,end);
         }
         /// <summary>
         /// 读取GBK字符串编码
@@ -364,12 +364,12 @@ namespace JT905.Protocol.MessagePack
         /// <summary>
         /// 读取16进制编码
         /// </summary>
-        /// <param name="len">长度</param>
+        /// <param name="len"></param>
         /// <returns></returns>
         public string ReadHex(int len)
         {
             var readOnlySpan = GetReadOnlySpan(len);
-            string hex = Convert.ToHexString(readOnlySpan.Slice(0, len));
+            string hex = HexUtil.DoHexDump(readOnlySpan, 0, len);
             return hex;
         }
         /// <summary>
@@ -382,12 +382,12 @@ namespace JT905.Protocol.MessagePack
             try
             {
                 var readOnlySpan = GetReadOnlySpan(6);
-                int year = BcdToInt(readOnlySpan[0]) + JT905Constants.DateLimitYear;
-                int month = BcdToInt(readOnlySpan[1]);
-                int day = BcdToInt(readOnlySpan[2]);
-                int hour = BcdToInt(readOnlySpan[3]);
-                int minute = BcdToInt(readOnlySpan[4]);
-                int second = BcdToInt(readOnlySpan[5]);
+                int year = Convert.ToInt32(readOnlySpan[0].ToString(format)) + JT905Constants.DateLimitYear;
+                int month = Convert.ToInt32(readOnlySpan[1].ToString(format));
+                int day = Convert.ToInt32(readOnlySpan[2].ToString(format));
+                int hour = Convert.ToInt32(readOnlySpan[3].ToString(format));
+                int minute = Convert.ToInt32(readOnlySpan[4].ToString(format));
+                int second = Convert.ToInt32(readOnlySpan[5].ToString(format));
                 d = new DateTime(year, month, day, hour, minute, second);
             }
             catch (Exception)
@@ -396,19 +396,6 @@ namespace JT905.Protocol.MessagePack
             }
             return d;
         }
-        /// <summary>
-        /// 16进制的BCD BYTE转成整型
-        /// </summary>
-        /// <param name="value">16进制的BCD BYTE</param>
-        /// <returns></returns>
-        public int BcdToInt(byte value)
-        {
-            int hight = value >> 4;
-            int low = value & 0xF;
-            int number = 10 * hight + low;
-            return number;
-        }
-
         /// <summary>
         /// 读取六字节日期,yyyyMMddHHmm
         /// </summary>
@@ -420,12 +407,12 @@ namespace JT905.Protocol.MessagePack
             {
                 var readOnlySpan = GetReadOnlySpan(6);
                 //int year = BinaryPrimitives.ReadInt16BigEndian(readOnlySpan.Slice(0,2));
-                int year = BcdToInt(readOnlySpan[0]) + BcdToInt(readOnlySpan[1]);
-                int month = BcdToInt(readOnlySpan[2]);
-                int day = BcdToInt(readOnlySpan[3]);
-                int hour = BcdToInt(readOnlySpan[4]);
-                int minute = BcdToInt(readOnlySpan[5]);
-                d = new DateTime(year, month, day, hour, minute, 0);
+                int year = Convert.ToInt32(readOnlySpan[0].ToString(format) + readOnlySpan[1].ToString(format));
+                int month = Convert.ToInt32(readOnlySpan[2].ToString(format));
+                int day = Convert.ToInt32(readOnlySpan[3].ToString(format));
+                int hour = Convert.ToInt32(readOnlySpan[4].ToString(format));
+                int minute = Convert.ToInt32(readOnlySpan[5].ToString(format));
+                d = new DateTime(year, month, day, hour, minute,0);
             }
             catch (Exception)
             {
@@ -443,12 +430,12 @@ namespace JT905.Protocol.MessagePack
             try
             {
                 var readOnlySpan = GetReadOnlySpan(6);
-                int year = BcdToInt(readOnlySpan[0]);
-                int month = BcdToInt(readOnlySpan[1]);
-                int day = BcdToInt(readOnlySpan[2]);
-                int hour = BcdToInt(readOnlySpan[3]);
-                int minute = BcdToInt(readOnlySpan[4]);
-                int second = BcdToInt(readOnlySpan[5]);
+                int year = Convert.ToInt32(readOnlySpan[0].ToString(format)) ;
+                int month = Convert.ToInt32(readOnlySpan[1].ToString(format));
+                int day = Convert.ToInt32(readOnlySpan[2].ToString(format));
+                int hour = Convert.ToInt32(readOnlySpan[3].ToString(format));
+                int minute = Convert.ToInt32(readOnlySpan[4].ToString(format));
+                int second = Convert.ToInt32(readOnlySpan[5].ToString(format));
                 if (year == 0 && month == 0 && day == 0 && hour == 0 && minute == 0 && second == 0) return null;
                 d = new DateTime(year + JT905Constants.DateLimitYear, month, day, hour, minute, second);
             }
@@ -468,14 +455,17 @@ namespace JT905.Protocol.MessagePack
             try
             {
                 var readOnlySpan = GetReadOnlySpan(5);
-                var fff = BcdToInt(readOnlySpan[3]) * 100 + BcdToInt(readOnlySpan[4]);
+                StringBuilder sb = new StringBuilder(4);
+                sb.Append(readOnlySpan[3].ToString(format));
+                sb.Append(readOnlySpan[4].ToString(format));
                 d = new DateTime(
                 DateTime.Now.Year,
                 DateTime.Now.Month,
                 DateTime.Now.Day,
-                BcdToInt(readOnlySpan[0]),
-                BcdToInt(readOnlySpan[1]),
-                BcdToInt(readOnlySpan[2]), fff);
+                Convert.ToInt32(readOnlySpan[0].ToString(format)),
+                Convert.ToInt32(readOnlySpan[1].ToString(format)),
+                Convert.ToInt32(readOnlySpan[2].ToString(format)),
+                Convert.ToInt32(sb.ToString().TrimStart()));
             }
             catch
             {
@@ -493,10 +483,13 @@ namespace JT905.Protocol.MessagePack
             try
             {
                 var readOnlySpan = GetReadOnlySpan(5);
-                int hour = BcdToInt(readOnlySpan[0]);
-                int minute = BcdToInt(readOnlySpan[1]);
-                int second = BcdToInt(readOnlySpan[2]);
-                int millisecond = BcdToInt(readOnlySpan[3]) * 100 + BcdToInt(readOnlySpan[4]);
+                StringBuilder sb = new StringBuilder(4);
+                sb.Append(readOnlySpan[3].ToString("X2"));
+                sb.Append(readOnlySpan[4].ToString("X2"));
+                int hour = Convert.ToInt32(readOnlySpan[0].ToString(format));
+                int minute = Convert.ToInt32(readOnlySpan[1].ToString(format));
+                int second = Convert.ToInt32(readOnlySpan[2].ToString(format));
+                int millisecond = Convert.ToInt32(sb.ToString().TrimStart());
                 if (hour == 0 && minute == 0 && second == 0 && millisecond == 0) return null;
                 d = new DateTime(
                 DateTime.Now.Year,
@@ -522,17 +515,20 @@ namespace JT905.Protocol.MessagePack
             DateTime d;
             try
             {
-                var readOnlySpan = GetReadOnlySpan(4);               
+                var readOnlySpan = GetReadOnlySpan(4);
+                StringBuilder sb = new StringBuilder(4);
+                sb.Append(readOnlySpan[0].ToString(format));
+                sb.Append(readOnlySpan[1].ToString(format));
                 d = new DateTime(
-                BcdToInt(readOnlySpan[0]) * 100 + BcdToInt(readOnlySpan[1]),
-                BcdToInt(readOnlySpan[2]),
-                BcdToInt(readOnlySpan[3]));
+                Convert.ToInt32(sb.ToString()),
+                Convert.ToInt32(readOnlySpan[2].ToString(format)),
+                Convert.ToInt32(readOnlySpan[3].ToString(format)));
             }
             catch (Exception)
             {
                 d = JT905Constants.UTCBaseTime;
             }
-            return d;
+            return d;   
         }
         /// <summary>
         /// 读取可空类型的四字节日期，YYYYMMDD
@@ -543,10 +539,13 @@ namespace JT905.Protocol.MessagePack
             DateTime? d;
             try
             {
-                var readOnlySpan = GetReadOnlySpan(4);                
-                int year = BcdToInt(readOnlySpan[0]) * 100 + BcdToInt(readOnlySpan[1]);
-                int month = BcdToInt(readOnlySpan[2]);
-                int day = BcdToInt(readOnlySpan[3]);
+                var readOnlySpan = GetReadOnlySpan(4);
+                StringBuilder sb = new StringBuilder(4);
+                sb.Append(readOnlySpan[0].ToString(format));
+                sb.Append(readOnlySpan[1].ToString(format));
+                int year = Convert.ToInt32(sb.ToString());
+                int month = Convert.ToInt32(readOnlySpan[2].ToString(format));
+                int day = Convert.ToInt32(readOnlySpan[3].ToString(format));
                 if (year == 0 && month == 0 && day == 0) return null;
                 d = new DateTime(year, month, day);
             }
@@ -567,9 +566,9 @@ namespace JT905.Protocol.MessagePack
             {
                 var readOnlySpan = GetReadOnlySpan(3);
                 d = new DateTime(
-                BcdToInt(readOnlySpan[0]) + JT905Constants.DateLimitYear,
-                BcdToInt(readOnlySpan[1]),
-                BcdToInt(readOnlySpan[2]));
+                Convert.ToInt32(readOnlySpan[0].ToString(format)) + JT905Constants.DateLimitYear,
+                Convert.ToInt32(readOnlySpan[1].ToString(format)),
+                Convert.ToInt32(readOnlySpan[2].ToString(format)));
             }
             catch (Exception)
             {
@@ -587,12 +586,12 @@ namespace JT905.Protocol.MessagePack
             try
             {
                 var readOnlySpan = GetReadOnlySpan(3);
-                int year = BcdToInt(readOnlySpan[0]);
-                int month = BcdToInt(readOnlySpan[1]);
-                int day = BcdToInt(readOnlySpan[2]);
+                int year =Convert.ToInt32(readOnlySpan[0].ToString(format));
+                int month=Convert.ToInt32(readOnlySpan[1].ToString(format));
+                int day = Convert.ToInt32(readOnlySpan[2].ToString(format));
                 if (year == 0 && month == 0 && day == 0) return null;
                 d = new DateTime(
-                 year + JT905Constants.DateLimitYear, month, day
+                 year + JT905Constants.DateLimitYear, month,day
                 );
             }
             catch (Exception)
@@ -631,7 +630,7 @@ namespace JT905.Protocol.MessagePack
         /// <param name="len"></param>
         /// <param name="trim"></param>
         /// <returns></returns>
-        public string ReadBCD(int len, bool trim = true)
+        public string ReadBCD(int len , bool trim = true)
         {
             int count = len / 2;
             var readOnlySpan = GetReadOnlySpan(count);
@@ -647,7 +646,7 @@ namespace JT905.Protocol.MessagePack
             else
             {
                 return bcdSb.ToString();
-            }
+            }  
         }
 
         /// <summary>
@@ -688,10 +687,10 @@ namespace JT905.Protocol.MessagePack
         /// <returns></returns>
         public string ReadBCD(int len, int v2, char v3)
         {
-            string tempStr = ReadBCD(len, false);
+            string tempStr = ReadBCD(len,false);
             int v = tempStr.Length - v2;
             var prefix = tempStr.Substring(0, v);
-            var postfix = tempStr.Substring(v, v2);
+            var postfix = tempStr.Substring(v,v2);
             return prefix + v3 + postfix;
         }
         /// <summary>
@@ -718,7 +717,7 @@ namespace JT905.Protocol.MessagePack
         /// </summary>
         /// <param name="count"></param>
         /// <returns></returns>
-        public ReadOnlySpan<byte> ReadContent(int count = 0)
+        public ReadOnlySpan<byte> ReadContent(int count=0)
         {
             if (_decoded)
             {
@@ -774,7 +773,7 @@ namespace JT905.Protocol.MessagePack
             if (_decoded)
             {
                 //内容长度=总长度-读取的长度-2（校验码1位+终止符1位）
-                return Reader.Length - ReaderCount - 2;
+                return Reader.Length - ReaderCount - 2; 
             }
             else
             {
@@ -785,7 +784,7 @@ namespace JT905.Protocol.MessagePack
         /// 跳过多少字节
         /// </summary>
         /// <param name="count"></param>
-        public void Skip(int count = 1)
+        public void Skip(int count=1)
         {
             ReaderCount += count;
         }

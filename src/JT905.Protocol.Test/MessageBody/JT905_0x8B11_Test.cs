@@ -39,9 +39,10 @@ namespace JT905.Protocol.Test.MessageBody
                 },
                 Bodies = new JT905_0x8B11()
                 {
-                    TypeID = new List<Enums.JT905DeviceType>() {
+                    TypeID = new List<Enums.JT905DeviceType> {
                         Enums.JT905DeviceType.ISU
-                    }
+                    },
+
                 }
             };
             var _0x8B11Hex = JT905Serializer.Serialize(package).ToHexString();

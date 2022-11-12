@@ -45,11 +45,6 @@ namespace JT905.Protocol
         /// </summary>
         IJT905_0x8103_Factory JT905_0X8103_Factory { get; set; }
         /// <summary>
-        /// 
-        /// </summary>
-
-        IJT905_0x0B11_Factory JT905_0x0B11_Factory { get; set; }
-        /// <summary>
         /// 统一编码
         /// </summary>
         Encoding Encoding { get; set; }
@@ -69,8 +64,6 @@ namespace JT905.Protocol
         /// 设备终端号(默认12位)
         /// </summary>
         int ISULength { get; set; }
-        
-
         /// <summary>
         /// 全局注册外部程序集
         /// </summary>

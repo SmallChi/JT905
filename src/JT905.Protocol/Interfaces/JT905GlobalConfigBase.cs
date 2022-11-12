@@ -27,7 +27,6 @@ namespace JT905.Protocol.Interfaces
             JT905_0X0200_Factory = new JT905_0x0200_Factory();
             JT905_0X8103_Custom_Factory = new JT905_0x8103_Custom_Factory();
             JT905_0X8103_Factory = new JT905_0x8103_Factory();
-            JT905_0x0B11_Factory = new JT905_0x0B11_Factory();
             ISULength = 12;
             Trim = true;
         }
@@ -73,11 +72,6 @@ namespace JT905.Protocol.Interfaces
         /// </summary>
         public virtual IJT905_0x8103_Factory JT905_0X8103_Factory { get; set; }
         /// <summary>
-        /// 
-        /// </summary>
-
-        public virtual IJT905_0x0B11_Factory JT905_0x0B11_Factory { get; set; }
-        /// <summary>
         /// 终端SIM卡长度
         /// </summary>
         public virtual int ISULength { get; set; }
@@ -85,7 +79,6 @@ namespace JT905.Protocol.Interfaces
         /// 是否去掉头尾空格
         /// </summary>
         public virtual bool Trim { get; set; }
-        
 
         /// <summary>
         /// 外部扩展程序集注册

@@ -38,7 +38,7 @@ namespace JT905.Protocol.Test.MessageBody
             // 52
             // 7E
             byte[] bytes = "7E020000271122334455660001000000010000000200BA7F0E07E4F11C003C002110152110100104000004B00202006F0302006F1C7E".ToHexBytes();
-            var ttt = "7E 02 00 00 19 10 80 00 00 03 16 00 00 00 00 0E 00 80 00 01 00 00 F8 58 85 03 F8 8F 54 00 00 00 22 03 04 11 26 55 53 7E ".ToHexBytes();
+            var ttt = "7E 02 00 00 19 10 80 00 00 03 16 00 00 00 00 0E 00 80 00 01 81 00 F8 57 A4 03 F8 8E 4E 00 AC 6D 10 01 01 08 13 47 2D 7E ".ToHexBytes();
             var aaa = "7E 02 00 00 19 10 80 00 00 03 16 00 00 00 00 0E 00 80 00 01 81 00 F8 57 A4 03 F8 8E 4E 00 AC 6D 10 01 01 08 50 35 1C 7E".ToHexBytes();
             JT905Package jT905Package = JT905Serializer.Deserialize(bytes);
             JT905Package jT905Package1 = JT905Serializer.Deserialize(ttt);
@@ -95,7 +95,7 @@ namespace JT905.Protocol.Test.MessageBody
 
         public void Test4()
         {
-            var botys = "7e0200002110010739520406b010004e00c000000000f8472403f8abe200000022102010465800f84ec803f89f81de7e".ToHexBytes();
+            var botys = "7E020000471080000003160001000000010000000200BA7F0E07E4F11C003C002110152110100104000004B00202006F0302006F110501000000011206010000000100130700000001001400140400000002001E837E".ToHexBytes();
             string v = JT905Serializer.Analyze(botys, options: JTJsonWriterOptions.Instance);
         }
     }
