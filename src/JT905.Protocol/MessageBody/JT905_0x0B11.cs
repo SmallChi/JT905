@@ -43,13 +43,14 @@ namespace JT905.Protocol.MessageBody
             if (reader.ReadCurrentRemainContentLength() > 0)
             {
                 value.tLVs = new List<TLV>();
-                while (reader.ReadCurrentRemainContentLength() > 0)
-                {
+                //TODO:待解析JT905_0x0B11
+                //while (reader.ReadCurrentRemainContentLength() > 0)
+                //{
 
-                }
+                //}
             }
-            
-            
+
+
             return value;
         }
 

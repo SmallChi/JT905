@@ -6,28 +6,17 @@
     <Product>JT905</Product>
     <Description>JT905协议、GB905协议、出租汽车终端与中心平台通讯协议</Description>
     <PackageReleaseNotes>JT905协议、GB905协议、出租汽车终端与中心平台通讯协议</PackageReleaseNotes>
-
-    <PackageReadmeFile>README.md</PackageReadmeFile>
+	<DocumentationFile>JT905.Protocol.xml</DocumentationFile>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
-    <PropertyGroup Condition="'$(Configuration)' == 'Release'">
-	    <DocumentationFile>JT905.Protocol.xml</DocumentationFile>
-    </PropertyGroup>
-	
-  
-	<ItemGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
-		<PackageReference Include="System.Text.Encoding.CodePages" Version="6.0.0" />
-		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
-	</ItemGroup>
-	<ItemGroup Condition=" '$(TargetFramework)' == 'net7.0' ">
+	<ItemGroup>
 		<PackageReference Include="System.Text.Encoding.CodePages" Version="7.0.0" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
 	</ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="System.Text.Encoding.CodePages" Version="5.0.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
-  </ItemGroup>
-  <ItemGroup>
-  	<PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="..\..\LICENSE" Pack="true" PackagePath="" />
+		<None Include="..\..\README.md" Pack="true" PackagePath="" />
+	</ItemGroup>
+
 </Project>

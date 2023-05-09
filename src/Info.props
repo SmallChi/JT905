@@ -1,10 +1,9 @@
 ﻿<Project>
   <PropertyGroup>
-    <TargetFrameworks>net6.0;net7.0;</TargetFrameworks>
-    <LangVersion>9.0</LangVersion>
+    <TargetFramework>net7.0</TargetFramework>
+    <LangVersion>11.0</LangVersion>
     <Copyright>Copyright 2022.</Copyright>
-    <Authors>SmallChi(Koike)</Authors>
-	<Authors>capfhz</Authors>
+    <Authors>SmallChi(Koike),capfhz</Authors>
     <RepositoryUrl>https://github.com/SmallChi/JT905</RepositoryUrl>
     <PackageProjectUrl>https://github.com/SmallChi/JT905</PackageProjectUrl>
     <licenseUrl>https://github.com/SmallChi/JT905/blob/master/LICENSE</licenseUrl>
@@ -29,6 +28,6 @@
 	</PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All"/>
   </ItemGroup>
 </Project>
