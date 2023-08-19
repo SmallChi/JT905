@@ -1720,6 +1720,26 @@
             <param name="isu"></param>
             <returns></returns>
         </member>
+        <member name="P:JT905.Protocol.Interfaces.IJT905SerialPortFactory.Map">
+            <summary>
+            实例列表
+            </summary>
+        </member>
+        <member name="M:JT905.Protocol.Interfaces.IJT905SerialPortFactory.TryGetValue(System.UInt16,JT905.Protocol.SerialPort.IBody.Types,JT905.Protocol.SerialPort.IBody@)">
+            <summary>
+            获取实例
+            </summary>
+            <param name="id"></param>
+            <param name="type"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.Interfaces.IJT905SerialPortFactory.SetMap``1">
+            <summary>
+            设置实例列表
+            </summary>>
+            <returns></returns>
+        </member>
         <member name="T:JT905.Protocol.Interfaces.IJT905_0x0200_Custom_Factory">
             <summary>
             自定义0x0200附加信息工厂
@@ -1885,6 +1905,11 @@
             0x8103终端参数设置消息工厂
             </summary>
         </member>
+        <member name="P:JT905.Protocol.Interfaces.JT905GlobalConfigBase.JT905TaximeterFactory">
+            <summary>
+            串口计价器消息工厂
+            </summary>
+        </member>
         <member name="P:JT905.Protocol.Interfaces.JT905GlobalConfigBase.ISULength">
             <summary>
             终端SIM卡长度
@@ -1953,6 +1978,11 @@
              <summary>
             设置终端参数工厂
              </summary>
+        </member>
+        <member name="P:JT905.Protocol.IJT905Config.JT905TaximeterFactory">
+            <summary>
+            计价器命令工厂
+            </summary>
         </member>
         <member name="P:JT905.Protocol.IJT905Config.Encoding">
             <summary>
@@ -9247,6 +9277,1603 @@
             写入JT19056校验码
             </summary>
             <param name="currentPosition"></param>
+        </member>
+        <member name="T:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader">
+            <summary>
+            JT905消息读取器
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.Reader">
+            <summary>
+            读取buffer
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.SrcBuffer">
+            <summary>
+            原数据
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReaderCount">
+            <summary>
+            读取到的数量
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.Version">
+            <summary>
+            JT905版本号
+            </summary>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.#ctor(System.ReadOnlySpan{System.Byte},JT905.Protocol.Enums.JT905Version)">
+            <summary>
+            解码（转义还原）,计算校验和
+            </summary>
+            <param name="srcBuffer"></param>
+            <param name="version">默认JT905Version.JTT2014</param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadInt16">
+            <summary>
+            读取有符号位的两字节数值类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadUInt16">
+            <summary>
+            读取无符号位的两字节数值类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadUInt32">
+            <summary>
+            读取无符号位的四字节数值类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadInt32">
+            <summary>
+            读取有符号位的四字节数值类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadUInt64">
+            <summary>
+            读取无符号位的八字节数值类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadInt64">
+            <summary>
+            读取有符号位的八字节数值类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadByte">
+            <summary>
+            读取一个字节
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadChar">
+            <summary>
+            读取一个字符
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadVirtualByte">
+            <summary>
+            虚拟读取一个字节，不计入内存偏移量
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadVirtualArray(System.Int32)">
+            <summary>
+            虚拟读取一个数组，不计入内存偏移量
+            </summary>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadVirtualUInt16">
+            <summary>
+            虚拟读取无符号位的两字节数值类型，不计入内存偏移量
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadVirtualInt16">
+            <summary>
+            虚拟读取有符号位的两字节数值类型，不计入内存偏移量
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadVirtualUInt32">
+            <summary>
+            虚拟读取无符号位的四字节数值类型，不计入内存偏移量
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadVirtualInt32">
+            <summary>
+            虚拟读取有符号位的四字节数值类型，不计入内存偏移量
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadVirtualUInt64">
+            <summary>
+            虚拟读取无符号位的八字节数值类型，不计入内存偏移量
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadVirtualInt64">
+            <summary>
+            虚拟读取有符号位的八字节数值类型，不计入内存偏移量
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadBigNumber(System.Int32)">
+            <summary>
+            读取数字编码 
+            大端模式、高位在前
+            </summary>
+            <param name="len"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadArray(System.Int32)">
+            <summary>
+            读取固定大小的内存块
+            </summary>
+            <param name="len"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadArray(System.Int32,System.Int32)">
+            <summary>
+            读取固定大小的内存块
+            </summary>
+            <param name="start"></param>
+            <param name="end"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadString(System.Int32)">
+            <summary>
+            读取GBK字符串编码
+            </summary>
+            <param name="len"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadASCII(System.Int32)">
+            <summary>
+            读取ASCII编码
+            </summary>
+            <param name="len"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadRemainStringContent">
+            <summary>
+            读取剩余数据体内容为字符串模式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadHex(System.Int32)">
+            <summary>
+            读取16进制编码
+            </summary>
+            <param name="len"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadDateTime6(System.String)">
+            <summary>
+            读取六字节日期,yyMMddHHmmss
+            </summary>
+            <param name="format">>D2： 10  X2：16</param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadDateTime7(System.String)">
+            <summary>
+            读取六字节日期,yyyyMMddHHmmss
+            </summary>
+            <param name="format">>D2： 10  X2：16</param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadDateTime6Ext(System.String)">
+            <summary>
+            读取六字节日期,yyyyMMddHHmm
+            </summary>
+            <param name="format">>D2： 10  X2：16</param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadDateTimeNull6(System.String)">
+            <summary>
+            读取可空类型的六字节日期,yyMMddHHmmss
+            </summary>
+            <param name="format">>D2： 10  X2：16</param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadDateTime5(System.String)">
+            <summary>
+            读取五字节日期,HH-mm-ss-msms|HH-mm-ss-fff
+            </summary>
+            <param name="format">D2： 10  X2：16</param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadDateTimeNull5(System.String)">
+            <summary>
+            读取可空类型的五字节日期,HH-mm-ss-msms|HH-mm-ss-fff
+            </summary>
+            <param name="format">D2： 10  X2：16</param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadDateTime4(System.String)">
+            <summary>
+            读取四字节日期，YYYYMMDD
+            </summary>
+            <param name="format">D2： 10  X2：16</param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadDateTimeNull4(System.String)">
+            <summary>
+            读取可空类型的四字节日期，YYYYMMDD
+            </summary>
+            <param name="format">D2： 10  X2：16</param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadDateTime3(System.String)">
+            <summary>
+            读取三字节日期，YYMMDD
+            </summary>
+            <param name="format">D2： 10  X2：16</param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadDateTimeNull3(System.String)">
+            <summary>
+            读取可空类型的三字节日期，YYMMDD
+            </summary>
+            <param name="format">D2： 10  X2：16</param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadUTCDateTime">
+            <summary>
+            读取UTC时间类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadBCD(System.Int32,System.Boolean)">
+            <summary>
+            读取BCD编码
+            </summary>
+            <param name="len"></param>
+            <param name="trim"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadBCD(System.Int32,System.Char)">
+            <summary>
+            读取BCD编码，返回以输入分隔符格式化字符串
+            电召服务费：XXX-X
+            里程：XXXXX.X
+            </summary>
+            <param name="len">长度</param>
+            <param name="separator">分隔符</param>
+            <returns>XXXX-X</returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadBCD(System.Int32,System.Int32,System.Char)">
+            <summary>
+            读取BCD编码
+            </summary>
+            <param name="len">长度</param>
+            <param name="v2">分隔符位置</param>
+            <param name="v3">分隔符</param>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.GetReadOnlySpan(System.Int32)">
+            <summary>
+            读取数量大小的内存块
+            </summary>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.GetVirtualReadOnlySpan(System.Int32)">
+            <summary>
+            虚拟读取数量大小的内存块，不计入内存偏移量
+            </summary>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadContent(System.Int32)">
+            <summary>
+            读取数据体内存块
+            </summary>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadStringEndChar0">
+            <summary>
+            读取一整串字符串到\0结束
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadVirtualStringEndChar0">
+            <summary>
+            虚拟读取一整串字符串到\0结束，不计入内存偏移量
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadVirtualArraryEndChar0">
+            <summary>
+            虚拟读取一整串字符串到\0结束，不计入内存偏移量
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadCurrentRemainContentLength">
+            <summary>
+            读取剩余数据体内容长度
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.Skip(System.Int32)">
+            <summary>
+            跳过多少字节
+            </summary>
+            <param name="count"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader.ReadCarDVRCheckCode(System.Int32)">
+            <summary>
+            读取JT19056校验码
+            </summary>
+            <param name="currentPosition"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter">
+            <summary>
+            JT905消息写入器
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.Version">
+            <summary>
+            JT905版本号
+            </summary>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.#ctor(System.Span{System.Byte},JT905.Protocol.Enums.JT905Version)">
+            <summary>
+            
+            </summary>
+            <param name="buffer">内存块</param>
+            <param name="version">版本号:默认2014</param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.FlushAndGetEncodingArray">
+            <summary>
+            编码后的数组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.FlushAndGetEncodingReadOnlySpan">
+            <summary>
+            编码后的内存块
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.FlushAndGetRealReadOnlySpan">
+            <summary>
+            获取实际写入的内存块
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.FlushAndGetRealArray">
+            <summary>
+            获取实际写入的数组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteStart">
+            <summary>
+            写入头标识
+            </summary>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteEnd">
+            <summary>
+            写入尾标识
+            </summary>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.Nil(System.Int32@)">
+            <summary>
+            写入空标识,0x00
+            </summary>
+            <param name="position"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.Skip(System.Int32@,System.Int32@)">
+            <summary>
+            跳过多少字节数
+            </summary>
+            <param name="count"></param>
+            <param name="position">跳过前的内存位置</param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.Skip(System.Int32@,System.Int32@,System.Byte@)">
+            <summary>
+            跳过多少字节数
+            </summary>
+            <param name="count"></param>
+            <param name="position">跳过前的内存位置</param>
+            <param name="fullValue">用什么数值填充跳过的内存块</param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteChar(System.Char@)">
+            <summary>
+            写入一个字符
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteByte(System.Byte@)">
+            <summary>
+            写入一个字节
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteInt16(System.Int16@)">
+            <summary>
+            写入两个字节的有符号数值类型
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteUInt16(System.UInt16@)">
+            <summary>
+            写入两个字节的无符号数值类型
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteInt32(System.Int32@)">
+            <summary>
+            写入四个字节的有符号数值类型
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteUInt32(System.UInt32@)">
+            <summary>
+            写入四个字节的无符号数值类型
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteUInt64(System.UInt64@)">
+            <summary>
+            写入八个字节的无符号数值类型
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteInt64(System.Int64@)">
+            <summary>
+            写入八个字节的有符号数值类型
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteString(System.String@)">
+            <summary>
+            写入字符串
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteArray(System.ReadOnlySpan{System.Byte}@)">
+            <summary>
+            写入数组
+            </summary>
+            <param name="src"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteUInt16Return(System.UInt16@,System.Int32@)">
+            <summary>
+            根据内存定位,反写两个字节的无符号数值类型
+            </summary>
+            <param name="value"></param>
+            <param name="position"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteInt16Return(System.Int16@,System.Int32@)">
+            <summary>
+            根据内存定位,反写两个字节的有符号数值类型
+            </summary>
+            <param name="value"></param>
+            <param name="position"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteInt32Return(System.Int32@,System.Int32@)">
+            <summary>
+            根据内存定位,反写四个字节的有符号数值类型
+            </summary>
+            <param name="value"></param>
+            <param name="position"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteUInt32Return(System.UInt32@,System.Int32@)">
+            <summary>
+            根据内存定位,反写四个字节的无符号数值类型
+            </summary>
+            <param name="value"></param>
+            <param name="position"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteInt64Return(System.Int64@,System.Int32@)">
+            <summary>
+            根据内存定位,反写八个字节的有符号数值类型
+            </summary>
+            <param name="value"></param>
+            <param name="position"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteUInt64Return(System.UInt64@,System.Int32@)">
+            <summary>
+            根据内存定位,反写八个字节的无符号数值类型
+            </summary>
+            <param name="value"></param>
+            <param name="position"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteByteReturn(System.Byte@,System.Int32@)">
+            <summary>
+            根据内存定位,反写1个字节的数值类型
+            </summary>
+            <param name="value"></param>
+            <param name="position"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteBCDReturn(System.String@,System.Int32@,System.Int32@)">
+            <summary>
+            根据内存定位,反写BCD编码数据
+            </summary>
+            <param name="value"></param>
+            <param name="len"></param>
+            <param name="position"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteStringReturn(System.String@,System.Int32@)">
+            <summary>
+            根据内存定位,反写一串字符串数据
+            </summary>
+            <param name="value"></param>
+            <param name="position"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteArrayReturn(System.ReadOnlySpan{System.Byte}@,System.Int32@)">
+            <summary>
+            根据内存定位,反写一组数组数据
+            </summary>
+            <param name="src"></param>
+            <param name="position"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.IntToBCD(System.Int32)">
+            <summary>
+            整型数据转为BCD BYTE
+            为了兼容int类型，不使用byte做参数
+            支持0xFF一个字节的转换
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteDateTime7(System.DateTime@,System.Int32@)">
+            <summary>
+            写入七个字节的日期类型,yyyyMMddHHmmss
+            </summary>
+            <param name="value"></param>
+            <param name="fromBase"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteDateTime6(System.DateTime@,System.Int32@)">
+            <summary>
+            写入六个字节的日期类型,yyMMddHHmmss
+            </summary>
+            <param name="value"></param>
+            <param name="fromBase"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteDateTime6YYYYMMddHHmm(System.DateTime@,System.Int32@)">
+            <summary>
+            写入六个字节的日期类型,yyyyMMddHHmm
+            </summary>
+            <param name="value"></param>
+            <param name="fromBase"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteDateTime6(System.Nullable{System.DateTime}@,System.Int32@)">
+            <summary>
+            写入六个字节的可空日期类型,yyMMddHHmmss
+            </summary>
+            <param name="value"></param>
+            <param name="fromBase"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteDateTime5(System.DateTime@,System.Int32@)">
+            <summary>
+            写入五个字节的日期类型,HH-mm-ss-msms或HH-mm-ss-fff
+            </summary>
+            <param name="value"></param>
+            <param name="fromBase"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteDateTime5(System.Nullable{System.DateTime}@,System.Int32@)">
+            <summary>
+            写入五个字节的可空日期类型,HH-mm-ss-msms或HH-mm-ss-fff
+            </summary>
+            <param name="value"></param>
+            <param name="fromBase"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteUTCDateTime(System.DateTime@)">
+            <summary>
+            写入UTC日期类型
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteDateTime4(System.DateTime@,System.Int32@)">
+            <summary>
+            写入四个字节的日期类型,YYYYMMDD BCD[4] 数据形如：20200101
+            </summary>
+            <param name="value"></param>
+            <param name="fromBase"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteDateTime4(System.Nullable{System.DateTime}@,System.Int32@)">
+            <summary>
+            写入四个字节的可空日期类型,YYYYMMDD BCD[4]数据形如:20200101
+            </summary>
+            <param name="value"></param>
+            <param name="fromBase"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteDateTime3(System.DateTime@,System.Int32@)">
+            <summary>
+            写入三个字节的日期类型,YYMMDD 数据形如：20200101
+            </summary>
+            <param name="value"></param>
+            <param name="fromBase"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteDateTime3(System.Nullable{System.DateTime}@,System.Int32@)">
+            <summary>
+            写入三个字节的可空日期类型,YYMMDD 数据形如：20200101
+            </summary>
+            <param name="value"></param>
+            <param name="fromBase"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteXor(System.Int32@,System.Int32@)">
+            <summary>
+            将指定内存块进行或运算并写入一个字节
+            </summary>
+            <param name="start"></param>
+            <param name="end"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteXor(System.Int32@)">
+            <summary>
+            将指定内存块进行或运算并写入一个字节
+            </summary>
+            <param name="start"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteXor(System.Int32)">
+            <summary>
+            将内存块进行或运算并写入一个字节
+            </summary>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteBCD(System.String@,System.Int32@)">
+            <summary>
+            写入BCD编码数据
+            </summary>
+            <param name="value"></param>
+            <param name="len"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteHex(System.String,System.Int32@)">
+            <summary>
+            写入Hex编码数据
+            </summary>
+            <param name="value"></param>
+            <param name="len"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteASCII(System.String@)">
+            <summary>
+            写入ASCII编码数据
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteASCII(System.String@,System.Int32,System.Byte)">
+            <summary>
+            写入ASCII编码数据
+            </summary>
+            <param name="value"></param>
+            <param name="padLength"></param>
+            <param name="padValue"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteFullEncode">
+            <summary>
+            将内存块进行905转义处理
+            </summary>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteEncode">
+            <summary>
+            将内存块进行905转义处理
+            </summary>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteBigNumber(System.String@,System.Int32)">
+            <summary>
+            写入数值类型，数字编码 大端模式、高位在前
+            </summary>
+            <param name="value"></param>
+            <param name="len"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteStringEndChar0(System.String)">
+            <summary>
+            将字符串写入并写入一个\0作为结尾
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.GetCurrentPosition">
+            <summary>
+            获取当前内存块写入的位置
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter.WriteCarDVRCheckCode(System.Int32@)">
+            <summary>
+            写入JT19056校验码
+            </summary>
+            <param name="currentPosition"></param>
+        </member>
+        <member name="T:JT905.Protocol.SerialPort.Buffers.JT905BufferWriter">
+            <summary>
+            
+            ref System.Buffers.Writer
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Buffers.JT905BufferWriter.BeforeCodingWrittenPosition">
+            <summary>
+            编码之前的写入位置
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.SerialPort.IBody">
+            <summary>
+            消息体
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.IBody.MessageId">
+            <summary>
+            消息id
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.IBody.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.IBody.Serialize(JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter@,JT905.Protocol.IJT905Config)">
+            <summary>
+            序列化
+            </summary>
+            <param name="writer"></param>
+            <param name="config"></param>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.IBody.Deserialize(JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader@,JT905.Protocol.IJT905Config)">
+            <summary>
+            反序列化
+            </summary>
+            <param name="reader"></param>
+            <param name="config"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JT905.Protocol.SerialPort.IBody.Types">
+            <summary>
+            上下行类型
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.SerialPort.IBody.Types.Up">
+            <summary>
+            上行
+            <para>外接设备发往ISU</para>
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.SerialPort.IBody.Types.Down">
+            <summary>
+            下行
+            <para>ISU发往外接设备</para>
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.SerialPort.IBody`1">
+            <summary>
+            消息体接口
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.IBody`1.Serialize(JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter@,JT905.Protocol.IJT905Config)">
+            <summary>
+            序列化
+            </summary>
+            <param name="writer"></param>
+            <param name="config"></param>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.IBody`1.Deserialize(JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader@,JT905.Protocol.IJT905Config)">
+            <summary>
+            反序列化
+            </summary>
+            <param name="reader"></param>
+            <param name="config"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JT905.Protocol.SerialPort.Body`1">
+            <summary>
+            消息体基类
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Body`1.Type">
+            <inheritdoc/>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Body`1.MessageId">
+            <inheritdoc/>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.Body`1.Deserialize(JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader@,JT905.Protocol.IJT905Config)">
+            <inheritdoc/>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.Body`1.Serialize(JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter@,JT905.Protocol.IJT905Config)">
+            <inheritdoc/>
+        </member>
+        <member name="T:JT905.Protocol.SerialPort.SerialPortPackage">
+            <summary>
+            串口数据包
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.SerialPortPackage.BeginMark">
+            <summary>
+            开始标记
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.SerialPortPackage.Length">
+            <summary>
+            长度
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.SerialPortPackage.Device">
+            <summary>
+            设备类型
+            <list type="table">
+            <listheader>
+            <term>设备类型代码</term>
+            <term>设备名称</term>
+            </listheader>
+            <item>
+            <term>0x00</term>
+            <term>ISU</term>
+            </item>
+            <item>
+            <term>0x01</term>
+            <term>通信模块</term>
+            </item>
+            <item>
+            <term>0x02</term>
+            <term>计价器</term>
+            </item>
+            <item>
+            <term>0x03</term>
+            <term>出租汽车安全模块</term>
+            </item>
+            <item>
+            <term>0x04</term>
+            <term>LED 显示屏</term>
+            </item>
+            <item>
+            <term>0x05</term>
+            <term>智能顶灯</term>
+            </item>
+            <item>
+            <term>0x06</term>
+            <term>服务评价器(后排)</term>
+            </item>
+            <item>
+            <term>0x07</term>
+            <term>摄像装置</term>
+            </item>
+            <item>
+            <term>0x08</term>
+            <term>卫星定位设备</term>
+            </item>
+            <item>
+            <term>0x09</term>
+            <term>液品(LCD)多媒体屏</term>
+            </item>
+            <item>
+            <term>0x10</term>
+            <term>ISU 人机交互设备</term>
+            </item>
+            <item>
+            <term>0x11</term>
+            <term>服务评价器(前排)</term>
+            </item>
+            <item>
+            <term>其他</term>
+            <term>rfu</term>
+            </item>
+            </list>
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.SerialPortPackage.ManufacturerIdentify">
+            <summary>
+            是否为自定义标识
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.SerialPortPackage.MessageId">
+            <summary>
+            命令字
+            <para>命令字第一字节用以区分是标准指令与厂家自定义指令,0x00 表示标准指令,其他为自定义指令;</para>
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.SerialPortPackage.Body">
+            <summary>
+            消息体
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.SerialPortPackage.CheckCode">
+            <summary>
+            校验码
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.SerialPortPackage.EndMark">
+            <summary>
+            结束标记
+            </summary>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.SerialPortPackage.Deserialize(JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader@,JT905.Protocol.SerialPort.IBody.Types,JT905.Protocol.IJT905Config)">
+            <inheritdoc/>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.SerialPortPackage.Serialize(JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter@,JT905.Protocol.IJT905Config)">
+            <inheritdoc/>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.SerialPortSerializer.#ctor(JT905.Protocol.IJT905Config)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="JT905Config"></param>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.SerialPortSerializer.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.SerialPortSerializer.SerializerId">
+            <summary>
+            配置标识
+            </summary>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.SerialPortSerializer.Serialize(JT905.Protocol.SerialPort.SerialPortPackage,JT905.Protocol.Enums.JT905Version,System.Int32)">
+            <summary>
+            序列化
+            </summary>
+            <param name="package"></param>
+            <param name="version"></param>
+            <param name="minBufferSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.SerialPortSerializer.Deserialize(System.ReadOnlySpan{System.Byte},JT905.Protocol.SerialPort.IBody.Types,JT905.Protocol.Enums.JT905Version,System.Int32)">
+            <summary>
+            反序列化
+            </summary>
+            <param name="bytes"></param>
+            <param name="version"></param>
+            <param name="minBufferSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.SerialPortSerializer.Serialize``1(``0,JT905.Protocol.Enums.JT905Version,System.Int32)">
+            <summary>
+            序列化
+            </summary>
+            <param name="package"></param>
+            <param name="version"></param>
+            <param name="minBufferSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.SerialPortSerializer.Deserialize``1(System.ReadOnlySpan{System.Byte},JT905.Protocol.Enums.JT905Version,System.Int32)">
+            <summary>
+            反序列化
+            </summary>
+            <param name="bytes"></param>
+            <param name="version"></param>
+            <param name="minBufferSize"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0000_Down">
+            <summary>
+            计价器状态查询
+            <para>设备发往计价器</para>
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0000_Down.Type">
+            <inheritdoc/>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0000_Down.MessageId">
+            <inheritdoc/>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0000_Down.DateTime">
+            <summary>
+            ISU当前时间
+            </summary>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0000_Down.Deserialize(JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader@,JT905.Protocol.IJT905Config)">
+            <inheritdoc/>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0000_Down.Serialize(JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter@,JT905.Protocol.IJT905Config)">
+            <inheritdoc/>
+        </member>
+        <member name="T:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0000_Up">
+            <summary>
+            计价器状态查询应答
+            <para>计价器发往设备</para>
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0000_Up.Type">
+            <inheritdoc/>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0000_Up.MessageId">
+            <inheritdoc/>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0000_Up.TerminalNumber">
+            <summary>
+            设备厂商编号
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0000_Up.TerminalType">
+            <summary>
+            设备类型
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0000_Up.TerminalSerial">
+            <summary>
+            设备序列号
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0000_Up.TerminalVersion">
+            <summary>
+            硬件版本号
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0000_Up.SoftwareMainVersion">
+            <summary>
+            软件主版本号
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0000_Up.SoftwareSlaveVersion">
+            <summary>
+            软件次版本号
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0000_Up.TerminalState">
+            <summary>
+            设备状态
+            <list type="table">
+            <listheader>
+            <term>值</term>
+            <term>说明</term>
+            </listheader>
+            <item>
+            <term>0x00</term>
+            <term>设备正常</term>
+            </item>
+            <item>
+            <term>0x01</term>
+            <term>设备限制使用（次数限制）</term>
+            </item>
+            <item>
+            <term>0x02</term>
+            <term>设备限制使用（日期限制）</term>
+            </item>
+            <item>
+            <term>0x04</term>
+            <term>营运数据存储满</term>
+            </item>
+            <item>
+            <term>0x08</term>
+            <term>上下班签到签退信息满</term>
+            </item>
+            <item>
+            <term>其他</term>
+            <term>设备异常</term>
+            </item>
+            </list>
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0000_Up.WorkerState">
+            <summary>
+            计价器工作状态
+            <list type="table">
+            <listheader>
+            <term>值</term>
+            <term>说明</term>
+            </listheader>
+            <item>
+            <term>0x00</term>
+            <term>签到已开机</term>
+            </item>
+            <item>
+            <term>0x01</term>
+            <term>签退未开机</term>
+            </item>
+            <item>
+            <term>0x10</term>
+            <term>签到，强制开机</term>
+            </item>
+            <item>
+            <term>0x11</term>
+            <term>签退，强制关机</term>
+            </item>
+            </list>
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0000_Up.LicensePlate">
+            <summary>
+            车牌号
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0000_Up.License">
+            <summary>
+            经营许可证号
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0000_Up.QualificationCertificate">
+            <summary>
+            驾驶员从业资格证号
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0000_Up.OperateCount">
+            <summary>
+            营运次数
+            </summary>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0000_Up.Deserialize(JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader@,JT905.Protocol.IJT905Config)">
+            <inheritdoc/>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0000_Up.Serialize(JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter@,JT905.Protocol.IJT905Config)">
+            <inheritdoc/>
+        </member>
+        <member name="T:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0004_Down">
+            <summary>
+            运价参数查询
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0004_Down.Type">
+            <inheritdoc/>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0004_Down.MessageId">
+            <inheritdoc/>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0004_Down.Deserialize(JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader@,JT905.Protocol.IJT905Config)">
+            <inheritdoc/>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0004_Down.Serialize(JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter@,JT905.Protocol.IJT905Config)">
+            <inheritdoc/>
+        </member>
+        <member name="T:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0004_Up">
+            <summary>
+            运价参数查询应答
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0004_Up.Type">
+            <inheritdoc/>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0004_Up.MessageId">
+            <inheritdoc/>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0004_Up.EnableDateTime">
+            <summary>
+            启用时间
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0004_Up.DayRoundtripPrice">
+            <summary>
+            白天往返单价
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0004_Up.NightRoundtripPrice">
+            <summary>
+            夜间往返单价
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0004_Up.DayOneWayPrice">
+            <summary>
+            白天单程单价
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0004_Up.NightOneWayPrice">
+            <summary>
+            夜间单程单价
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0004_Up.DaySecondEmptyTagPrice">
+            <summary>
+            白天二次空贴单价
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0004_Up.NightSecondEmptyTagPrice">
+            <summary>
+            夜间二次空贴单价
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0004_Up.DayInitialPrice">
+            <summary>
+            白天起步单价
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0004_Up.NightInitialPrice">
+            <summary>
+            夜间起步单价
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0004_Up.ContinuationMileage">
+            <summary>
+            续程里程数
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0004_Up.InitialKilometers">
+            <summary>
+            起程公里
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0004_Up.SecondEmptyTagKilometers">
+            <summary>
+            二次空贴公里
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0004_Up.DaylightWaitingPrice">
+            <summary>
+            白天等候时间单价
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0004_Up.NightWaitingPrice">
+            <summary>
+            夜间等候时间单价
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0004_Up.FreeWaitingTime">
+            <summary>
+            免费等候时间
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0004_Up.SurchargeTime">
+            <summary>
+            加价时间
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0004_Up.NighttimeStartTime">
+            <summary>
+            夜间开始时间
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0004_Up.NighttimeEndTime">
+            <summary>
+            夜间结束时间
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0004_Up.RUF">
+            <summary>
+            系统预留
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0004_Up.Customize">
+            <summary>
+            厂商自定义扩展
+            </summary>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0004_Up.Deserialize(JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader@,JT905.Protocol.IJT905Config)">
+            <inheritdoc/>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0004_Up.Serialize(JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter@,JT905.Protocol.IJT905Config)">
+            <inheritdoc/>
+        </member>
+        <member name="T:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0005_Down">
+            <summary>
+            运价参数设置
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0005_Down.Type">
+            <inheritdoc/>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0005_Down.MessageId">
+            <inheritdoc/>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0005_Down.Metadata">
+            <summary>
+            参数设置元数据
+            <para>参数设置应至少包括参数查询中返回的参数，各厂商自定义参数区内容及编码以及参数的启用时间、参数版本等</para>
+            </summary>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0005_Down.Deserialize(JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader@,JT905.Protocol.IJT905Config)">
+            <inheritdoc/>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0005_Down.Serialize(JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter@,JT905.Protocol.IJT905Config)">
+            <inheritdoc/>
+        </member>
+        <member name="T:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0005_Up">
+            <summary>
+            运价参数设置应答
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0005_Up.Type">
+            <inheritdoc/>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0005_Up.MessageId">
+            <inheritdoc/>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0005_Up.Result">
+            <summary>
+            操作结果
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0005_Up.DateTime">
+            <summary>
+            参数数据包中的参数启用时间，YYYYMMDDhh
+            </summary>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0005_Up.Deserialize(JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader@,JT905.Protocol.IJT905Config)">
+            <inheritdoc/>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0005_Up.Serialize(JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter@,JT905.Protocol.IJT905Config)">
+            <inheritdoc/>
+        </member>
+        <member name="T:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0005_Up.ResultType">
+            <summary>
+            结果类型
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0005_Up.ResultType.Success">
+            <summary>
+            参数下载成功
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0005_Up.ResultType.FailWithValidationOrConfigFailure">
+            <summary>
+            参数包校验失败，设置失败
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0005_Up.ResultType.VersionMatch">
+            <summary>
+            同一版本，无需设置
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x0005_Up.ResultType.deviceNotSupported">
+            <summary>
+            设备不支持
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E7_Down">
+            <summary>
+            单次营运开始通知应答
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E7_Down.Type">
+            <inheritdoc/>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E7_Down.MessageId">
+            <inheritdoc/>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E7_Down.Result">
+            <summary>
+            操作结果
+            </summary>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E7_Down.Deserialize(JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader@,JT905.Protocol.IJT905Config)">
+            <inheritdoc/>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E7_Down.Serialize(JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter@,JT905.Protocol.IJT905Config)">
+            <inheritdoc/>
+        </member>
+        <member name="T:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E7_Down.ResultType">
+            <summary>
+            结果类型
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E7_Down.ResultType.Success">
+            <summary>
+            执行正确
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E7_Down.ResultType.Fail">
+            <summary>
+            执行错误
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E7_Up">
+            <summary>
+            单次营运开始通知指令
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E7_Up.Type">
+            <inheritdoc/>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E7_Up.MessageId">
+            <inheritdoc/>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E7_Up.DateTime">
+            <summary>
+            进入重车时间
+            </summary>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E7_Up.Deserialize(JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader@,JT905.Protocol.IJT905Config)">
+            <inheritdoc/>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E7_Up.Serialize(JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter@,JT905.Protocol.IJT905Config)">
+            <inheritdoc/>
+        </member>
+        <member name="T:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E8_Down">
+            <summary>
+            单次营运结束后营运数据发送应答
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E8_Down.Type">
+            <inheritdoc/>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E8_Down.MessageId">
+            <inheritdoc/>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E8_Down.Result">
+            <summary>
+            操作结果
+            </summary>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E8_Down.Deserialize(JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader@,JT905.Protocol.IJT905Config)">
+            <inheritdoc/>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E8_Down.Serialize(JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter@,JT905.Protocol.IJT905Config)">
+            <inheritdoc/>
+        </member>
+        <member name="T:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E8_Down.Results">
+            <summary>
+            操作结果
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E8_Down.Results.Success">
+            <summary>
+            执行正确
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E8_Down.Results.Fail">
+            <summary>
+            执行错误
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E8_Up">
+            <summary>
+            单次营运结束后营运数据
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E8_Up.Type">
+            <inheritdoc/>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E8_Up.MessageId">
+            <inheritdoc/>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E8_Up.LicensePlate">
+            <summary>
+            车牌号
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E8_Up.License">
+            <summary>
+            营运许可证号
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E8_Up.QualificationCertificate">
+            <summary>
+            驾驶员从业资格证号
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E8_Up.BeginDateTime">
+            <summary>
+            上车时间
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E8_Up.EndTime">
+            <summary>
+            下车时间
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E8_Up.Mileage">
+            <summary>
+            计程
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E8_Up.EmptyDrive">
+            <summary>
+            空驶
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E8_Up.AdditionalFee">
+            <summary>
+            附加费
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E8_Up.WaitTime">
+            <summary>
+            等待计时
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E8_Up.Amount">
+            <summary>
+            交易金额
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E8_Up.Section">
+            <summary>
+            当前车次
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E8_Up.TradeType">
+            <summary>
+            交易类型
+            <list type="table">
+            <listheader>
+            <term>设备类型代码</term>
+            <term>设备名称</term>
+            </listheader>
+            <item>
+            <term>0x00</term>
+            <term>现金交易</term>
+            </item>
+            <item>
+            <term>0x01</term>
+            <term>M1卡交易</term>
+            </item>
+            <item>
+            <term>0x03</term>
+            <term>CPU卡交易</term>
+            </item>
+            <item>
+            <term>0x09</term>
+            <term>其他交易</term>
+            </item>
+            </list>
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E8_Up.IntegrationOfTransportationCard">
+            <summary>
+            一卡通数据
+            </summary>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E8_Up.Deserialize(JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader@,JT905.Protocol.IJT905Config)">
+            <inheritdoc/>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00E8_Up.Serialize(JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter@,JT905.Protocol.IJT905Config)">
+            <inheritdoc/>
+        </member>
+        <member name="T:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00F2_Down">
+            <summary>
+            计价器营运数据补传应答
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00F2_Down.Type">
+            <inheritdoc/>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00F2_Down.MessageId">
+            <inheritdoc/>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00F2_Down.Result">
+            <summary>
+            操作结果
+            </summary>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00F2_Down.Deserialize(JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader@,JT905.Protocol.IJT905Config)">
+            <inheritdoc/>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00F2_Down.Serialize(JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter@,JT905.Protocol.IJT905Config)">
+            <inheritdoc/>
+        </member>
+        <member name="T:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00F2_Down.ResultType">
+            <summary>
+            结果类型
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00F2_Down.ResultType.Success">
+            <summary>
+            操作成功
+            </summary>
+        </member>
+        <member name="F:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00F2_Down.ResultType.Fail">
+            <summary>
+            校验错误
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00F2_Up">
+            <summary>
+            计价器营运数据补传
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00F2_Up.Type">
+            <inheritdoc/>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00F2_Up.MessageId">
+            <inheritdoc/>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00F2_Up.Data">
+            <summary>
+            营运数据
+            </summary>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00F2_Up.Deserialize(JT905.Protocol.MessagePack.JT905SerialPortMessagePackReader@,JT905.Protocol.IJT905Config)">
+            <inheritdoc/>
+        </member>
+        <member name="M:JT905.Protocol.SerialPort.Taximeter.Taximeter_0x00F2_Up.Serialize(JT905.Protocol.MessagePack.JT905SerialPortMessagePackWriter@,JT905.Protocol.IJT905Config)">
+            <inheritdoc/>
+        </member>
+        <member name="T:JT905.Protocol.SerialPort.TerminalNumber">
+            <summary>
+            设备编码
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.TerminalNumber.Number">
+            <summary>
+            厂商编号
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.TerminalNumber.Type">
+            <summary>
+            设备类型
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.SerialPort.TerminalNumber.Serial">
+            <summary>
+            序列号
+            </summary>
         </member>
     </members>
 </doc>

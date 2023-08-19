@@ -1,9 +1,10 @@
-﻿using JT905.Protocol.Enums;
-using JT905.Protocol.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
+using JT905.Protocol.Enums;
+using JT905.Protocol.Interfaces;
+using JT905.Protocol.SerialPort;
 
 namespace JT905.Protocol
 {
@@ -45,6 +46,10 @@ namespace JT905.Protocol
         /// </summary>
         IJT905_0x8103_Factory JT905_0X8103_Factory { get; set; }
         /// <summary>
+        /// 计价器命令工厂
+        /// </summary>
+        IJT905SerialPortFactory JT905TaximeterFactory { get; set; }
+        /// <summary>
         /// 统一编码
         /// </summary>
         Encoding Encoding { get; set; }
@@ -75,7 +80,7 @@ namespace JT905.Protocol
         /// </summary>
         void ReplaceMsgId<TSourceJT905Bodies, TTargetJT905Bodies>()
             where TSourceJT905Bodies : JT905Bodies
-            where TTargetJT905Bodies : JT905Bodies,new();
+            where TTargetJT905Bodies : JT905Bodies, new();
 
     }
 }

@@ -1,9 +1,10 @@
-﻿using JT905.Protocol.Enums;
-using JT905.Protocol.Internal;
-using JT905.Protocol.MessageBody;
-using System;
+﻿using System;
 using System.Reflection;
 using System.Text;
+using JT905.Protocol.Enums;
+using JT905.Protocol.Internal;
+using JT905.Protocol.MessageBody;
+using JT905.Protocol.SerialPort;
 
 namespace JT905.Protocol.Interfaces
 {
@@ -27,6 +28,7 @@ namespace JT905.Protocol.Interfaces
             JT905_0X0200_Factory = new JT905_0x0200_Factory();
             JT905_0X8103_Custom_Factory = new JT905_0x8103_Custom_Factory();
             JT905_0X8103_Factory = new JT905_0x8103_Factory();
+            JT905TaximeterFactory = new JT905SerialPortFactory();
             ISULength = 12;
             Trim = true;
         }
@@ -72,6 +74,10 @@ namespace JT905.Protocol.Interfaces
         /// </summary>
         public virtual IJT905_0x8103_Factory JT905_0X8103_Factory { get; set; }
         /// <summary>
+        /// 串口计价器消息工厂
+        /// </summary>
+        public virtual IJT905SerialPortFactory JT905TaximeterFactory { get; set; }
+        /// <summary>
         /// 终端SIM卡长度
         /// </summary>
         public virtual int ISULength { get; set; }
@@ -97,6 +103,7 @@ namespace JT905.Protocol.Interfaces
                     JT905_0X0200_Custom_Factory.Register(easb);
                     JT905_0X8103_Factory.Register(easb);
                     JT905_0X8103_Custom_Factory.Register(easb);
+                    JT905TaximeterFactory.Register(easb);
                 }
             }
             return this;
