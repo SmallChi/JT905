@@ -16,6 +16,7 @@ namespace JT905.Protocol.MessageBody
         /// 参数长度
         /// </summary>
         public abstract byte ParamLength { get; set; }
+
         /// <summary>
         /// 消息描述
         /// </summary>

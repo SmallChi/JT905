@@ -39,7 +39,7 @@ namespace JT905.Protocol.Test.MessageBody
                 },
                 Bodies = new JT905_0x0B11()
                 {
-                    tLVs = new List<TLV>() { new TLV {
+                    TLVs = new List<TLV>() { new TLV {
                         DeviceType=Enums.JT905DeviceType.ISU,
                         HardwareVer="12",
                         SoftVer="1001",

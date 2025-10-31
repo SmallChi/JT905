@@ -21,7 +21,11 @@ namespace JT905.Protocol.MessageBody
         /// 数据长度
         /// </summary>
         public override byte ParamLength { get; set; } = 4;
-    
+
+        /// <summary>
+        /// 消息描述
+        /// </summary>
+
         public override string Description => "ISU心跳发送间隔，单位为秒(s)";
         
         /// <summary>
