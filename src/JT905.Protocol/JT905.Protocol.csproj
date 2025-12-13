@@ -11,8 +11,8 @@
   </PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="System.Text.Encoding.CodePages" Version="9.0.0" />
-		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.0" />
+		<PackageReference Include="System.Text.Encoding.CodePages" Version="10.0.1" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.1" />
 	</ItemGroup>
 	<ItemGroup>
 		<None Include="..\..\LICENSE" Pack="true" PackagePath="" />

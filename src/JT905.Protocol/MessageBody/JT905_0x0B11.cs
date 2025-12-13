@@ -49,8 +49,8 @@ namespace JT905.Protocol.MessageBody
             {
                 writer.WriteString("[]巡检设备类型代码", "");
             }
-
         }
+
         /// <summary>
         /// 反序列化
         /// </summary>
@@ -70,8 +70,6 @@ namespace JT905.Protocol.MessageBody
 
                 //}
             }
-
-
             return value;
         }
         /// <summary>
@@ -99,6 +97,7 @@ namespace JT905.Protocol.MessageBody
             }
         }
     }
+
     /// <summary>
     /// 设备巡检应答消息体
     /// </summary>
@@ -160,7 +159,7 @@ namespace JT905.Protocol.MessageBody
         /// <summary>
         /// 一卡通交易缓存条数
         /// </summary>
-        public  CardTransactionDataCount { get; set; } 
+        public int CardTransactionDataCount { get; set; } 
 
     }
 }

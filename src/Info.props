@@ -1,6 +1,6 @@
 ﻿<Project>
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <LangVersion>13.0</LangVersion>
     <Copyright>Copyright 2022.</Copyright>
     <Authors>SmallChi(Koike),capfhz,yedajiang44</Authors>
@@ -8,7 +8,7 @@
     <PackageProjectUrl>https://github.com/SmallChi/JT905</PackageProjectUrl>
     <licenseUrl>https://github.com/SmallChi/JT905/blob/master/LICENSE</licenseUrl>
     <license>https://github.com/SmallChi/JT905/blob/master/LICENSE</license>
-    <Version>1.0.0-preview3</Version>
+    <Version>1.0.0</Version>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <AnalysisLevel>latest</AnalysisLevel>

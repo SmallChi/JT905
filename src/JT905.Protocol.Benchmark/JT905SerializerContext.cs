@@ -164,7 +164,7 @@ namespace JT905.Protocol.Benchmark
     {
         public JT905SerializerConfig()
         {
-            AddJob(Job.Default.WithGcServer(false).WithToolchain(CsProjCoreToolchain.NetCoreApp50).WithPlatform(Platform.AnyCpu));
+            AddJob(Job.Default.WithGcServer(false).WithToolchain(CsProjCoreToolchain.NetCoreApp10_0).WithPlatform(Platform.AnyCpu));
         }
     }
 }

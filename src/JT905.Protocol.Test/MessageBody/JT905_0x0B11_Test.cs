@@ -39,14 +39,15 @@ namespace JT905.Protocol.Test.MessageBody
                 },
                 Bodies = new JT905_0x0B11()
                 {
-                    TLVs = new List<TLV>() { new TLV {
-                        DeviceType=Enums.JT905DeviceType.ISU,
-                        HardwareVer="12",
-                        SoftVer="1001",
-                        ISUStatus=0,
-                        ISUAlarm=0
-                    } }
-
+                    TLVs = new List<TLV>() { 
+                        new TLV {
+                            Tag=Enums.JT905DeviceType.ISU,
+                            HardwareVer="12",
+                            SoftVer="1001",
+                            ISUStatus=0,
+                            ISUAlarm=0 
+                        } 
+                    }
                 }
             };
             var _0x0B11Hex = JT905Serializer.Serialize(package).ToHexString();

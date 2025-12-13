@@ -4077,19 +4077,58 @@
             设备巡检应答
             </summary>
         </member>
-        <member name="T:JT905.Protocol.MessageBody.TLV">
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B11.MsgId">
+            <summary>
+            消息ID
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B11.Description">
+            <summary>
+            消息描述
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x0B11.TLVs">
             <summary>
             
             </summary>
         </member>
-        <member name="P:JT905.Protocol.MessageBody.TLV.DeviceType">
+        <member name="M:JT905.Protocol.MessageBody.JT905_0x0B11.Analyze(JT905.Protocol.MessagePack.JT905MessagePackReader@,System.Text.Json.Utf8JsonWriter,JT905.Protocol.IJT905Config)">
             <summary>
-            
+            分析
+            </summary>
+            <param name="reader"></param>
+            <param name="writer"></param>
+            <param name="config"></param>
+        </member>
+        <member name="M:JT905.Protocol.MessageBody.JT905_0x0B11.Deserialize(JT905.Protocol.MessagePack.JT905MessagePackReader@,JT905.Protocol.IJT905Config)">
+            <summary>
+            反序列化
+            </summary>
+            <param name="reader"></param>
+            <param name="config"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JT905.Protocol.MessageBody.JT905_0x0B11.Serialize(JT905.Protocol.MessagePack.JT905MessagePackWriter@,JT905.Protocol.MessageBody.JT905_0x0B11,JT905.Protocol.IJT905Config)">
+            <summary>
+            序列化
+            </summary>
+            <param name="writer"></param>
+            <param name="value"></param>
+            <param name="config"></param>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.TLV">
+            <summary>
+            设备巡检应答消息体
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.TLV.Tag">
+            <summary>
+            标签
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.TLV.Length">
             <summary>
-            
+            长度
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.TLV.SerialNumber">
@@ -4115,6 +4154,31 @@
         <member name="P:JT905.Protocol.MessageBody.TLV.ISUAlarm">
             <summary>
             ISU报警标志
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.TLV.SignedDataCount">
+            <summary>
+            签到缓存数据条数
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.TLV.SignedOutDataCount">
+            <summary>
+            签退缓存数据条数
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.TLV.NormalDataCount">
+            <summary>
+            营运记录缓存条数
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.TLV.CardTransactionDataCount">
+            <summary>
+            一卡通交易缓存条数
+            </summary>
+        </member>
+        <member name="T:JT905.Protocol.MessageBody.JT905_0x0B11_tlv">
+            <summary>
+            
             </summary>
         </member>
         <member name="T:JT905.Protocol.MessageBody.JT905_0x8001">
@@ -4230,6 +4294,11 @@
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0001.ParamLength">
             <summary>
             数据长度
+            </summary>
+        </member>
+        <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0001.Description">
+            <summary>
+            消息描述
             </summary>
         </member>
         <member name="P:JT905.Protocol.MessageBody.JT905_0x8103_0x0001.ParamValue">

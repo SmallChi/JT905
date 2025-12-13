@@ -155,6 +155,34 @@ Assert.Equal(100, ((JT905_0x0200_0x01)jT905_0x0200.BasicLocationAttachData[JT905
 Assert.Equal(125, ((JT905_0x0200_0x02)jT905_0x0200.BasicLocationAttachData[JT905Constants.JT905_0x0200_0x02]).Oil);
 ```
 
+``` ini
+
+BenchmarkDotNet v0.15.8, Windows 11 (10.0.26200.6584/25H2/2025Update/HudsonValley2)
+Intel Core i7-8700K CPU 3.70GHz (Coffee Lake), 1 CPU, 12 logical and 6 physical cores
+.NET SDK 10.0.100
+  [Host]     : .NET 10.0.0 (10.0.0, 10.0.25.52411), X64 RyuJIT x86-64-v3
+  Job-SRTPUO : .NET 10.0.0 (10.0.0, 10.0.25.52411), X64 RyuJIT x86-64-v3
+
+Platform=AnyCpu  Server=False  Toolchain=.NET 10.0  
+
+```
+| Method                          | Categories       | N      | Mean          | Error        | StdDev       | Median        | Gen0       | Allocated    |
+|-------------------------------- |----------------- |------- |--------------:|-------------:|-------------:|--------------:|-----------:|-------------:|
+| **0x0100Serialize**                 | **0x0100Serializer** | **100**    |      **19.02 ¦Ìs** |     **0.127 ¦Ìs** |     **0.119 ¦Ìs** |      **19.04 ¦Ìs** |     **5.0964** |     **31.25 KB** |
+| 0x0100Deserialize               | 0x0100Serializer | 100    |      28.09 ¦Ìs |     0.402 ¦Ìs |     0.356 ¦Ìs |      27.97 ¦Ìs |     9.7961 |     60.16 KB |
+| **0x0100Serialize**                 | **0x0100Serializer** | **10000**  |   **1,934.98 ¦Ìs** |    **16.083 ¦Ìs** |    **15.044 ¦Ìs** |   **1,934.42 ¦Ìs** |   **509.7656** |   **3125.01 KB** |
+| 0x0100Deserialize               | 0x0100Serializer | 10000  |   2,769.21 ¦Ìs |    47.088 ¦Ìs |    44.046 ¦Ìs |   2,763.99 ¦Ìs |   980.4688 |   6015.63 KB |
+| **0x0100Serialize**                 | **0x0100Serializer** | **100000** |  **19,246.47 ¦Ìs** |   **208.207 ¦Ìs** |   **184.570 ¦Ìs** |  **19,295.84 ¦Ìs** |  **5093.7500** |  **31250.14 KB** |
+| 0x0100Deserialize               | 0x0100Serializer | 100000 |  29,617.52 ¦Ìs |   537.471 ¦Ìs |   639.822 ¦Ìs |  29,513.80 ¦Ìs |  9812.5000 |  60156.25 KB |
+|                                 |                  |        |               |              |              |               |            |              |
+| **0x0200_All_AttachId_Serialize**   | **0x0200Serializer** | **100**    |      **68.22 ¦Ìs** |     **0.929 ¦Ìs** |     **0.913 ¦Ìs** |      **67.86 ¦Ìs** |    **11.4746** |     **70.33 KB** |
+| 0x0200_All_AttachId_Deserialize | 0x0200Serializer | 100    |     379.20 ¦Ìs |     4.054 ¦Ìs |     3.792 ¦Ìs |     378.17 ¦Ìs |    50.7813 |    311.72 KB |
+| **0x0200_All_AttachId_Serialize**   | **0x0200Serializer** | **10000**  |   **7,017.92 ¦Ìs** |   **122.142 ¦Ìs** |   **108.276 ¦Ìs** |   **7,011.70 ¦Ìs** |  **1140.6250** |   **7033.08 KB** |
+| 0x0200_All_AttachId_Deserialize | 0x0200Serializer | 10000  |  39,666.05 ¦Ìs |   787.275 ¦Ìs | 1,516.812 ¦Ìs |  38,948.96 ¦Ìs |  5076.9231 |  31171.88 KB |
+| **0x0200_All_AttachId_Serialize**   | **0x0200Serializer** | **100000** |  **67,774.32 ¦Ìs** |   **535.331 ¦Ìs** |   **474.557 ¦Ìs** |  **67,679.77 ¦Ìs** | **11375.0000** |  **70331.05 KB** |
+| 0x0200_All_AttachId_Deserialize | 0x0200Serializer | 100000 | 389,044.13 ¦Ìs | 6,220.753 ¦Ìs | 6,656.136 ¦Ìs | 387,608.85 ¦Ìs | 50000.0000 | 311718.75 KB |
+
+
 ## NuGet °²×°
 
 | Package Name          | Version                                            | Preview Version                                       | Downloads                                           | Remark |
